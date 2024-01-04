@@ -1,2 +1,3 @@
-# certs
-Notes for all the certifications 
+# Welcome
+
+Back at it again
