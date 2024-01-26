@@ -16,7 +16,7 @@ Hyperconvergence - Full integration of servers, networks and storage
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 

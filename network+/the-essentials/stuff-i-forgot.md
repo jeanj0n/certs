@@ -10,7 +10,7 @@ description: Collision domains, cloud services
 
 <div align="left">
 
-<img src="../../.gitbook/assets/image (29).png" alt="">
+<img src="../../.gitbook/assets/image (29) (1).png" alt="">
 
 </div>
 

@@ -49,5 +49,15 @@
 
 ## AWS SAA
 
-* [Run it Back](aws-saa/run-it-back.md)
-* [Page](aws-saa/page.md)
+* [Run it Back](aws-saa/run-it-back/README.md)
+  * [IAM](aws-saa/run-it-back/iam.md)
+  * [EC2](aws-saa/run-it-back/ec2.md)
+  * [EC2 - SAA Level](aws-saa/run-it-back/ec2-saa-level.md)
+  * [EC2 Storage](aws-saa/run-it-back/ec2-storage.md)
+  * [High Availability & Scalability](aws-saa/run-it-back/high-availability-and-scalability.md)
+  * [RDS, Aurora and ElastiCache](aws-saa/run-it-back/rds-aurora-and-elasticache.md)
+  * [Route 53](aws-saa/run-it-back/route-53.md)
+  * [Solutions Architect Sauce](aws-saa/run-it-back/solutions-architect-sauce.md)
+  * [S3](aws-saa/run-it-back/s3.md)
+  * [S3 Security](aws-saa/run-it-back/s3-security.md)
+  * [CloudFront](aws-saa/run-it-back/cloudfront.md)

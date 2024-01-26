@@ -42,7 +42,7 @@ MAC Address has 6 groups of two hexa each separated by :
 
 Public
 
-![](<../../.gitbook/assets/image (32).png>)
+![](<../../.gitbook/assets/image (32) (1).png>)
 
 Private
 

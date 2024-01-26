@@ -8,7 +8,7 @@ Mac Spoofing - Pretend to have another user's MAC address , combine with ARP spo
 
 **Network Zones**
 
-![](<../../.gitbook/assets/image (27).png>)
+![](<../../.gitbook/assets/image (27) (1).png>)
 
 Extranet - Special DMZ for partner organization to access over wide area network
 

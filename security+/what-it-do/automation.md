@@ -14,7 +14,7 @@ Idempotence - Automation produce same result regardless of component's previous 
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 

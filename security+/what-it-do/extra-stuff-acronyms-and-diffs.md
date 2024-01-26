@@ -39,7 +39,7 @@ Check Wireless Security from Net+ pls
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -58,7 +58,7 @@ Anomaly vs Behaviour - anomaly define expected outcome and anything outside it i
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="500"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="500"><figcaption></figcaption></figure>
 
 </div>
 
@@ -73,5 +73,13 @@ EPP **Signature** (Endpoint protection platform) vs EDR **Anomaly** (Endpoint de
 <div align="left">
 
 <figure><img src="../../.gitbook/assets/image (66).png" alt="" width="563"><figcaption></figcaption></figure>
+
+</div>
+
+**Jumpbox vs Bastion Host**&#x20;
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/image (26).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
