@@ -31,13 +31,13 @@ Possible target groups include
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -51,7 +51,7 @@ One static IP per AZ, and supports assigning Elastic IP
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -65,7 +65,7 @@ Manage a fleet of 3 rd party network virtual appliances in AWS
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt="" width="204"><figcaption><p>Target Group can be either EC2 Instances or Private IP addresses</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt="" width="204"><figcaption><p>Target Group can be either EC2 Instances or Private IP addresses</p></figcaption></figure>
 
 </div>
 

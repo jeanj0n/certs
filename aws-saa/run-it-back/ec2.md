@@ -45,7 +45,7 @@ It exists independent of the EC2 so it wouldn't even know a failed connection oc
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 

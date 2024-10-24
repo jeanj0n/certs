@@ -60,4 +60,7 @@
   * [Solutions Architect Sauce](aws-saa/run-it-back/solutions-architect-sauce.md)
   * [S3](aws-saa/run-it-back/s3.md)
   * [S3 Security](aws-saa/run-it-back/s3-security.md)
-  * [CloudFront](aws-saa/run-it-back/cloudfront.md)
+  * [CloudFront & Global Accelerator](aws-saa/run-it-back/cloudfront-and-global-accelerator.md)
+  * [AWS Storage Extras](aws-saa/run-it-back/aws-storage-extras.md)
+  * [AWS Integration and Messaging](aws-saa/run-it-back/aws-integration-and-messaging.md)
+  * [Pitch Notes](aws-saa/run-it-back/pitch-notes.md)

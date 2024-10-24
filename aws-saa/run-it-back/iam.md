@@ -6,7 +6,7 @@ Define the permissions given to a user directly or group, a user can be part of 
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="442"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="442"><figcaption></figcaption></figure>
 
 </div>
 
@@ -14,7 +14,7 @@ Version (always the same) and Id are part of the policy structure itself, the re
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="349"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="349"><figcaption></figcaption></figure>
 
 </div>
 
