@@ -82,7 +82,7 @@ To use Storage Gateway, one needs on-premise virtualization or a hardware applia
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt="" width="491"><figcaption><p>S3</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="" width="491"><figcaption><p>S3</p></figcaption></figure>
 
 </div>
 
@@ -106,7 +106,7 @@ To use Storage Gateway, one needs on-premise virtualization or a hardware applia
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt="" width="563"><figcaption><p>High Level View</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt="" width="563"><figcaption><p>High Level View</p></figcaption></figure>
 
 </div>
 
@@ -119,7 +119,7 @@ Pay per hour + data transferred
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="499"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="499"><figcaption></figcaption></figure>
 
 </div>
 
@@ -132,13 +132,13 @@ One agent can use upto 10 Gbps
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="542"><figcaption><p>DataSync bw AWS and NFS/SMB server</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="542"><figcaption><p>DataSync bw AWS and NFS/SMB server</p></figcaption></figure>
 
 </div>
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="461"><figcaption><p>DataSync bw AWS services</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="461"><figcaption><p>DataSync bw AWS services</p></figcaption></figure>
 
 </div>
 

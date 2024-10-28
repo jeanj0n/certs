@@ -17,7 +17,7 @@ Also, custom HTTP such as ALB, EC2, S3 static website or any HTTP backend
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="563"><figcaption><p>allow the public IP via security policys (og stuff)</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt="" width="563"><figcaption><p>allow the public IP via security policys (og stuff)</p></figcaption></figure>
 
 </div>
 
