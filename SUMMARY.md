@@ -63,4 +63,5 @@
   * [CloudFront & Global Accelerator](aws-saa/run-it-back/cloudfront-and-global-accelerator.md)
   * [AWS Storage Extras](aws-saa/run-it-back/aws-storage-extras.md)
   * [AWS Integration and Messaging](aws-saa/run-it-back/aws-integration-and-messaging.md)
+  * [Containers](aws-saa/run-it-back/containers.md)
   * [Pitch Notes](aws-saa/run-it-back/pitch-notes.md)
