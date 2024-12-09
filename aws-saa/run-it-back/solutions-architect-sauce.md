@@ -9,28 +9,16 @@
 
 ### Instantiate Applications Quickly
 
-* Golden AMI: Install your applications, OS dependencies etc.. beforehand custom AMI&#x20;
+* Golden AMI: Install your applications, OS dependencies etc. beforehand custom AMI&#x20;
 * Bootstrap using User Data
 
 ### Elastic Beanstalk
 
-Automatically handles application deployment C2, ASG, ELB, RDS\
+Automatically handles application deployment EC2, ASG, ELB, RDS\
 Dev has to only look after application code
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt="" width="563"><figcaption><p>Lifecycle of Beanstalk deployment</p></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt="" width="563"><figcaption><p>Lifecycle of Beanstalk deployment</p></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt="" width="563"><figcaption><p>Client communicate indirectly through SQS Queue, 'Workers' pull messages from queue and scale accordingly</p></figcaption></figure></div>
 
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt="" width="563"><figcaption><p>Client communicate indirectly through SQS Queue, 'Workers' pull messages from queue and scale accordingly</p></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
