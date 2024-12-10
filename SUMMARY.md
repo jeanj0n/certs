@@ -65,4 +65,6 @@
   * [AWS Integration and Messaging](aws-saa/run-it-back/aws-integration-and-messaging.md)
   * [Containers](aws-saa/run-it-back/containers.md)
   * [Serverless](aws-saa/run-it-back/serverless.md)
+  * [Databases](aws-saa/run-it-back/databases.md)
+  * [Data & Analytics](aws-saa/run-it-back/data-and-analytics.md)
   * [Pitch Notes](aws-saa/run-it-back/pitch-notes.md)
