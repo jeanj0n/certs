@@ -15,11 +15,7 @@ Enhanced security with Cloudfront Origin Access Control (OAC)
 
 Also, custom HTTP such as ALB, EC2, S3 static website or any HTTP backend
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (5).png" alt="" width="563"><figcaption><p>allow the public IP via security policys (og stuff)</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1).png" alt="" width="563"><figcaption><p>allow the public IP via security policys (og stuff)</p></figcaption></figure></div>
 
 Restrict access via allowlist or blocklist
 
@@ -31,11 +27,7 @@ If you change content before TTL, Cloudfront wouldn't know right. We can force a
 
 
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (98).png" alt="" width="278"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (98).png" alt="" width="278"><figcaption></figcaption></figure></div>
 
 Instead of going over public internet and increase hops along w latency, use internal AWS network to route our application.
 

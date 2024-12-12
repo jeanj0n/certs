@@ -67,4 +67,8 @@
   * [Serverless](aws-saa/run-it-back/serverless.md)
   * [Databases](aws-saa/run-it-back/databases.md)
   * [Data & Analytics](aws-saa/run-it-back/data-and-analytics.md)
+  * [Machine Learning \[DO\]](aws-saa/run-it-back/machine-learning-do.md)
+  * [Monitoring, Audit and Performance](aws-saa/run-it-back/monitoring-audit-and-performance.md)
+  * [Advanced Identity](aws-saa/run-it-back/advanced-identity.md)
+  * [Security & Encryption](aws-saa/run-it-back/security-and-encryption.md)
   * [Pitch Notes](aws-saa/run-it-back/pitch-notes.md)

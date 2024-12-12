@@ -6,27 +6,15 @@ Create DB in cloud managed by AWS, all the major DB can be used except MongoDB
 
 SQL uses port 3306
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (15).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (15) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 #### Storage auto-scaling if free storage<10%, low storage atleast 5 min or 6 hours since last change
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (16).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (16).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 If replica same region then free otherwise PAID
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (17).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (17).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 Multi-AZ keeps same connection string regardless of which database is set up
 
@@ -45,23 +33,11 @@ Proprietary from AWS, mad optimized but more expensive, grow in increments of 10
 
 Supports MySQL and PostgreSQL
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (18).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt="" width="563"><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/image (19).png" alt="" width="563"><figcaption><p>the writer and reader endpoint is how client communicate w this shi the scaling is automatic by AWS</p></figcaption></figure></div>
 
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (19).png" alt="" width="563"><figcaption><p>the writer and reader endpoint is how client communicate w this shi the scaling is automatic by AWS</p></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (20).png" alt="" width="563"><figcaption><p>set up custom endpoints to access subsets faster or for any use case</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (20).png" alt="" width="563"><figcaption><p>set up custom endpoints to access subsets faster or for any use case</p></figcaption></figure></div>
 
 #### Aurora Serverless
 
@@ -73,11 +49,7 @@ Automated database instantiation and auto- scaling based on actual usage, no pla
 * Global database - 1 Primary Region (read / write), upto 5 secondary(read) replication < 1 sec\
   Up to 16 Read Replicas per secondary region, promoting another region has RTO < 1 min
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (21).png" alt="" width="166"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (21).png" alt="" width="166"><figcaption></figcaption></figure></div>
 
 #### Aurora Machine Learning
 
@@ -93,11 +65,7 @@ Attach ML models to any Aurora service
 
 In a stopped RDS database, you still pay for storage. If you plan on stopping it for a long time, you should snapshot & restore instead
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (22).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (22).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 #### Aurora Cloning
 
@@ -105,19 +73,11 @@ In a stopped RDS database, you still pay for storage. If you plan on stopping it
 * Initially, the new DB cluster uses the same data volume as the original DB cluster (fast and efficient – no copying is needed)\
   When updates are made to the new DB cluster data, then additional storage is allocated and data is copied to be separated
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (23).png" alt="" width="259"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (23).png" alt="" width="259"><figcaption></figcaption></figure></div>
 
 #### RDS Proxy
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (24).png" alt="" width="236"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (24).png" alt="" width="236"><figcaption></figcaption></figure></div>
 
 * Allows apps to pool and share DB connections established with the database
 * Enforce IAM Authentication for DB, and securely store credentials in AWS Secrets Manager
@@ -128,11 +88,7 @@ In a stopped RDS database, you still pay for storage. If you plan on stopping it
 ElastiCache is to get managed Redis or Memcached, involves heavy application code changes\
 Provides cache and session management
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 #### Cache Security
 
@@ -152,8 +108,4 @@ Each time a new element added, it’s ranked in real time, then added in correct
 
 ### Important Ports
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (25).png" alt="" width="348"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (25).png" alt="" width="348"><figcaption></figcaption></figure></div>

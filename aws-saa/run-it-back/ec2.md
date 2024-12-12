@@ -15,11 +15,7 @@ Bootstrap using an EC2 User Data script (only once when you first boot the machi
 
 ### Naming Convention of EC2 Instances
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (27).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (27).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 The different optimized types and their workloads - **DO (Pg. 50)**
 
@@ -35,19 +31,11 @@ One security group can reference another
 
 It exists independent of the EC2 so it wouldn't even know a failed connection occured&#x20;
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (29).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (29).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ### Purchasing Options
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (11).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (11) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 **Spot Instances** - Define max spot price and get the instance while current spot price < max
 
