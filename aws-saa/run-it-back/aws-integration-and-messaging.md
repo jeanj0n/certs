@@ -4,7 +4,7 @@
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (15).png" alt="" width="556"><figcaption><p>synchronous apps may not perform well w variable workloads, decouple to scale independently</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="499"><figcaption><p>unlimited throughput, 256kb message limit, duplicates and out of order messages (SendMessageAPI)</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="499"><figcaption><p>unlimited throughput, 256kb message limit, duplicates and out of order messages (SendMessageAPI)</p></figcaption></figure></div>
 
 Can use CloudWatch metric to trigger autoscaling of EC2 'Consumers'
 
@@ -27,7 +27,7 @@ Long Polling - Consumer wait in between 'polls' if there are no messages in queu
 
 300 messages without batching, 3000 with. No duplicates
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="563"><figcaption><p>decoupling bw application tiers</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="563"><figcaption><p>decoupling bw application tiers</p></figcaption></figure></div>
 
 ## SNS (Notification) Pub/Sub
 

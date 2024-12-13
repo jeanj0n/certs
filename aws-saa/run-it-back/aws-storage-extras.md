@@ -89,7 +89,7 @@ Help transfer in and out of S3 or EFS using FTP/FTPS/SFTP, integrate using exist
 Scalable and highly available (multi-AZ)\
 Pay per hour + data transferred
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="499"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="499"><figcaption></figcaption></figure></div>
 
 ### DataSync
 
@@ -98,7 +98,7 @@ Facilitates data transfer from AWS to AWS/Non-AWS storage services (Non requires
 Can perform replication tasks as necessary and preserve file perms and metadata\
 One agent can use upto 10 Gbps
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="542"><figcaption><p>DataSync bw AWS and NFS/SMB server</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt="" width="542"><figcaption><p>DataSync bw AWS and NFS/SMB server</p></figcaption></figure></div>
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="461"><figcaption><p>DataSync bw AWS services</p></figcaption></figure></div>
 
