@@ -88,7 +88,7 @@ In a stopped RDS database, you still pay for storage. If you plan on stopping it
 ElastiCache is to get managed Redis or Memcached, involves heavy application code changes\
 Provides cache and session management
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 #### Cache Security
 

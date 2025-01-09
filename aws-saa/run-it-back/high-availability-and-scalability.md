@@ -29,9 +29,9 @@ Possible target groups include
 * Private IP addresses
 * NLB is NOT POSSIBLE
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (9) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (9) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (8) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 Get fixed DNS name so all requests are consistent.\
 For app servers to get client IP, use X-Forwarded-For in the header, Port and Proto similarly

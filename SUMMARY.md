@@ -71,4 +71,5 @@
   * [Monitoring, Audit and Performance](aws-saa/run-it-back/monitoring-audit-and-performance.md)
   * [Advanced Identity](aws-saa/run-it-back/advanced-identity.md)
   * [Security & Encryption](aws-saa/run-it-back/security-and-encryption.md)
+  * [Networking - VPC](aws-saa/run-it-back/networking-vpc.md)
   * [Pitch Notes](aws-saa/run-it-back/pitch-notes.md)
