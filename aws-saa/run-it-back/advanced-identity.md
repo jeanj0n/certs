@@ -4,13 +4,13 @@
 
 Manage multiple AWS accounts - Consolidated Billing and shared reserved instances across all accounts
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 ### Service Control Policies (SCP)
 
 IAM policies applied to OU or Accounts to restrict Users and Roles, not applicable to management
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>SCP Hierarchy</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>SCP Hierarchy</p></figcaption></figure></div>
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>ListBucket is bucket level and the rest are object level</p></figcaption></figure></div>
 

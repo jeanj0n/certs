@@ -17,8 +17,8 @@
 Automatically handles application deployment EC2, ASG, ELB, RDS\
 Dev has to only look after application code
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt="" width="563"><figcaption><p>Lifecycle of Beanstalk deployment</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption><p>Lifecycle of Beanstalk deployment</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt="" width="563"><figcaption><p>Client communicate indirectly through SQS Queue, 'Workers' pull messages from queue and scale accordingly</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption><p>Client communicate indirectly through SQS Queue, 'Workers' pull messages from queue and scale accordingly</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>

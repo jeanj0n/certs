@@ -63,7 +63,7 @@ Fully managed ML-service to build apps with real-time personalized recommendatio
 
 Amazon literally uses this for your personal experience
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="431"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="431"><figcaption></figcaption></figure></div>
 
 ### Textract
 
