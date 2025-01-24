@@ -14,7 +14,7 @@ Antivirus and anti-malware can actually do stuff (heurestic - learn previous vir
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (67).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 

@@ -18,7 +18,7 @@ Automatic Key rotation
 * Customer-managed KMS Key: (must be enabled) automatic & on-demand
 * Imported KMS Key: only manual rotation possible using alias
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt="" width="417"><figcaption><p>watch perms, region 2 should be able to use Key A if send encrypted</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt="" width="417"><figcaption><p>watch perms, region 2 should be able to use Key A if send encrypted</p></figcaption></figure></div>
 
 ### Key Policies
 
@@ -31,7 +31,7 @@ Identical KMS keys in different AWS Regions, same ID, key material, automatic ro
 
 No need for cross-region API calls
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt="" width="331"><figcaption><p>Keys are managed independantly, NOT GLOBAL</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt="" width="331"><figcaption><p>Keys are managed independantly, NOT GLOBAL</p></figcaption></figure></div>
 
 **(DynamoDB Global Tables/ Global Aurora) and KMS MultiRegion Keys** perform Client-Side Encryption - can protect specific fields even from database admins, only if API access there then sort
 
@@ -75,7 +75,7 @@ For Edge-optimized API, TLS certificate must be in us-east-1
 
 Protect against common web exploits, Web ACL are regional except for CloudFront
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>WAF on ALB with fixed IP</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption><p>WAF on ALB with fixed IP</p></figcaption></figure></div>
 
 ## Shield
 

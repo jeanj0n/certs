@@ -1,6 +1,6 @@
 # Networking - VPC
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="563"><figcaption><p>VPC Components Diagram</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="563"><figcaption><p>VPC Components Diagram</p></figcaption></figure></div>
 
 All new AWS accounts have a default VPC - new EC2 instances launched into this by default
 
@@ -19,21 +19,21 @@ CIDR min size is /28 and max is /16
 **Internet Gateway** - Resources in VPC connect to internet via this, created separately from VPC, only one VPC attached to one IGW\
 IGW don't offer internet access on their own, have to edit the routing tables
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="520"><figcaption><p>Editing route tables</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="520"><figcaption><p>Editing route tables</p></figcaption></figure></div>
 
 **Bastion Hosts** - instance on public subnet used to SSH into private EC2 instances, should allow inbound on port 22
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="211"><figcaption><p>EC2 sec groups must allow sec group or IP of bastion</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt="" width="211"><figcaption><p>EC2 sec groups must allow sec group or IP of bastion</p></figcaption></figure></div>
 
 **NAT instance** - outdated, replaced by NAT gateway, an instance/entity used to provide internet comms
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="209"><figcaption><p>Disable EC2 setting: Source / destination Check</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" width="209"><figcaption><p>Disable EC2 setting: Source / destination Check</p></figcaption></figure></div>
 
 NAT Gateway - managed by AWS, created in specific AZ using elastic IP upto 100Gbps, can't be used by EC2 in same subnet (common sense) no security groups to manage
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1).png" alt="" width="523"><figcaption><p>NAT Gateway, create multiple NATGW in multiple AZs for fault-tolerance</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt="" width="523"><figcaption><p>NAT Gateway, create multiple NATGW in multiple AZs for fault-tolerance</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1).png" alt="" width="563"><figcaption><p>Security Groups (stateful) and NACLs (stateless)</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt="" width="563"><figcaption><p>Security Groups (stateful) and NACLs (stateless)</p></figcaption></figure></div>
 
 ### NACL
 
@@ -57,7 +57,7 @@ Port client opens to expect a response after sending request to defined port on 
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (8) (1).png" alt="" width="541"><figcaption><p>NACL rules for each target subnes CIDR</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="548"><figcaption><p>Differenciate</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt="" width="548"><figcaption><p>Differenciate</p></figcaption></figure></div>
 
 ### VPC Peering
 
@@ -71,7 +71,7 @@ VPCs can be in diff accounts/regions, refer to both via same security group
 
 Connect to AWS services using a private network instead of using the public Internet, redundant and horizontal scalability
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="182"><figcaption><p>Every AWS service is publicly exposed (public URL)</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="182"><figcaption><p>Every AWS service is publicly exposed (public URL)</p></figcaption></figure></div>
 
 In case of issues: \
 • Check DNS Setting Resolution in your VPC \
@@ -97,11 +97,11 @@ Monitor and troubleshoot connectivity issues, these logs go to S3, CW logs, Kine
 
 Network information from AWS managed interfaces like ELB, RDS, ElastiCache, NATGW, Redshift etc.
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Flow logs syntax, action due to SG/NACL</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Flow logs syntax, action due to SG/NACL</p></figcaption></figure></div>
 
 ### Site-to-Site VPN
 
-<div align="left"><figure><img src="../../.gitbook/assets/image.png" alt="" width="191"><figcaption><p>self explanatory title really, connects two sites</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6).png" alt="" width="191"><figcaption><p>self explanatory title really, connects two sites</p></figcaption></figure></div>
 
 You need
 
@@ -112,7 +112,7 @@ You need
 
 **VPN CloudHub** - setup multiple VPN on same VGW, enable dynamic routing and configure route tables
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1).png" alt="" width="281"><figcaption><p>hub-and-spoke, comms bw multiple sites</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="281"><figcaption><p>hub-and-spoke, comms bw multiple sites</p></figcaption></figure></div>
 
 ### Direct Connect (DX)
 
@@ -120,9 +120,9 @@ Dedicated private connection from a remote network to your VPC, access both publ
 
 You need the infra already (the connection setup and VGW)
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2).png" alt="" width="512"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="512"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (3).png" alt="" width="426"><figcaption><p>DC Gateway for multiple VPC in multiple regions</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="426"><figcaption><p>DC Gateway for multiple VPC in multiple regions</p></figcaption></figure></div>
 
 Types
 
@@ -131,7 +131,7 @@ Types
 
 Lead times (what this mean?) more than 1 month to establish new connection (Imp, questions bout which connection to used based on time interval)
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4).png" alt="" width="518"><figcaption><p>Resiliency for Direct Connect</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1).png" alt="" width="518"><figcaption><p>Resiliency for Direct Connect</p></figcaption></figure></div>
 
 If DX fail, keep Site-to-Site as backup cheapest alternative
 
@@ -141,9 +141,9 @@ For having transitive peering between thousands of VPC and on-premises, hub-and-
 
 Share cross-account using Resource Access Manager (RAM), supports IP multicast
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (5).png" alt="" width="205"><figcaption><p>regional, can work cross region</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1).png" alt="" width="205"><figcaption><p>regional, can work cross region</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (6).png" alt="" width="493"><figcaption><p>Share DX bw multiple accounts, above one DX gateway for diff regions watch</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="493"><figcaption><p>Share DX bw multiple accounts, above one DX gateway for diff regions watch</p></figcaption></figure></div>
 
 VPC Traffic Mirroring - capture and inspect network traffic in your VPC, route traffic to security appliances we manage
 

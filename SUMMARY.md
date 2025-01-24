@@ -72,4 +72,5 @@
   * [Advanced Identity](aws-saa/run-it-back/advanced-identity.md)
   * [Security & Encryption](aws-saa/run-it-back/security-and-encryption.md)
   * [Networking - VPC](aws-saa/run-it-back/networking-vpc.md)
+  * [Disaster Recovery & Migrations](aws-saa/run-it-back/disaster-recovery-and-migrations.md)
   * [Pitch Notes](aws-saa/run-it-back/pitch-notes.md)

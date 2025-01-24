@@ -32,7 +32,7 @@ Export logs to S3, upto 12 hours 'CreateExportTask' - use Log Subscriptions cus 
 
 Subscription Filter – filter which logs are events delivered to your destination
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Cross-Account subscription can send log events to resources in diff AWS account</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>Cross-Account subscription can send log events to resources in diff AWS account</p></figcaption></figure></div>
 
 ### Logs Agent & Unified Agent
 
@@ -56,7 +56,7 @@ Target EC2, ASG, SNS etc.
 
 Composite Alarms - single metric monitoring states of multiple other alarms, aggregated by AND and OR conditions
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="359"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="" width="359"><figcaption></figcaption></figure></div>
 
 Alarms can be created based on CloudWatch Logs Metrics Filters
 
@@ -66,7 +66,7 @@ Alarms can be created based on CloudWatch Logs Metrics Filters
 * Event pattern - rules react to a service doing something
 * Trigger Lambda functions, send SQS/SNS
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>Event buses can be accessed by other AWS accounts using Resource-based Policies</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Event buses can be accessed by other AWS accounts using Resource-based Policies</p></figcaption></figure></div>
 
 You can archive events sent to an event bus and replay these archived events
 
@@ -95,7 +95,7 @@ A trail can be applied to All Regions (default) or a single Region
 * Data Events - Doesn't log by default (high volume), S3 object-level activity, Lambda&#x20;
 * Insight Events (Behavior based) - detect unusual activity, analyze write events
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>Event sent to S3, EventBridge for automation</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>Event sent to S3, EventBridge for automation</p></figcaption></figure></div>
 
 Events are stored for 90 days, for further times send to S3 and use Athena
 

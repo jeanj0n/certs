@@ -4,11 +4,11 @@
 
 Define the permissions given to a user directly or group, a user can be part of multiple groups
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="442"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="442"><figcaption></figcaption></figure></div>
 
 Version (always the same) and ID are part of the policy structure itself, the rest fall under statement
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="349"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="349"><figcaption></figcaption></figure></div>
 
 ### Means of Access
 

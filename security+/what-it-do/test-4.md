@@ -14,6 +14,6 @@ Why run vuln scan during peak time ffs read questions properly
 
 Degaussed hard drive is reusable, hence purging not destruction
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
