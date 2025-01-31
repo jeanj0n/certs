@@ -8,6 +8,9 @@ Generally speaking, you would want to use an ALB for layer 7 load balancing and 
 
 EBS not shared EFS is (what else?)
 
+What is a Dead letter queue (DLQ)?\
+For messages not posted successfully, hit this place up for missed messages instead of infinite loop
+
 Aurora, RDS and DynamoDB?
 
 {% embed url="https://medium.com/@vasanthabalaji/saa-c03-whitepapers-and-aws-services-to-master-fbf54c96647e" %}
