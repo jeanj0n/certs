@@ -4,6 +4,15 @@ description: Coach's Observations
 
 # Pitch Notes
 
+Well Architected Framework 6 Pillars
+
+• 1) Operational Excellence \
+• 2) Security \
+• 3) Reliability \
+• 4) Performance Efficiency \
+• 5) Cost Optimization \
+• 6) Sustainability
+
 Generally speaking, you would want to use an ALB for layer 7 load balancing and NLB for everything else.
 
 EBS not shared EFS is (what else?)

@@ -18,7 +18,7 @@ Automatic Key rotation
 * Customer-managed KMS Key: (must be enabled) automatic & on-demand
 * Imported KMS Key: only manual rotation possible using alias
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt="" width="417"><figcaption><p>watch perms, region 2 should be able to use Key A if send encrypted</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt="" width="417"><figcaption><p>watch perms, region 2 should be able to use Key A if send encrypted</p></figcaption></figure></div>
 
 ### Key Policies
 

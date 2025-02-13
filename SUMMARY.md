@@ -73,4 +73,5 @@
   * [Security & Encryption](aws-saa/run-it-back/security-and-encryption.md)
   * [Networking - VPC](aws-saa/run-it-back/networking-vpc.md)
   * [Disaster Recovery & Migrations](aws-saa/run-it-back/disaster-recovery-and-migrations.md)
+  * [Other Services](aws-saa/run-it-back/other-services.md)
   * [Pitch Notes](aws-saa/run-it-back/pitch-notes.md)
