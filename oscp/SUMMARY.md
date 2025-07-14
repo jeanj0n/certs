@@ -15,7 +15,7 @@
 ## Web
 
 * [SQLi](web/sqli.md)
-* [Languages](web/languages.md)
+* [Apache & Languages](web/apache-and-languages.md)
 * [Natas](web/natas.md)
 
 ## Buffer
@@ -50,6 +50,7 @@
   * [Nocturnal \[Linux Easy\]](hackthebox/linux/nocturnal-linux-easy.md)
   * [Soccer \[Linux Easy\]](hackthebox/linux/soccer-linux-easy.md)
   * [CozyHosting \[Linux Easy\]](hackthebox/linux/cozyhosting-linux-easy.md)
+  * [Usage \[Easy\]](hackthebox/linux/usage-easy.md)
 * [Windows](hackthebox/windows/README.md)
   * [Netmon \[WIndows Easy\]](hackthebox/windows/netmon-windows-easy.md)
   * [ServMon \[Windows Easy\]](hackthebox/windows/servmon-windows-easy.md)

