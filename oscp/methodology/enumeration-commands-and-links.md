@@ -27,12 +27,14 @@ nmap -sU --top-ports 20 -oN scan.nmap -vv $ip  (UDP)
 ### HTTP/HTTPS (80/443)
 
 <pre><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -h (try -H) 'Host: FUZZ.board.htb' -f(c/s/w)   
-(Directory) ffuf -w /usr/share/wordlists/dirb/wordlist.txt -u http://$IP:PORT/FUZZ 
+(Directory) ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$IP:PORT/FUZZ 
 (File fuzzing) ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.html,.txt    
 (HTTP GET)  ffuf -w /opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php?FUZZ=key -fs xxx        
-(HTTP POST) ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx  
-(Use raw request) ffuf -u [URL] -request [request.txt] -w &#x3C;( seq 0 65535) -ac [FUZZ should be present in the request]
+(HTTP POST) ffuf -w [wordlist]:FUZZ -u [URL] -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'header: value' -fs xxx  
+(Use raw request) : ffuf -request request.txt -request-proto http -w wordlist.txt -r [FUZZ should be present in the request]
+(Multiple params) ffuf -w list1.txt:W1 -w list2.txt:W2 -X POST -d "username=W1&#x26;password=W2" -u [URL] -fc 200
 -p "1.0" and -rate [25]  to rate limit incase of WAF
+-r follow redirect
 wfuzz -c -w /usr/share/wordlists/yes.txt -u "http://alert.htb/" -H "Host: FUZZ.alert.htb"
 
 curl --insecure -b "[cookiename]=[value]" -X POST --data "[data]" [URL] (--insecure bypass SSL verification)

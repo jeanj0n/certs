@@ -23,6 +23,8 @@ Vhost config: /etc/apache2/sites-enabled/000-default.conf
 
 If there is an input field where it fetches a file, you can view the source of php file itself or the apache log for LFI2RCE
 
+PHP deserialization
+
 ## Java
 
 ### XSS
@@ -54,3 +56,7 @@ fetch('http://alert.htb/messages.php')
 {% embed url="https://portswigger.net/web-security/cross-site-scripting/cheat-sheet" %}
 
 {% embed url="https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html" %}
+
+{% embed url="https://brandonrussell.io/OSCP-Notes/XXMore.html" %}
+
+### XXE

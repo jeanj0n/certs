@@ -49,9 +49,9 @@ find / -perm -4000 -o -perm -2000 -print  2>/dev/null
 
 ### Kernel <a href="#kernel" id="kernel"></a>
 
-https://github.com/mzet-/linux-exploit-suggester
+{% embed url="https://github.com/mzet-/linux-exploit-suggester" %}
 
-https://github.com/jondonas/linux-exploit-suggester-2
+{% embed url="https://github.com/jondonas/linux-exploit-suggester-2" %}
 
 ```
 cat /proc/version

