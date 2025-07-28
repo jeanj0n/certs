@@ -123,6 +123,12 @@ querygroup [RID]
 queryuser [RID]
 enumprivs
 
+MOUNT
+#First create folder in kali linux 
+mkdir /mnt/smb
+#mount folder to kali
+sudo mount -t cifs //[IP]/[SHARE] /mnt/smb
+
 responder to receive NTLM authentication hashes from services like mysql
 smbserver.py
 ```

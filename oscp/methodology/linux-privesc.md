@@ -12,10 +12,7 @@ find / -perm -g=s -type f 2>/dev/null    # SGID
 find / -perm -u=s -type f 2>/dev/null    # SUID
 
 find / -perm -g=s -o -perm -u=s -type f 2>/dev/null    # SGID or SUID < full search  
-for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done    # Looks in 'common' places: /bin, /sbin < quicker  
-
--find starting at root (/), SGID or SUID, not Symbolic links, only 3 folders deep, list with more detail and hide any errors (e.g. permission denied)
-find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev/null  
+for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done    # Looks in 'common' places: /bin, /sbin < quicker   
 
 find / perm /u=s -user "Username" 2>/dev/null  
 ```

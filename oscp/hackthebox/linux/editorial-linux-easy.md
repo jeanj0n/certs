@@ -6,7 +6,7 @@ Honsetly mad disappointing absolute fumble from all ends
 The methodology and ffuf to fuzz ports
 {% endembed %}
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>To ensure only requests from the target jost show up, add to scope too</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>To ensure only requests from the target jost show up, add to scope too</p></figcaption></figure>
 
 Now the fact that we couldn't even identify the Preview button actually sent a request of its own is an abomination.
 
@@ -22,17 +22,17 @@ http://127.0.0.1 is the way but no change, maybe we gotta hit the right port? Th
 
 **Also for some reason, burp doesn't show the modified content when viewing past requests but if you send it to repeater, it show up which is nasty work.**
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 But we finally get a hit and that's port 5000. Filter it by the response size easiest option.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 we get a few API endpoints we can hit up, if you use common sense from reading the content, you can tell which one you really want. Append this to the lo URL we been using as payload to get another document which exposes dev credentials
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Getting into dev, we see we can't run sudo on anything and no real juice from linpeas.sh either.
 
@@ -43,7 +43,7 @@ And that's all good only nothing wrong w manually searching
 
 `git show <hash>` shows the commits made, the difference pushed and any comments too.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Why did I pick this specific hash? Well the comment associated with this hash/ push request mentioned downgrading credentials so ye.
 

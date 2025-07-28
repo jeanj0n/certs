@@ -15,8 +15,13 @@
 ## Web
 
 * [SQLi](web/sqli.md)
-* [Apache & Languages](web/apache-and-languages.md)
-* [Natas](web/natas.md)
+* [Apache & Languages](web/apache-and-languages/README.md)
+  * [SSRF](web/apache-and-languages/ssrf.md)
+  * [File Inclusion](web/apache-and-languages/file-inclusion.md)
+  * [CSRF](web/apache-and-languages/csrf.md)
+  * [OS Injection](web/apache-and-languages/os-injection.md)
+  * [Path Traversal](web/apache-and-languages/path-traversal.md)
+  * [List](web/apache-and-languages/list.md)
 
 ## Buffer
 
@@ -52,6 +57,8 @@
   * [CozyHosting \[Linux Easy\]](hackthebox/linux/cozyhosting-linux-easy.md)
   * [Usage \[Easy\]](hackthebox/linux/usage-easy.md)
   * [Help \[Easy\]](hackthebox/linux/help-easy.md)
+  * [Networked \[Easy\]](hackthebox/linux/networked-easy.md)
+  * [Pandora \[Easy\]](hackthebox/linux/pandora-easy.md)
 * [Windows](hackthebox/windows/README.md)
   * [Netmon \[WIndows Easy\]](hackthebox/windows/netmon-windows-easy.md)
   * [ServMon \[Windows Easy\]](hackthebox/windows/servmon-windows-easy.md)
@@ -60,6 +67,8 @@
   * [Mailing \[Windows Easy\]](hackthebox/windows/mailing-windows-easy.md)
   * [Escape \[Windows Medium\]](hackthebox/windows/escape-windows-medium.md)
   * [StreamIO \[Windows Medium\]](hackthebox/windows/streamio-windows-medium.md)
+  * [Jeeves \[Medium\]](hackthebox/windows/jeeves-medium.md)
+  * [Aero \[Medium\]](hackthebox/windows/aero-medium.md)
 * [Windows AD](hackthebox/windows-ad/README.md)
   * [Forest \[Windows AD Easy\]](hackthebox/windows-ad/forest-windows-ad-easy.md)
   * [Active \[Windows AD Easy\]](hackthebox/windows-ad/active-windows-ad-easy.md)

