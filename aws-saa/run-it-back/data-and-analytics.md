@@ -23,7 +23,7 @@ Can run in provisioned or serverless cluster, faster than Athena due to indexes
 
 ### Redshift Cluster
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption><p>Leader query plan and sort results, Compute perform query and send to leader</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (215).png" alt=""><figcaption><p>Leader query plan and sort results, Compute perform query and send to leader</p></figcaption></figure></div>
 
 ### Snapshots & DR
 
@@ -36,7 +36,7 @@ Configure Amazon Redshift to automatically copy snapshots (automated or manual) 
 
 ### Loading data&#x20;
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (121).png" alt="" width="462"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (216).png" alt="" width="462"><figcaption></figcaption></figure></div>
 
 **Redshift Spectrum** - Query data already in S3 without loading it, needs a Redshift cluster available and the Spectrum acts as the middle man
 
@@ -96,7 +96,7 @@ Flink - Java, Scala or SQL app to process the streaming data
 
 Does not read from Firehose (use Kinesis Analytics for SQL instead)
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (218).png" alt=""><figcaption></figcaption></figure></div>
 
 ### Amazon MSK (Managed Streaming for Apache Kafka)
 
@@ -105,6 +105,6 @@ Automatic recovery from common Kafka failures, data stored on EBS volume as long
 
 Consumers include Kinesis Flink, Glue, Lambda and apps running on EC2, ECS
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (124).png" alt=""><figcaption><p>MSK creates &#x26; manages Kafka brokers nodes &#x26; Zookeeper nodes, multi-AZ (up to 3 for HA)</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (219).png" alt=""><figcaption><p>MSK creates &#x26; manages Kafka brokers nodes &#x26; Zookeeper nodes, multi-AZ (up to 3 for HA)</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (125).png" alt="" width="422"><figcaption><p>what was data streams vs firehose again?</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (220).png" alt="" width="422"><figcaption><p>what was data streams vs firehose again?</p></figcaption></figure></div>

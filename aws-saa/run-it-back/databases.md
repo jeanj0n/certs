@@ -43,7 +43,7 @@ Quantum Ledger Database, for recording financial transactions - like blockchain 
 
 Serverless time series DB - optimizes storage based on recency along with real time series analytics (eg. IoT apps sending a lot of data on a daily basis)
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (119).png" alt="" width="415"><figcaption><p>Timestream can be used to leerage further analysis using those tools</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (214).png" alt="" width="415"><figcaption><p>Timestream can be used to leerage further analysis using those tools</p></figcaption></figure></div>
 
 
 

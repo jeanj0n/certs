@@ -27,7 +27,7 @@ There's four more hahahaha
 
 **Compensatory Control -** When a normal control cannot staisfy requirements, residual risk is accepted by the organization&#x20;
 
-<figure><img src="../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
 ### Vulnerability Management
 

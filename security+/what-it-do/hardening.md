@@ -58,9 +58,9 @@ Linux - ext4, Apple APSX
 * Live Migration - Man in the middle attack if not encrypted
 * Virtualization Sprawl - when Vm created, used without proper management or admin&#x20;
 
-<figure><img src="../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 
 

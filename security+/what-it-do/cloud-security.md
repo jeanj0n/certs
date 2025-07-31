@@ -14,11 +14,7 @@ Hyperconvergence - Full integration of servers, networks and storage
 * Platform - Provide hardware and software for service to operate
 * Security - outsource sec services as cloud interface
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure></div>
 
 #### Virtual Private Cloud (VPC - IaaS)
 

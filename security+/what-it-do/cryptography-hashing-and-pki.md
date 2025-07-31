@@ -73,11 +73,7 @@ X.690 uses BER, CER, and DER for encoding
 * CER (Canonical Encoding Rules) - Restricted BER, uses only one encoding type
 * DER (Distinguished Encoding Rules) - More restrictive rules for length, character strings, and how elements of a digital certificate are stored in X.509
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (54).png" alt="" width="262"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (149).png" alt="" width="262"><figcaption></figcaption></figure></div>
 
 ### Certificate Authorities
 

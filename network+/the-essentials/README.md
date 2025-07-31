@@ -35,8 +35,4 @@ DNS Record Types
 
 ### Ports to Remember
 
-<div align="left">
-
-<img src="../../.gitbook/assets/image (37).png" alt="">
-
-</div>
+<div align="left"><img src="../../.gitbook/assets/image (132).png" alt=""></div>

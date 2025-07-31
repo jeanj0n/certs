@@ -30,11 +30,7 @@ Three components
 * Agent - Software loaded on device to redirect info to Network management system
 * Network management systems - Software run on one or more server to control moitoring of managed devices
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure></div>
 
 Three versions, SNMP v1/2 **insecure** due to use of community strings to access device
 
@@ -68,7 +64,7 @@ WORM (Write Once Read Many) - Ensure logs not tampered with
 
 Different options of SIEM
 
-<figure><img src="../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
 
 ### SOAR (Security Orchestration, Automation and Response)
 

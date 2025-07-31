@@ -8,32 +8,12 @@ MSSP (Managed Security Service Provider)&#x20;
 
 RAT (Remote Access Trojan)
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (155).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (60).png" alt="" width="375"><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/image (156).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (157).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (158).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (61).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (62).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (63).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (64).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (159).png" alt="" width="375"><figcaption></figcaption></figure></div>

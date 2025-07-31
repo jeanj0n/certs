@@ -1,10 +1,6 @@
 # Route 53
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (74).png" alt="" width="340"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (169).png" alt="" width="340"><figcaption></figcaption></figure></div>
 
 Highly available, scalable, fully managed and Authoritative DNS (We can modify the records)\
 Can check health of resources and provide 100% availability SLA\
@@ -31,11 +27,7 @@ Similar to CNAME, works for root domains too (Free if charge)
 
 Create Alias record for anything except EC2 DNS instances (works on root domains too)
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (76).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (171).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ### Routing Policies
 
@@ -69,9 +61,5 @@ Or pass/fail based on the text in the first 5120 bytes of the response\
 Domain Registrar usually provides you with a DNS service to manage your DNS records\
 But you can use another DNS service to manage your DNS records
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (75).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (170).png" alt="" width="563"><figcaption></figcaption></figure></div>
 

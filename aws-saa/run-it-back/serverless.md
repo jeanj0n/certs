@@ -2,7 +2,7 @@
 
 No need to manage the servers, they still be running in the background
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (112).png" alt="" width="398"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (207).png" alt="" width="398"><figcaption></figcaption></figure></div>
 
 ## Lambda
 
@@ -39,11 +39,11 @@ Invoke function from pre-initialized state instead of full init process, produci
 
 Serverless, attached to Cloudfront centers
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (115).png" alt="" width="82"><figcaption><p>see who can control what</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (210).png" alt="" width="82"><figcaption><p>see who can control what</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (113).png" alt="" width="411"><figcaption><p>both are provided by Cloudfront only, NO MIX UP W API</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (208).png" alt="" width="411"><figcaption><p>both are provided by Cloudfront only, NO MIX UP W API</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (114).png" alt="" width="415"><figcaption><p>CF for more web stuff and Lambda for more processing type tasks</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (209).png" alt="" width="415"><figcaption><p>CF for more web stuff and Lambda for more processing type tasks</p></figcaption></figure></div>
 
 ### VPC with Lambda
 
@@ -85,7 +85,7 @@ Ordered stream of item-level modifications (create/update/delete) in a table
 * DynamoDB Streams - 24 hours retention, limited consumers, process using Lambda or DDB Stream Kinesis adapter
 * Kinesis Data Streams (Newer) - 1 year retention, high consumers, processed using a lot more (Refer consumers in Kinesis, they do the 'processing')
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (116).png" alt="" width="453"><figcaption><p>DynamoDB streams</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (211).png" alt="" width="453"><figcaption><p>DynamoDB streams</p></figcaption></figure></div>
 
 #### Global Tables
 
@@ -128,7 +128,7 @@ AWS Lambda + API Gateway - Serverless
 * User Auth - via IAM (Internal), Cognito (External users, web & mobile app) or custom
 * Custom Domain Name HTTPS - through ACM (AWS Certificate Manager), set up record in Route 53, edge-optimized certificate in **us-east-1** & regional certificate in that of API Gateway
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption><p>Lambda has NO CACHING FEATURE</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (213).png" alt=""><figcaption><p>Lambda has NO CACHING FEATURE</p></figcaption></figure></div>
 
 ### Step Function
 
@@ -141,4 +141,4 @@ User Identity management for web/mobile application
 * Cognito User Pools - Sign in for app users, integrate w API and ALB
 * Cognito Identity Pools (Federated Identity) - Give AWS credentials so users can access AWS resources directly, integrate w user pools as Identity provider (IP) : provide default IAM roles or custom for fine grained control
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (117).png" alt="" width="414"><figcaption><p>Identity Pools</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (212).png" alt="" width="414"><figcaption><p>Identity Pools</p></figcaption></figure></div>

@@ -37,25 +37,25 @@ Check Wireless Security from Net+ pls
   \
   Internal scan - An internal scan is conducted within a company's network to ensure safety inside of the network, can't figure out the system configs of a workstation with this
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (96).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ## Differentiate
 
 OpenID and OAuth the tag team, authenticate and authorize respectively and both use ID tokens.\
 SAML uses XML and uses assertions, explicitly authenticate and implicitly authorize using tags.
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (72).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (167).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 Anomaly vs Behaviour - anomaly define expected outcome and anything outside it is flagged, behaviour is expected events associated w a user and anything that deviates flagged
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="500"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (97).png" alt="" width="500"><figcaption></figcaption></figure></div>
 
 EPP **Signature** (Endpoint protection platform) vs EDR **Anomaly** (Endpoint detection and response) - Refer Sec applications & devices last section ples
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (65).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (160).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (66).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (161).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 **Jumpbox vs Bastion Host**&#x20;
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (26).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (89).png" alt="" width="563"><figcaption></figcaption></figure></div>

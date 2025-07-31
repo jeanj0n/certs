@@ -8,7 +8,7 @@ Mac Spoofing - Pretend to have another user's MAC address , combine with ARP spo
 
 **Network Zones**
 
-![](<../../.gitbook/assets/image (27) (1).png>)
+![](<../../.gitbook/assets/image (122).png>)
 
 Extranet - Special DMZ for partner organization to access over wide area network
 
@@ -38,5 +38,5 @@ War Dialing - hitting up modems to see who respond, like servers back in the day
 
 Private Branch Exchange (PBX) - Internal Phone system used in organizations
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 

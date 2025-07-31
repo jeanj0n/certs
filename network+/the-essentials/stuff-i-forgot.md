@@ -8,19 +8,11 @@ description: Collision domains, cloud services
 
 
 
-<div align="left">
+<div align="left"><img src="../../.gitbook/assets/image (124).png" alt=""></div>
 
-<img src="../../.gitbook/assets/image (29) (1).png" alt="">
+<div align="left"><img src="../../.gitbook/assets/image (136).png" alt=""></div>
 
-</div>
-
-<div align="left">
-
-<img src="../../.gitbook/assets/image (41).png" alt="">
-
-</div>
-
-![](<../../.gitbook/assets/image (44).png>)
+![](<../../.gitbook/assets/image (139).png>)
 
 
 

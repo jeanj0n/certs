@@ -31,7 +31,7 @@ They lose their storage if stopped so backups and replication are our responsibi
 
 **Only gp2/gp3 and io1/io2 can be used as boot volumes**
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
 
 **EBS Multi-Attach only for io1/io2 family upto 16 instances at a time, only cluster-aware file systems)**
 
@@ -45,11 +45,7 @@ Uses NFSv4.1 protocol and security groups to control access to EFS
 
 Uses POSIX (Linux) file systems only, no Windows
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (77).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (172).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 #### Storage Tiers
 
@@ -70,14 +66,6 @@ EBS - one instance (except multi-attach io1/io2), locked to a specific AZ\
 EFS - mounting 100s of instances across AZ\
 &#x20;          share website files (WordPress, example workflow)
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (173).png" alt="" width="241"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (78).png" alt="" width="241"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (80).png" alt="" width="241"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (175).png" alt="" width="241"><figcaption></figcaption></figure></div>

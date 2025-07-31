@@ -12,7 +12,7 @@
 * Warm Standby - full system up and running but at min size, scale to production load on disaster
 * Hot Site - Low RTO & expensive, full production scale running on AWS and on premise
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Disaster Recovery Tips</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Disaster Recovery Tips</p></figcaption></figure></div>
 
 ## DMS
 
@@ -24,7 +24,7 @@ Supports:
 
 Continuous Data Replication using CDC
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="548"><figcaption><p>DMS Sources and Targets</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6).png" alt="" width="548"><figcaption><p>DMS Sources and Targets</p></figcaption></figure></div>
 
 ### Schema Conversion Tool (SCT)
 
@@ -32,9 +32,9 @@ The engine conversion of DB Schema happens via this, data is transferred via DMS
 
 No need for SCT if migrating same DB engine (eg. On-premise PostgreSQL to RDS PostgreSQL)
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="527"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (7).png" alt="" width="527"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (8).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ## AWS Backup
 
@@ -72,7 +72,7 @@ Lift-and-shift (rehost) solution which simplify migrating applications to AWS \
 • Supports wide range of platforms, Operating Systems, and databases \
 • Minimal downtime, reduced costs
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 ### VMware Cloud on AWS
 

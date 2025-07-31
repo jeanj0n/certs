@@ -44,4 +44,4 @@ BAS (Bulding Automation System) - Components and protocols that allow central co
 
 Physical Access Control System (PACS) - centralized monitoring of security mechanisms
 
-<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>

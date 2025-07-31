@@ -4,15 +4,15 @@
 
 Manage multiple AWS accounts - Consolidated Billing and shared reserved instances across all accounts
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure></div>
 
 ### Service Control Policies (SCP)
 
 IAM policies applied to OU or Accounts to restrict Users and Roles, not applicable to management
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>SCP Hierarchy</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption><p>SCP Hierarchy</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>ListBucket is bucket level and the rest are object level</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption><p>ListBucket is bucket level and the rest are object level</p></figcaption></figure></div>
 
 ### IAM vs Resource-Based
 
@@ -23,7 +23,7 @@ IAM policies applied to OU or Accounts to restrict Users and Roles, not applicab
 
 For users and roles (not groups), policy to set the max perms an IAM entity can get
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure></div>
 
 ## IAM Identity Center
 
@@ -33,7 +33,7 @@ One login for all AWS accounts in AWS organisations, SAML 2.0 apps, EC2 WIndows 
 
 Identity providers can be built-in IAM Identity center or 3rd party like AD
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>Identity Center fine-grained permissions and assignments</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption><p>Identity Center fine-grained permissions and assignments</p></figcaption></figure></div>
 
 ## AWS Directory Services
 
@@ -44,7 +44,7 @@ Identity providers can be built-in IAM Identity center or 3rd party like AD
 Connect to AWS MM AD out of the box - just connect\
 For Self-managed directory - use AD connector or two-way trust relationship
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure></div>
 
 ## Control Tower
 
@@ -57,4 +57,4 @@ Ongoing governance for Control Tower
 * Preventive Guardrail – using SCPs
 * Detective Guardrail – using AWS Config
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Sample Workflow</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption><p>Sample Workflow</p></figcaption></figure></div>

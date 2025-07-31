@@ -16,7 +16,7 @@ Store international mobile subscriber identity (IMSI) number
 
 SIM cloning - two phones utilize same service, can access og phone data
 
-<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 
 #### Security of Apps
 

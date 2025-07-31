@@ -12,7 +12,7 @@ Crossover cable (T-568-B to A) is used when same type of device is used( Data Te
 
 Punch Down block: 66 not a great choice, bad interference till CAT5, 110 after CAT5
 
-![](<../../.gitbook/assets/image (36).png>)
+![](<../../.gitbook/assets/image (131).png>)
 
 Ethernet IEEE
 
@@ -42,21 +42,21 @@ MAC Address has 6 groups of two hexa each separated by :
 
 Public
 
-![](<../../.gitbook/assets/image (32) (1).png>)
+![](<../../.gitbook/assets/image (127).png>)
 
 Private
 
-![](<../../.gitbook/assets/image (35).png>)
+![](<../../.gitbook/assets/image (130).png>)
 
 Special
 
-![](<../../.gitbook/assets/image (45).png>)
+![](<../../.gitbook/assets/image (140).png>)
 
 * APIPA: when device has no static address and CANT connect to DHCP, address from 169.-- is assigned, quick config of LAN, non-routable but local subnet is connected
 * Zeroconf: based on APIPA, resolve comp name to IP address without DNS server on local, provide service discovery protocols(printers etc)
 
 ### Subnetting
 
-![](<../../.gitbook/assets/image (34).png>)
+![](<../../.gitbook/assets/image (129).png>)
 
 The Mask value from left to right is previous mask + corrsponding host (Class C subnetting)

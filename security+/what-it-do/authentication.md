@@ -18,7 +18,7 @@
 
 Standard port based auth for wired and wireless networks, can prevent rogue devices
 
-![](<../../.gitbook/assets/image (51).png>)
+![](<../../.gitbook/assets/image (146).png>)
 
 Encapsulate EAP(Extensible Authentication Protocol) - A framework of protocols allow numerous methods of authentication
 
@@ -26,11 +26,7 @@ Encapsulate EAP(Extensible Authentication Protocol) - A framework of protocols a
 * EAP-TLS uses digital certificates for mutual authentication
 * EAP-TTLS uses a server-side digital certificate and a client-side password for mutual authentication
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure></div>
 
 ### LDAP (Lightweight Directory Access Protocol)&#x20;
 
@@ -42,7 +38,7 @@ Active Directory - Microsoft implementation along with SSO
 
 **Kerboros -** Auth protocol used by Windows to provide two-way authentication using a system of **tickets**, run on **port 88**&#x20;
 
-![](<../../.gitbook/assets/image (53).png>)
+![](<../../.gitbook/assets/image (148).png>)
 
 RDP run on 3389
 

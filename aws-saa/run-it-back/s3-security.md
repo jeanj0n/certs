@@ -11,11 +11,7 @@
 
 AES-256, set header "x-amz-server-side-encryption": "AES256"
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (81).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (176).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 #### SSE-KMS
 
@@ -28,17 +24,9 @@ When you upload it calls the GenerateDataKey KMS API download calls Decrypt API,
 
 Only HTTPS allowed HTTP ok for above two, keys must always be mentioned in header
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (177).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (82).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (83).png" alt="" width="563"><figcaption><p>Force Encryption in Transit aws:SecureTransport</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (178).png" alt="" width="563"><figcaption><p>Force Encryption in Transit aws:SecureTransport</p></figcaption></figure></div>
 
 **Bucket Policies are evaluated before “Default Encryption”**
 
@@ -49,11 +37,7 @@ Origin = scheme (protocol) + host (domain) + port
 * Same origin: http://example.com/app1 & http://example.com/app2
 * Different origins: http://www.example.com & http://other.example.com
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (84).png" alt="" width="563"><figcaption><p>Without setting the headers beforehand, cannot request content from another source will only get rejected</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (179).png" alt="" width="563"><figcaption><p>Without setting the headers beforehand, cannot request content from another source will only get rejected</p></figcaption></figure></div>
 
 ### MFA Delete
 
@@ -67,11 +51,7 @@ Only the bucket owner (root account) can enable/disable MFA Delete
 
 Any request made to S3, from any account, authorized or denied, will be logged into another S3 bucket, use Athena to perform data analysis on this separate bucket
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (85).png" alt="" width="339"><figcaption><p>don't put app and log bucket in same ples</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (180).png" alt="" width="339"><figcaption><p>don't put app and log bucket in same ples</p></figcaption></figure></div>
 
 #### S3 Glacier Vault Lock
 
@@ -79,26 +59,10 @@ Adapt WORM model, Helpful for compliance and data retention
 
 ### S3 Object Lock
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (181).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (86).png" alt="" width="563"><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/image (182).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (185).png" alt="" width="375"><figcaption><p>Access Points – VPC Origin</p></figcaption></figure></div>
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (87).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (90).png" alt="" width="375"><figcaption><p>Access Points – VPC Origin</p></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (89).png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (184).png" alt="" width="563"><figcaption></figcaption></figure></div>

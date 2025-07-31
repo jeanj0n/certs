@@ -4,11 +4,7 @@ description: Read from notes and do social engineering here as well
 
 # Planning for the Worst
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (55).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (150).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 ### Data Redundancy
 
@@ -18,25 +14,13 @@ description: Read from notes and do social engineering here as well
 * RAID 6 - **4 disk drives,** provides redundancy by striping and **double** parity data across the disk drives
 * RAID 10 - Creates a striped RAID of two mirrored RAIDs (combines RAID 1 & RAID 0)
 
-<img src="../../.gitbook/assets/image (56).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image (151).png" alt="" data-size="original">
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (152).png" alt="" width="346"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (57).png" alt="" width="346"><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/image (153).png" alt="" width="369"><figcaption></figcaption></figure></div>
 
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (58).png" alt="" width="369"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (59).png" alt="" width="361"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (154).png" alt="" width="361"><figcaption></figcaption></figure></div>
 
 **Business Continuity Plan (BCP)** - continue the delivery of products or services at pre-defined acceptable levels following a disruptive incident
 

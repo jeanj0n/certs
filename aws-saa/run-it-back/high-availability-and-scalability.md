@@ -29,9 +29,9 @@ Possible target groups include
 * Private IP addresses
 * NLB is NOT POSSIBLE
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (9) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (72).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (71).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 Get fixed DNS name so all requests are consistent.\
 For app servers to get client IP, use X-Forwarded-For in the header, Port and Proto similarly
@@ -41,7 +41,7 @@ For app servers to get client IP, use X-Forwarded-For in the header, Port and Pr
 To forward TCP and UDP traffic to instances, handle upto millions of requests per second.\
 One static IP per AZ, and supports assigning Elastic IP
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (10) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (73).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ### Gateway Load Balancer
 
@@ -51,7 +51,7 @@ Manage a fleet of 3 rd party network virtual appliances in AWS
 * Load Balancer – distributes traffic to your virtual appliances
 * Uses the GENEVE protocol on port 6081
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (11) (1) (1).png" alt="" width="204"><figcaption><p>Target Group can be either EC2 Instances or Private IP addresses</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (74).png" alt="" width="204"><figcaption><p>Target Group can be either EC2 Instances or Private IP addresses</p></figcaption></figure></div>
 
 ### Sticky Sessions (ALB & NLB)
 
@@ -69,7 +69,7 @@ Rules for Duration-based
 
 ### Cross-Zone Load Balancing
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (12) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (75).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 Enabled and disabled by default for ALB and NLB respectively
 
@@ -82,7 +82,7 @@ Manage certificates using ACM (AWS Certificate Manager), make custom certs on yo
 
 Load multiple SSL certificates onto one web server, requires the client to indicate the hostname of the target server in the initial SSL handshake
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (13) (1).png" alt="" width="295"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (76).png" alt="" width="295"><figcaption></figcaption></figure></div>
 
 ### Connection Draining
 
@@ -93,7 +93,7 @@ Between 1 to 3600 seconds (default: 300 seconds), 0 to disable feature
 
 Perform elastic scaling of instance deployment depending on the workload&#x20;
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (14) (1).png" alt="" width="207"><figcaption><p>Add Min/Max and desired size capacity</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (77).png" alt="" width="207"><figcaption><p>Add Min/Max and desired size capacity</p></figcaption></figure></div>
 
 Scale using CloudWatch alarms, monitor metrics such as CPU usage, requests per minute
 

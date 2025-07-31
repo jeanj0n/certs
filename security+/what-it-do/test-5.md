@@ -6,14 +6,6 @@ description: 88%
 
 
 
-<div align="left">
+<div align="left"><figure><img src="../../.gitbook/assets/image (163).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (68).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
-
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (69).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (164).png" alt="" width="375"><figcaption></figcaption></figure></div>

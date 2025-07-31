@@ -12,11 +12,7 @@ Snowflake System - System w diff config wrt standard template within IaC
 
 Idempotence - Automation produce same result regardless of component's previous state
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure></div>
 
 ### AI
 

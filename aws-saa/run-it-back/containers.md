@@ -34,15 +34,15 @@ Task level - ECS auto scaling based on: CPU, RAM, ALB request per count
 
 Instance level - EC2 instances scaled by ECS Cluster Capacity Provider - paired with ASG, auto does it for you
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (108).png" alt="" width="401"><figcaption><p>ECS tasks invoked by Event Bridge</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (203).png" alt="" width="401"><figcaption><p>ECS tasks invoked by Event Bridge</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (109).png" alt="" width="405"><figcaption><p>Identify status change in the task and notify </p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (204).png" alt="" width="405"><figcaption><p>Identify status change in the task and notify </p></figcaption></figure></div>
 
 ## EKS
 
 Cloud-agnostic (Works with any CSP), collect logs using Cloudwatch Container Insights
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (110).png" alt="" width="437"><figcaption><p>EKS diagram</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (205).png" alt="" width="437"><figcaption><p>EKS diagram</p></figcaption></figure></div>
 
 #### Node Types
 
@@ -62,4 +62,4 @@ Fully managed service that makes it easy to deploy web applications and APIs at 
 
 Just mention source/image and it build everything (ALB, encryption, target, VPC)
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (111).png" alt="" width="133"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (206).png" alt="" width="133"><figcaption></figcaption></figure></div>

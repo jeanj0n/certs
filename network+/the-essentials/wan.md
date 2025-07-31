@@ -1,8 +1,8 @@
 # WAN
 
-![](<../../.gitbook/assets/image (33).png>)
+![](<../../.gitbook/assets/image (128).png>)
 
-![](<../../.gitbook/assets/image (38).png>)
+![](<../../.gitbook/assets/image (133).png>)
 
 #### Packet Switching
 
@@ -40,4 +40,4 @@ Wireless Frequencies
 * FHSS: Devices hop b/w predetermined frequencies, good security
 * OFDM: Uses multiple data streams, resist interference gigachad stuff
 
-![](<../../.gitbook/assets/image (47).png>)
+![](<../../.gitbook/assets/image (142).png>)
