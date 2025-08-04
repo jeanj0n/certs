@@ -6,7 +6,9 @@ description: suid vs sudo vs capabilities
 
 ## Report
 
+FInd creds for user 'Daniel' via SNMP enumeration. Reading Apache config files, we see a vhost that only listens on local host, port forward to access it and it uses Pandora FMS whose version is vulnerable to unauthenticated SQLi to become admin. Upload PHP reverse shell and access file via uploads directory and become 'matt'
 
+Access authorized\_keys and insert own key to use SSH. Matt can run a backup binary as SUID. It performs a backup of a particular directory using tar but does not call via full PATH. Create our own tar binary and become root
 
 ## Cheatsheet
 

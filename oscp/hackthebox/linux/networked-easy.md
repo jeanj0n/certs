@@ -2,7 +2,9 @@
 
 ## Report
 
+A file upload vulnerabilty allows us to execute PHP code and obtain a reverse shell. A cronjob executing a script that is vulnerable to path injection and obtain another reverse shell as user 'guly'.
 
+guly can run a network config script as sudo. Any input after a whitespace is executed. A google search would show this. SPwan another shell and become root
 
 ## Cheatsheet
 
