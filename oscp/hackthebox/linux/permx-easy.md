@@ -1,16 +1,16 @@
-# PermX \[Linux Easy]
+# PermX \[Easy]
 
 Found the vhost this time, got the public exploit and landed on a webshell. Transfer LinPeas and LinEnum to see cheeky results, learn how to read this stuff
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 User passwd for mtz, ssh w these credentials for user.txt
 
 sudo -l shows us a acl.sh script which can be run
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 #!/bin/bash

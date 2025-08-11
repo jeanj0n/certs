@@ -39,6 +39,8 @@ Wrappers to look out for:
 
 If there is an input field where it fetches a file and you control that parameter, you can view the source of php file itself or the apache log for LFI2RCE
 
-{% embed url="https://sushant747.gitbooks.io/total-oscp-guide/content/local_file_inclusion.html" %}
+{% hint style="info" %}
+Watch PHP deserialization
+{% endhint %}
 
-PHP deserialization
+{% embed url="https://sushant747.gitbooks.io/total-oscp-guide/content/local_file_inclusion.html" %}

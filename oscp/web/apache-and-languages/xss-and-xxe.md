@@ -2,9 +2,11 @@
 description: Do all of them, it don't matter if it feel stupid
 ---
 
-# XSS
+# XSS & XXE
 
 {% embed url="https://brandonrussell.io/OSCP-Notes/XXMore.html" %}
+
+{% embed url="https://brandonrussell.io/OSCP-Notes/XXXEMore.html" %}
 
 ```
 ; breaks current command
@@ -35,6 +37,8 @@ fetch('http://alert.htb/messages.php')
 {% embed url="https://github.com/payloadbox/xss-payload-list" %}
 
 {% embed url="https://medium.com/@sevenoffsec/portswiggers-xss-labs-solved-with-explanation-part-1-678206556964" %}
+
+{% embed url="https://infosecwriteups.com/zero-to-hero-dom-xss-d291d62432d8" %}
 
 > Well, you should know when and how to spot XSS. Regarding OSCP exam, I don’t think XSS will be there since your goal is getting RCE on the target machine.
 >

