@@ -59,6 +59,10 @@ net view \10.10.14.3\
 
 {% embed url="https://keydecryptor.com/" %}
 
+{% embed url="https://github.com/openwall/john/blob/bleeding-jumbo/doc/DYNAMIC" %}
+Crack salted passwords because hashcat just can't seem to get it
+{% endembed %}
+
 ```
 [file_ext]2john
 john [--format=lm] --wordlist=/usr/share/wordlists/rockyou.txt [hash.txt]

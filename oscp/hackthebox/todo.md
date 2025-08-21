@@ -1,8 +1,13 @@
 # TODO
 
-## Roadmap (Follow Lain)
+{% embed url="https://github.com/intotheewild/OSCP-Checklist/blob/main/I'm%20stuck%20what%20the%20fuck.md" %}
 
-How do I make a checklist? so far whatever cheatsheets are documented well i just outsourced it yfm, maybe i do need my own checklist otherwise imma crash out like my bro in the reddit post
+## Roadmap&#x20;
+
+* add .git and .github to dirb wordlist
+* ad consolidated notes
+* local and domain users - we only messing w one system machines till now yeah
+* auto find the hotfix stuff for windows, cant only check that if you have a hint
 
 {% embed url="https://docs.google.com/spreadsheets/d/1ATrAPRo0nt02BYdpKrlCcEzaoxTzqLO9FM8QumxdBWs/edit?gid=129517485#gid=129517485" %}
 

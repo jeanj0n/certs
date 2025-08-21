@@ -1,5 +1,7 @@
 # Path Traversal
 
+{% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion/Intruders" %}
+
 ## We Know
 
 * Poison byte for file extension

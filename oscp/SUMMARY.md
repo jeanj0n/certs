@@ -15,15 +15,15 @@
 ## Web
 
 * [SQLi](web/sqli.md)
-* [Apache & Languages](web/apache-and-languages/README.md)
-  * [API](web/apache-and-languages/api.md)
-  * [XSS & XXE](web/apache-and-languages/xss-and-xxe.md)
-  * [SSRF](web/apache-and-languages/ssrf.md)
-  * [File Inclusion](web/apache-and-languages/file-inclusion.md)
-  * [CSRF](web/apache-and-languages/csrf.md)
-  * [OS Injection](web/apache-and-languages/os-injection.md)
-  * [Path Traversal](web/apache-and-languages/path-traversal.md)
-  * [SSTI (Template Injection)](web/apache-and-languages/ssti-template-injection.md)
+* [Web Servers & Languages](web/web-servers-and-languages/README.md)
+  * [API](web/web-servers-and-languages/api.md)
+  * [XSS & XXE](web/web-servers-and-languages/xss-and-xxe.md)
+  * [SSRF](web/web-servers-and-languages/ssrf.md)
+  * [File Inclusion](web/web-servers-and-languages/file-inclusion.md)
+  * [CSRF](web/web-servers-and-languages/csrf.md)
+  * [OS Injection](web/web-servers-and-languages/os-injection.md)
+  * [Path Traversal](web/web-servers-and-languages/path-traversal.md)
+  * [SSTI (Template Injection)](web/web-servers-and-languages/ssti-template-injection.md)
 
 ## Buffer
 
@@ -37,6 +37,7 @@
   * [Scripts](methodology/enumeration-commands-and-links/scripts.md)
 * [Linux Privesc](methodology/linux-privesc.md)
 * [Windows PrivEsc](methodology/windows-privesc.md)
+* [AD PrivEsc](methodology/ad-privesc.md)
 
 ## Hackthebox
 
@@ -76,6 +77,9 @@
   * [StreamIO \[Medium\]](hackthebox/windows/streamio-medium.md)
   * [Jeeves \[Medium\]](hackthebox/windows/jeeves-medium.md)
   * [Aero \[Medium\]](hackthebox/windows/aero-medium.md)
+  * [Administrator \[Medium\]](hackthebox/windows/administrator-medium.md)
+  * [Manager \[Medium\]](hackthebox/windows/manager-medium.md)
+  * [Intelligence \[Medium\]](hackthebox/windows/intelligence-medium.md)
 * [AD](hackthebox/ad/README.md)
   * [Forest \[Easy\]](hackthebox/ad/forest-easy.md)
   * [Active \[Easy\]](hackthebox/ad/active-easy.md)
@@ -85,6 +89,7 @@
   * [Monteverde \[Medium\]](hackthebox/ad/monteverde-medium.md)
   * [Cascade \[Medium\]](hackthebox/ad/cascade-medium.md)
   * [Cicada \[Easy\]](hackthebox/ad/cicada-easy.md)
+  * [TheFrizz \[Medium\]](hackthebox/ad/thefrizz-medium.md)
 
 ## Pen-200
 

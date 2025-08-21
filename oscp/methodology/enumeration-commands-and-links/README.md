@@ -161,6 +161,9 @@ ldapsearch -H ldap://[ip] -x -b "DC=htb,DC=local" '(objectClass=Person)' sAMAcco
 ldapsearch -H ldap://[ip] -x -b "DC=htb,DC=local" '(objectClass=Person)' sAMAccountName  sAMAccountType
 
 ldapsearch -H ldap://[ip] -x -b "DC=htb,DC=local" '(objectClass=Person)' sAMAccountName sAMAccountType | grep sAMAccountName | awk '{print $2}' > userlist.ldap
+
+ldapsearch -H ldap://support.htb -D 'ldap@support.htb' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "DC=support,DC=htb" | grep "User" -B 20 -A 20
+ldapsearch -H ldap://support.htb -D 'ldap@support.htb' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "DC=support,DC=htb" '(&(objectClass=Person)(cn=support))'| grep "User" -A 20 -B 20
 ```
 
 {% embed url="https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap" %}

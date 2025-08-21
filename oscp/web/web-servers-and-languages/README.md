@@ -1,4 +1,4 @@
-# Apache & Languages
+# Web Servers & Languages
 
 ## Apache
 
@@ -12,6 +12,10 @@ Vhost config: /etc/apache2/sites-enabled/000-default.conf
 ```
 
 {% embed url="https://cwiki.apache.org/confluence/display/httpd/DistrosDefaultLayout#DistrosDefaultLayout-Apachehttpd2.4defaultlayout(apache.orgsourcepackage):" %}
+
+## Nginx
+
+{% embed url="https://www.howtogeek.com/devops/how-to-find-your-nginx-configuration-folder/" %}
 
 ## PHP
 

@@ -28,6 +28,9 @@ Host file -`C:\Windows\System32\drivers\etc\hosts`
 ### Basic Info gathering
 
 ```
+powershell -ep bypass
+. .\Downloads\PowerView.ps1
+
 systeminfo - (look for latest hotfixes patched)
 wmic qfe - check patch history (wmi - windows management instrumentation command line quick fix engineering)
 wmic logicaldisk get caption,description,providername
@@ -37,7 +40,7 @@ icacls - ACL to files/directories
 where /R c:\windows bash.exe
 
 dir /R [Watch out for ADS (Alternate data streams) - good way to hide data]
-dir  /A:H (ls -la of cmd.exe)
+dir /A:H (ls -la of cmd.exe)
 ls -force (ls -la of powershell)
 ```
 
