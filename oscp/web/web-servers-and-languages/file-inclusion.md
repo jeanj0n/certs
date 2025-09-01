@@ -28,7 +28,7 @@ Add a `.htaccess` file adding the type 'application/x-httpd-php' basically execu
 
 Why did URL encoding and directory traversal not work or show not found? The response showed it was successful. php5 also only downloaded the uploaded file instead of any execution
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="503"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="503"><figcaption></figcaption></figure></div>
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (7).png" alt="" width="504"><figcaption></figcaption></figure></div>
 

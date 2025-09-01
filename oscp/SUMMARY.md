@@ -7,10 +7,7 @@
 * [Define](ad/define.md)
 * [Post-Exploitation Basics](ad/post-exploitation-basics.md)
 * [Breaching AD](ad/breaching-ad.md)
-
-***
-
-* [Wreath](wreath.md)
+* [Wreath](ad/wreath.md)
 
 ## Web
 
@@ -31,7 +28,8 @@
 
 ## Methodology
 
-* [Fundamentals](methodology/fundamentals.md)
+* [Fundamentals](methodology/fundamentals/README.md)
+  * [Pivoting](methodology/fundamentals/pivoting.md)
 * [Enumeration (Commands & Links)](methodology/enumeration-commands-and-links/README.md)
   * [Real Resources](methodology/enumeration-commands-and-links/real-resources.md)
   * [Scripts](methodology/enumeration-commands-and-links/scripts.md)
@@ -67,6 +65,7 @@
   * [Magic \[Medium\]](hackthebox/linux/magic-medium.md)
   * [Builder \[Medium\]](hackthebox/linux/builder-medium.md)
   * [Monitored \[Medium\]](hackthebox/linux/monitored-medium.md)
+  * [Nibbles \[Easy\]](hackthebox/linux/nibbles-easy.md)
 * [Windows](hackthebox/windows/README.md)
   * [Netmon \[Easy\]](hackthebox/windows/netmon-easy.md)
   * [ServMon \[Easy\]](hackthebox/windows/servmon-easy.md)
@@ -90,6 +89,7 @@
   * [Cascade \[Medium\]](hackthebox/ad/cascade-medium.md)
   * [Cicada \[Easy\]](hackthebox/ad/cicada-easy.md)
   * [TheFrizz \[Medium\]](hackthebox/ad/thefrizz-medium.md)
+  * [Flight \[Hard\]](hackthebox/ad/flight-hard.md)
 
 ## Pen-200
 

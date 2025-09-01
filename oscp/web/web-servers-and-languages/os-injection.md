@@ -8,7 +8,7 @@ Using `; & &&` with URL encoding
 
 ### Lab 2
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 `||` is conditional if right but why use it at the end of the command as well?
 

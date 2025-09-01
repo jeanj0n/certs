@@ -2,7 +2,7 @@
 
 Found the vhost this time, got the public exploit and landed on a webshell. Transfer LinPeas and LinEnum to see cheeky results, learn how to read this stuff
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

