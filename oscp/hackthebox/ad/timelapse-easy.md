@@ -1,4 +1,4 @@
-# Timelapse \[Windows AD Easy]
+# Timelapse \[Easy]
 
 ## Report
 
@@ -55,6 +55,6 @@ It reveals the password of the admin of that DC and system
 
 svc\_deploy was part of a group that could read LAPS creds, BloodHound confirmed it but we can do our manual recon as well, from there pyLAPS.py did the rest
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 Learning how to use Bloodhound better has been a gamechanger so far

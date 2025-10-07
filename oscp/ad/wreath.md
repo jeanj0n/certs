@@ -117,7 +117,7 @@ sshuttle -r user@172.16.0.5 172.16.0.0/24 -x 172.16.0.5      #use -x to exclude 
 
 ### Git Server
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can access 10.200.84.150 from our own machine w no extra setup crazy, if this wasn't there we would have to setup a proxy using proxychains or sum else
 

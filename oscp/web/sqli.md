@@ -11,7 +11,7 @@ Time-based SQLI, if boolean and error fail
 Lock in w me twin
 
 ```bash
-mysql -h [IP] -u [username] -p
+mysql [--skip-ssl] -h [IP] -u[username] -p[pass]
 ```
 
 {% code title="Info Dumping" %}

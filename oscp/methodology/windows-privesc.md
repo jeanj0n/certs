@@ -40,6 +40,8 @@ icacls - ACL to files/directories
 where /R c:\windows bash.exe
 
 dir /R [Watch out for ADS (Alternate data streams) - good way to hide data]
+more < hm.txt:root.txt
+
 dir /A:H (ls -la of cmd.exe)
 ls -force (ls -la of powershell)
 ```
@@ -68,13 +70,20 @@ arp -a
 netstat -ano | findstr LISTENING
 ```
 
-### Password Hunting (Can automate)
+### Passwords
 
 ```
 findstr "/si password *.txt (look for string "password" in any txt file) 
 ```
 
-### AV Enumeration
+{% code title="Keepass Database" %}
+```
+kpcli -kdb CEH.kdbx ls --group CEH --entries 
+show -f [entry_number]
+```
+{% endcode %}
+
+### AV Enumeration \[AMSI, AppLocker, Defender]
 
 ```
 sc query windefend
@@ -82,6 +91,8 @@ sc query <query> see what services are running
 netsh advfirewall firewall dump
 netsh firewall show state/config
 ```
+
+{% embed url="https://juggernaut-sec.com/applocker-bypass/" %}
 
 ## Automated Enumeration
 
@@ -188,7 +199,7 @@ $documents.MoveHere($item)
 
 dnSpy the GOAT
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ## Kernel Exploits
 

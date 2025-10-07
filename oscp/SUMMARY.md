@@ -8,6 +8,7 @@
 * [Post-Exploitation Basics](ad/post-exploitation-basics.md)
 * [Breaching AD](ad/breaching-ad.md)
 * [Wreath](ad/wreath.md)
+* [Derron C Part One](ad/derron-c-part-one.md)
 
 ## Web
 
@@ -29,10 +30,10 @@
 ## Methodology
 
 * [Fundamentals](methodology/fundamentals/README.md)
-  * [Pivoting](methodology/fundamentals/pivoting.md)
-* [Enumeration (Commands & Links)](methodology/enumeration-commands-and-links/README.md)
-  * [Real Resources](methodology/enumeration-commands-and-links/real-resources.md)
-  * [Scripts](methodology/enumeration-commands-and-links/scripts.md)
+  * [Pivoting (Tunneling & Forwarding)](methodology/fundamentals/pivoting-tunneling-and-forwarding.md)
+* [Enumeration](methodology/enumeration/README.md)
+  * [Real Resources](methodology/enumeration/real-resources.md)
+  * [Scripts](methodology/enumeration/scripts.md)
 * [Linux Privesc](methodology/linux-privesc.md)
 * [Windows PrivEsc](methodology/windows-privesc.md)
 * [AD PrivEsc](methodology/ad-privesc.md)
@@ -90,6 +91,45 @@
   * [Cicada \[Easy\]](hackthebox/ad/cicada-easy.md)
   * [TheFrizz \[Medium\]](hackthebox/ad/thefrizz-medium.md)
   * [Flight \[Hard\]](hackthebox/ad/flight-hard.md)
+  * [Blackfield \[Hard\]](hackthebox/ad/blackfield-hard.md)
+  * [Certified \[Medium\]](hackthebox/ad/certified-medium.md)
+
+## Proving Grounds
+
+* [WATCH](proving-grounds/watch.md)
+* [Linux](proving-grounds/linux/README.md)
+  * [Twiggy \[Easy\]](proving-grounds/linux/twiggy-easy.md)
+  * [Exfiltrated \[Easy\]](proving-grounds/linux/exfiltrated-easy.md)
+  * [Astronaut \[Easy\]](proving-grounds/linux/astronaut-easy.md)
+  * [Pelican \[Inter\]](proving-grounds/linux/pelican-inter.md)
+  * [Boolean \[Inter\]](proving-grounds/linux/boolean-inter.md)
+  * [Crane \[Inter\]](proving-grounds/linux/crane-inter.md)
+  * [Cockpit \[Inter\]](proving-grounds/linux/cockpit-inter.md)
+  * [Codo \[Easy\]](proving-grounds/linux/codo-easy.md)
+  * [Levram \[Easy\]](proving-grounds/linux/levram-easy.md)
+  * [Extplorer \[Inter\]](proving-grounds/linux/extplorer-inter.md)
+  * [Image \[Inter\]](proving-grounds/linux/image-inter.md)
+  * [Law \[Inter\]](proving-grounds/linux/law-inter.md)
+  * [Lavita \[Inter\]](proving-grounds/linux/lavita-inter.md)
+  * [PC \[Inter\]](proving-grounds/linux/pc-inter.md)
+  * [Fired \[Inter\]](proving-grounds/linux/fired-inter.md)
+  * [Press \[Inter\]](proving-grounds/linux/press-inter.md)
+  * [Scrutiny \[Inter\]](proving-grounds/linux/scrutiny-inter.md)
+  * [Flu \[Inter\]](proving-grounds/linux/flu-inter.md)
+  * [Ochima \[Inter\]](proving-grounds/linux/ochima-inter.md)
+  * [Zipper \[Hard\]](proving-grounds/linux/zipper-hard.md)
+  * [Plum \[Inter\]](proving-grounds/linux/plum-inter.md)
+  * [SPX \[Inter\]](proving-grounds/linux/spx-inter.md)
+  * [Jordak \[Inter\]](proving-grounds/linux/jordak-inter.md)
+  * [BitForge \[Inter\]](proving-grounds/linux/bitforge-inter.md)
+  * [Clue \[Hard\]](proving-grounds/linux/clue-hard.md)
+  * [Vmdak \[Inter\]](proving-grounds/linux/vmdak-inter.md)
+  * [Blackgate \[Hard\]](proving-grounds/linux/blackgate-hard.md)
+  * [Readys \[Inter\]](proving-grounds/linux/readys-inter.md)
+  * [Nukem \[Inter\]](proving-grounds/linux/nukem-inter.md)
+  * [Maria \[Inter\]](proving-grounds/linux/maria-inter.md)
+* [Windows](proving-grounds/windows/README.md)
+  * [Algernon \[Easy\]](proving-grounds/windows/algernon-easy.md)
 
 ## Pen-200
 

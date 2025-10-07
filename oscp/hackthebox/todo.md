@@ -4,18 +4,15 @@
 
 ## Roadmap&#x20;
 
-* highlight all possible vectors, right now all you doing is document commands for everything you've done how will you know when to use so like a web methodology sort for windows and ad
+* establish a data flow/ trail for the web app before coming to a conclusion what attack vector is to be used - enumerate harder
 * keep track of every external winprivesc tool downloaded in all these rooms (eg. ntlmtheft)
 * we need to keep a backup for every tool we run (eg. ffuf and feroxbuster, one worldist and another one) - this is to test your methodology
 * start learning to spray dumb creds \[use cues given in the bloody box] it's like in football how you're so one dimensional try to do something different
 * learning how to find files manually, what if browsing directories or winpeas dont work
-* learn how to finish your fuzking fuzz commands ffs
 * local and domain users - we only messing w one system machines till now yeah
-* auto find the hotfix stuff for windows, cant only check that if you have a hint
+* auto find the hotfix stuff for windows, can't only check that if you have a hint
 
-### Rooms
 
-* Sea (Easy L)
 
 {% embed url="https://docs.google.com/spreadsheets/d/1ATrAPRo0nt02BYdpKrlCcEzaoxTzqLO9FM8QumxdBWs/edit?gid=129517485#gid=129517485" %}
 

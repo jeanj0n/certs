@@ -85,6 +85,15 @@ patato - brute force tool for various protocols incase hydra doesn't work out (l
 cat userlist.txt | tr ' ' '\n' | grep . [Replaces all whitespaces between values with newlines]
 grep -r password . 2>/dev/null [searches for the value 'password' recursively across all files]
 cut -d "delimiter" -f (field number 1,2 etc.) file.txt
+
+Find directories having a particular name
+find / -type d -name [directory] 2>/dev/null
+
+Find directories writable by current user
+find / -type d -maxdepth 5 -writable 2>/dev/null
+
+Find passwords in files
+grep -Ri 'password' [directory_to_search] 2>/dev/null
 ```
 
 ## Pivoting & Port Forwarding
@@ -97,7 +106,7 @@ cut -d "delimiter" -f (field number 1,2 etc.) file.txt
 
 {% embed url="https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740" %}
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
 
 ## Git
 

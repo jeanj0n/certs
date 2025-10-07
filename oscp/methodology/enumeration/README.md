@@ -2,7 +2,7 @@
 description: All but the easiest HTBs are harder than even the 25 point exam boxes.
 ---
 
-# Enumeration (Commands & Links)
+# Enumeration
 
 {% embed url="https://sgtdede.gitbook.io/hacking/oscp-2022/guide-en" %}
 
@@ -18,7 +18,7 @@ description: All but the easiest HTBs are harder than even the 25 point exam box
 
 ```
 nmap -sC -sV -p- $ip -v -oN scan.nmap        (TCP)
-nmap -sU --top-ports 20 -oN scan.nmap -vv $ip  (UDP)
+sudo nmap -sU --top-ports 20 -oN udpscan.nmap -vv $ip  (UDP)
 -Pn Disables host discovery and only conducts a port scan. 
 -A OS/Version Detection
 -O Remote OS detection using TCP/IP stack fingerprinting
@@ -44,6 +44,9 @@ wfuzz -c -w /usr/share/wordlists/yes.txt -u "http://alert.htb/" -H "Host: FUZZ.a
 curl --insecure -b "[cookiename]=[value]" -X POST --data "[data]" [URL] (--insecure bypass SSL verification)
 
 nikto -h $ip
+
+sudo wpscan --url http://[URL]
+sudo wpscan --url http://[URL] -e ap --plugins-detection aggressive
 </code></pre>
 
 ### FTP (21)

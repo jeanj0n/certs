@@ -1,4 +1,4 @@
-# Soccer \[Linux Easy]
+# Soccer \[Easy]
 
 {% embed url="https://0xdf.gitlab.io/2023/06/10/htb-soccer.html" %}
 Best sqli explaination, make a script to automate this tho ik you can do it
@@ -96,7 +96,7 @@ player:PlayerOftheMatch2022
 
 #### SQL Injection over websockets
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Right Click -> Extensions -> Send to WebSocket Turbo Intruder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption><p>Right Click -> Extensions -> Send to WebSocket Turbo Intruder</p></figcaption></figure>
 
 After so much research, we found a github cheatsheet for sqli enumeration without sqlmap in the SQLi Contd page. Using sqlmap in verbose gave a lot of info as well as the methodology and tables/schema to use.
 
@@ -115,6 +115,6 @@ Since this was over websockets (port 9091) our wfuzz commands we found wont work
 
 A valid response is 13 characters long, hence we only output response for replies with length 13
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 ASCII values from 32 to 127 cover all alphabets, numbers and special characters

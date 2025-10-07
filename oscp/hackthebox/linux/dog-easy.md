@@ -1,4 +1,4 @@
-# Dog \[Linux Easy]
+# Dog \[Easy]
 
 ## Report
 
@@ -31,6 +31,6 @@ Email address - support@htb
 
 `grep -r "@dog.htb"`
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure></div>

