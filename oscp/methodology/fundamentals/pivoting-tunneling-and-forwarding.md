@@ -20,6 +20,10 @@ In this one, for double pivot, first session is closed and new direct link is ma
 Add 240.0.0.1 to ip route instead of target IP, all ports will be forwarded to this IP eg. 240.0.0.1:8080 will show the website hosted on target which wasn't accessible earlier
 {% endembed %}
 
+```
+Wreath -> invoke-portscan.ps1 comms mentioned too (instead of nmap)
+```
+
 ### Summary
 
 ```

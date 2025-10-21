@@ -17,12 +17,16 @@ description: All but the easiest HTBs are harder than even the 25 point exam box
 ### Nmap
 
 ```
-nmap -sC -sV -p- $ip -v -oN scan.nmap        (TCP)
+sudo nmap -v $ip -sC -sV -p- --open -oN tcpscan.nmap (TCP)
+sudo nmap -sVC -vvv $ip --script vuln -oN fulltcpscan.nmap (Scan vulnerabilities eg. SMB)
+
 sudo nmap -sU --top-ports 20 -oN udpscan.nmap -vv $ip  (UDP)
 -Pn Disables host discovery and only conducts a port scan. 
 -A OS/Version Detection
 -O Remote OS detection using TCP/IP stack fingerprinting
 ```
+
+> I start nearly every box this way because it quickly returns a wealth of information. Sudo as it defaults to the faster half-open SYN scan, then -Pn to ignore ping and assume it is up, -n to ignore DNS, the IP address, -sC for default scripts, -sV for version information, -p- to scan all ports, and MOST importantly the — open argument to only apply scripts and version scans to found open ports.
 
 ### HTTP/HTTPS (80/443)
 
@@ -30,7 +34,7 @@ sudo nmap -sU --top-ports 20 -oN udpscan.nmap -vv $ip  (UDP)
 Always look up documentation of service you're trying to exploit, 90% of the time the answer will be there if you feel all other vectors are off
 {% endhint %}
 
-<pre><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -H 'Host: FUZZ.board.htb' -f(c/s/w)   
+<pre data-title="Fuzzing with ffuf"><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -H 'Host: FUZZ.board.htb' -f(c/s/w)   
 (Directory) ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$IP:PORT/FUZZ 
 (File fuzzing) -e .php,.html,.txt            
 (HTTP POST) ffuf -w [wordlist] -u [URL] -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'header: value' -fs xxx  
@@ -41,13 +45,27 @@ Always look up documentation of service you're trying to exploit, 90% of the tim
 -recursion
 wfuzz -c -w /usr/share/wordlists/yes.txt -u "http://alert.htb/" -H "Host: FUZZ.alert.htb"
 
-curl --insecure -b "[cookiename]=[value]" -X POST --data "[data]" [URL] (--insecure bypass SSL verification)
-
 nikto -h $ip
+</code></pre>
 
+#### Send web request via cURL
+
+```
+curl --insecure -u [username:password] -b "[cookiename]=[value]" -X POST --data "[data]" [URL] (--insecure bypass SSL verification)
+```
+
+#### WordPress
+
+```
 sudo wpscan --url http://[URL]
 sudo wpscan --url http://[URL] -e ap --plugins-detection aggressive
-</code></pre>
+```
+
+#### WebDAV
+
+{% embed url="https://www.linkedin.com/pulse/exploiting-webdav-gainrce-arav-budhiraja/" %}
+cadaver go crazy (ASP revshell)
+{% endembed %}
 
 ### FTP (21)
 
@@ -66,6 +84,10 @@ binary (Set to binary mode for proper channel to download bin files)
 get [file]
 ```
 
+Brute Force
+
+`sudo hydra -L names.txt -P '/usr/share/wordlists/seclists/Passwords/probable-v2-top1575.txt' -s 21 ftp://$IP`
+
 ### SSH (22)
 
 ```
@@ -76,7 +98,7 @@ sshuttle
 proxychains?
 ```
 
-### SMTP (25)
+### SMTP (25) and Mail
 
 ```
 telnet 10.10.11.14 25
@@ -84,28 +106,63 @@ EHLO [emailid]
 AUTH LOGIN
 [username in base64]
 [password in base64]
-
-swaks --to receiver@mail.com --from sender@mail.com --auth LOGIN --auth-user sender@mail.com --header-X-Test "Header" --server <TARGET-IP> --attach file.txt
 ```
 
-### Kerberos (88)
-
-Golden/Silver ticket loading
+User Enumeration via SMTP
 
 ```
-./kerbrute_linux_amd64 userenum -d <domain>  userlist.txt --dc <domain> -v
-./GetNPUsers.py -dc-ip [ip] -request '[domain]/[user]'
-./GetNPUsers.py [domain] -dc-ip [ip] -usersfile userlist.txt
-./GetNPUsers.py -no-pass -dc-ip [ip] [domain]/[user]
-hashcat64 -m 18200 <hash> rockyou.txt -d 1
-
-./GetUserSPNs.py [domain]/[user]:[password] -dc-ip [ip] 
-./GetUserSPNs.py [domain]/[user]:[password] -dc-ip [ip] -request <get ticket here>
-
-export KRB5CCNAME=/home/jtripz/htb/rooms/escape/ticket.ccache; faketime -f '+8h' /usr/bin/python3 psexec.py [domain]/[username]@[dc] -k -no-pass
+smtp-user-enum -M VRFY -U [userlist] -t [ip] 
 ```
 
-### SMB (139/445)
+Send Mail \[Phishing]
+
+```
+sudo swaks --to mailadmin@localhost --from jonas@localhost --header 'Subject: Please check this spreadsheet' --header-X-Test "Header" --server 192.168.171.140  --attach @yess.ods
+```
+
+#### IMAP (143)
+
+{% hint style="info" %}
+Hepet \[WIndows PG]
+{% endhint %}
+
+```
+telnet $ip 143
+A1 login jonas SicMundusCreatusEst
+A1 list "INBOX/" "*"
+g21 SELECT "INBOX"
+
+F1 fetch 5 RFC822 [5 mails that's why]
+```
+
+#### POP3 (110)
+
+Brute force
+
+```
+hydra -l <USER> -P <PASSWORDS_LIST> -f <IP> pop3 -V
+hydra -S -v -l <USER> -P <PASSWORDS_LIST> -s 995 -f <IP> pop3 -V
+```
+
+Read mail
+
+```
+telnet <IP> 110
+
+USER <USER>
+PASS <PASSWORD>
+LIST
+RETR <MAIL_NUMBER>
+QUIT
+```
+
+### DNS (53)
+
+```
+dig axfr hutch.offsec @192.168.223.122
+```
+
+### SMB & RPC (139/445)
 
 ```
 NXC
@@ -159,6 +216,8 @@ netexec smb [ip] -u guest -p '' --[rid-brute/users/groups/local-users]
 {% embed url="https://www.hackingarticles.in/active-directory-enumeration-rpcclient/" %}
 
 ### LDAP (389)&#x20;
+
+Good place to find user creds - check user description along with rpcclient
 
 ```
 ldapsearch -H ldap://[ip] -x -s base namingcontexts  [-x simple auth, -s scope]

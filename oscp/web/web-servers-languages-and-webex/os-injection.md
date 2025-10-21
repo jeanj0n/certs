@@ -8,7 +8,7 @@ Using `; & &&` with URL encoding
 
 ### Lab 2
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 `||` is conditional if right but why use it at the end of the command as well?
 
@@ -28,7 +28,7 @@ Well `||sleep 10;` works but we get a 500 Server Error
 
 The writable folder, we found cus of these boys - how else would we know?
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 {% embed url="https://github.com/payloadbox/command-injection-payload-list" %}
 

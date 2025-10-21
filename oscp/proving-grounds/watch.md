@@ -10,7 +10,6 @@ The first room 'Twiggy' showed the Offsec patterns we have to watch for
 * base64 encode payloads if within quotes - you'll know whats up
 * ffuf is not broken, the vpn connection is fine (new syntax port position?)
 * default creds - offsec loves admin:admin?
-* Have precompiled binaries of everything you need (pspy, linpeas, winpeas, nmap, ligolo, chisel) (php image and func\_bypass, chain exploiter)
 
 TRY HARDER
 
@@ -25,7 +24,7 @@ TRY HARDER
 * Be confident enough that once the path you took didn't work, it's not going to and we need to find the next one
 * Organize notes better, chained exploits become difficult if you don't keep track
 * Don't be scared of trial and error, you never get things right on the first try
-* YOU DO NOT MAKE MORE PROGRESS JUST BECAUSE YOU"RE TICKING OFF MORE BOXES
+* YOU DO NOT MAKE MORE PROGRESS JUST BECAUSE YOU'RE TICKING OFF MORE BOXES
 
 ## Faults So Far
 

@@ -4,28 +4,31 @@
 
 ## AD
 
-* [Define](ad/define.md)
-* [Post-Exploitation Basics](ad/post-exploitation-basics.md)
-* [Breaching AD](ad/breaching-ad.md)
-* [Wreath](ad/wreath.md)
+* [Define](ad/define/README.md)
+  * [Kerberos](ad/define/kerberos.md)
+* [THM](ad/thm/README.md)
+  * [Post-Exploitation Basics](ad/thm/post-exploitation-basics.md)
+  * [Breaching AD](ad/thm/breaching-ad.md)
+  * [Wreath](ad/thm/wreath.md)
 * [Derron C Part One](ad/derron-c-part-one.md)
 
 ## Web
 
 * [SQLi](web/sqli.md)
-* [Web Servers & Languages](web/web-servers-and-languages/README.md)
-  * [API](web/web-servers-and-languages/api.md)
-  * [XSS & XXE](web/web-servers-and-languages/xss-and-xxe.md)
-  * [SSRF](web/web-servers-and-languages/ssrf.md)
-  * [File Inclusion](web/web-servers-and-languages/file-inclusion.md)
-  * [CSRF](web/web-servers-and-languages/csrf.md)
-  * [OS Injection](web/web-servers-and-languages/os-injection.md)
-  * [Path Traversal](web/web-servers-and-languages/path-traversal.md)
-  * [SSTI (Template Injection)](web/web-servers-and-languages/ssti-template-injection.md)
+* [Web Servers, Languages & WebEx](web/web-servers-languages-and-webex/README.md)
+  * [API](web/web-servers-languages-and-webex/api.md)
+  * [XSS & XXE](web/web-servers-languages-and-webex/xss-and-xxe.md)
+  * [SSRF](web/web-servers-languages-and-webex/ssrf.md)
+  * [File Upload](web/web-servers-languages-and-webex/file-upload.md)
+  * [CSRF](web/web-servers-languages-and-webex/csrf.md)
+  * [OS Injection](web/web-servers-languages-and-webex/os-injection.md)
+  * [Path Traversal](web/web-servers-languages-and-webex/path-traversal.md)
+  * [SSTI (Template Injection)](web/web-servers-languages-and-webex/ssti-template-injection.md)
 
 ## Buffer
 
 * [Buffer Overflow Prep](buffer/buffer-overflow-prep.md)
+* [Shells \[msfvenom\]](buffer/shells-msfvenom.md)
 
 ## Methodology
 
@@ -130,6 +133,14 @@
   * [Maria \[Inter\]](proving-grounds/linux/maria-inter.md)
 * [Windows](proving-grounds/windows/README.md)
   * [Algernon \[Easy\]](proving-grounds/windows/algernon-easy.md)
+  * [Internal \[Easy\]](proving-grounds/windows/internal-easy.md)
+  * [AuthBy \[Inter\]](proving-grounds/windows/authby-inter.md)
+  * [Craft \[Inter\]](proving-grounds/windows/craft-inter.md)
+  * [Hutch \[Inter\]](proving-grounds/windows/hutch-inter.md)
+  * [Jacko \[Inter\]](proving-grounds/windows/jacko-inter.md)
+  * [Kevin \[Easy\]](proving-grounds/windows/kevin-easy.md)
+  * [DVR4 \[Inter\]](proving-grounds/windows/dvr4-inter.md)
+  * [Hepet \[Inter\]](proving-grounds/windows/hepet-inter.md)
 
 ## Pen-200
 

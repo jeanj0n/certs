@@ -6,6 +6,8 @@ description: watch pspy
 
 {% embed url="https://github.com/RajChowdhury240/OSCP-CheatSheet/blob/main/Linux%20-%20Privilege%20Escalation.md" %}
 
+{% embed url="https://ibb.co/7bwxyYh" %}
+
 ### Web Reverse Shell&#x20;
 
 * App config file
@@ -55,7 +57,7 @@ rlwrap nc -lvnp <port>
 ```
 {% endcode %}
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
 
 ## Checklist
 
@@ -301,6 +303,8 @@ cat /etc/cron.deny*
 
 ### Kernel <a href="#kernel" id="kernel"></a>
 
+{% embed url="https://github.com/SecWiki/linux-kernel-exploits" %}
+
 {% embed url="https://github.com/mzet-/linux-exploit-suggester" %}
 
 {% embed url="https://github.com/jondonas/linux-exploit-suggester-2" %}
@@ -315,10 +319,8 @@ dmesg | grep Linux
 ls /boot | grep vmlinuz-
 ```
 
-{% embed url="https://guif.re/linuxeop" %}
+### Wildcard
 
 {% embed url="https://book.hacktricks.xyz/linux-hardening/privilege-escalation/wildcards-spare-tricks?source=post_page-----16397895490f--------------------------------" %}
-READDDD from HTB Usage
+READ from HTB Usage
 {% endembed %}
-
-{% embed url="https://t0o0tz.com/posts/post0x0004/" %}

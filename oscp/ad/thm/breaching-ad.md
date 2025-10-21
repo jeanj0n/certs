@@ -18,7 +18,7 @@ Kerberos, relies on DNS to create tickets. Tickets cannot be associated with IPs
 
 {% embed url="https://security.stackexchange.com/questions/273649/using-hydra-on-a-ntlm-authentication" %}
 
-<figure><img src="../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 
 ### LDAP Bind Credentials
 
@@ -45,7 +45,7 @@ sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo servic
 
 Setup slapd, refer room for setup. Use tcpdump to capture the traffic when exchange happens and voila.
 
-<figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
 
 ### Authentication Relay
 
@@ -55,7 +55,7 @@ Responder will attempt to poison any Link-Local Multicast Name Resolution (LLMNR
 
 Although it can intercept and poison requests from our box, don't because normal attempts could fail meaning there could be a disruption and users and services can't connect as intended.
 
-<figure><img src="../.gitbook/assets/image (88).png" alt=""><figcaption><p>thm boys send out a auth request every 30 min for us to intercept</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (88).png" alt=""><figcaption><p>thm boys send out a auth request every 30 min for us to intercept</p></figcaption></figure>
 
 ### Microsoft Deployment Toolkit (MDT)
 
@@ -71,8 +71,8 @@ Get it and then use PowerPXE on Powershell (like PowerUp.ps1) to read the conten
 
 Assume we got our hands on a database, apparently McAffee hardcodes credentials used during installation
 
-<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 There is a GitHub which deals w decryption from mcaffee db, use that w the password you obtained

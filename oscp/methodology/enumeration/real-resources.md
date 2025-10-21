@@ -5,6 +5,8 @@ description: The real stuff
 # Real Resources
 
 {% embed url="https://kashish.gitbook.io/7/master" %}
+GOAT
+{% endembed %}
 
 {% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings" %}
 PayloadAllTheThings
@@ -19,5 +21,11 @@ Ultimate wordlist repo
 {% endembed %}
 
 {% embed url="https://github.com/frizb/MSF-Venom-Cheatsheet" %}
-msfvenom Cheatsheet
-{% endembed %}
+
+{% hint style="info" %}
+Refer Internal \[Windows Easy] from PG for working with msfvenom payloads
+{% endhint %}
+
+{% embed url="https://github.com/intotheewild/OSCP-Checklist/tree/main" %}
+
+{% embed url="https://github.com/fatalxs/oscp-cheatsheet/tree/main" %}

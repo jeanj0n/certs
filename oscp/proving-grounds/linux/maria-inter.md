@@ -131,7 +131,6 @@ wpscan --url http://192.168.195.167/ -e ap --plugins-detection aggressive
  | Found By: Known Locations (Aggressive Detection)
  |  - http://192.168.183.167/wp-content/plugins/easy-wp-smtp/, status: 200
  | Version: 1.4.1 (100% confidence)
-
 ```
 
 ## Loot
@@ -156,7 +155,6 @@ define( 'DB_PASSWORD', 'wordpress' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
-
 ```
 
 can't login to sql as user wordrpress, enumerate FTP using our LFI exploit

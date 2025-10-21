@@ -1,12 +1,8 @@
 # Define
 
-<div align="left"><figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (40).png" alt="" width="563"><figcaption><p>NTLM Working</p></figcaption></figure></div>
 
-<div align="left"><figure><img src="../.gitbook/assets/image (39).png" alt="" width="563"><figcaption><p>Kerboros Working</p></figcaption></figure></div>
-
-<div align="left"><figure><img src="../.gitbook/assets/image (40).png" alt="" width="563"><figcaption><p>NTLM Working</p></figcaption></figure></div>
-
-<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption><p>LDAP Bind</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption><p>LDAP Bind</p></figcaption></figure>
 
 AD - Centralise the administration of common components of Windows network in a single repo \
 Domain Controller (DC) - the server that runs AD, contain hashed passwords for all user accounts within the environment.
@@ -30,13 +26,13 @@ A machine account will be named after its own name followed by $  eg.TM01$
 
 ### Security Groups
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 **Organizational Units (OUs)**  are container objects that allow you to classify users and machines. Define sets of users with similar policing requirements. One user can only be in one OU
 
 Default containers (OU) created by Windows
 
-<div align="left"><figure><img src="../.gitbook/assets/image (33).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (33).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 #### OU vs Security Groups
 
@@ -44,7 +40,7 @@ OU is used to implement policies on users and computers, specific configs to use
 
 Security Groups grant perms over resources (users access shared folder), user can be part of multiple groups
 
-<div align="left"><figure><img src="../.gitbook/assets/image (34).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (34).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 OU are accidental-delete protected by default, uncheck that under Advamced features to delete OUs for management purposes.
 
@@ -55,17 +51,17 @@ Delegating a power doesn't mean they can perform said operation via **Active Dir
 
 ### Login via RDP
 
-xfreerdp /u:THM\phillip /p:Claire2008 /v:10.10.225.26 /dynamic-resolution
+`xfreerdp /u:THM\phillip /p:Claire2008 /v:10.10.225.26 /dynamic-resolution`
 
 Username format : THM\philip \[even tho in the login it shows \<room name>\\\<username>, fix it]
 
-<div align="left"><figure><img src="../.gitbook/assets/image (84).png" alt="" width="563"><figcaption><p>Create a new OU under Domain Container (thm.local)</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (84).png" alt="" width="563"><figcaption><p>Create a new OU under Domain Container (thm.local)</p></figcaption></figure></div>
 
 To delete OU's and prevent accidental delete
 
-<div align="left"><figure><img src="../.gitbook/assets/image (47).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (47).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../.gitbook/assets/image (48).png" alt="" width="246"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (48).png" alt="" width="246"><figcaption></figcaption></figure></div>
 
 ```
 Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose
@@ -97,6 +93,6 @@ Once you make the GPO, drag it to the desired OU you wish to implement it on.
 
 ### Trees and Forest
 
-<div align="left"><figure><img src="../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure></div>
 
 **Two-way trust relationships** can also be made to allow both domains to mutually authorise users from the other. One-way is also fine.&#x20;
