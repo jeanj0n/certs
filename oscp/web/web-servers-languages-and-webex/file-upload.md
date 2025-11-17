@@ -8,7 +8,7 @@ We already know
 
 ## Lab 3 (Directory Traversal)
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 In the first two labs, no file extension checking, here only raw content of the files uploaded are being displayed. You can upload the php webshell but can't execute commands.
 
@@ -28,7 +28,7 @@ Add a `.htaccess` file adding the type 'application/x-httpd-php' basically execu
 
 Why did URL encoding and directory traversal not work or show not found? The response showed it was successful. php5 also only downloaded the uploaded file instead of any execution
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="503"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="" width="503"><figcaption></figcaption></figure></div>
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (7) (1).png" alt="" width="504"><figcaption></figcaption></figure></div>
 

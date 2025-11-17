@@ -2,7 +2,7 @@
 
 ## Report
 
-Website on port 80 accepts file upload for .odt files, null byte poisoning works but we can't get payload to execute and directory traversal is blocked. Uploading malicious micro running powershell in the assumption that the file we upload will be opened gets us a reberse shell. To lateral privesc to user 'apache' who has SeImpersonate, create reverse shell at web root.
+Website on port 80 accepts file upload for .odt files, null byte poisoning works but we can't get payload to execute and directory traversal is blocked. Uploading malicious micro running powershell in the assumption that the file we upload will be opened gets us a reverse shell. To lateral privesc to user 'apache' who has SeImpersonate, create reverse shell at web root.
 
 GodPotato works but critical commands like whoami and ipconfig dont work really which ruins the whole point especially when submitting for proof, PrintSpoofer however does get the job done.&#x20;
 
@@ -68,4 +68,4 @@ Status   Name               DisplayName
 Running  Spooler            Print Spooler
 ```
 
-<div align="left"><figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure></div>

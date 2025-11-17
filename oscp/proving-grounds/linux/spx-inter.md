@@ -10,7 +10,7 @@ User profiler uses the same password as admin from web interface and can run mak
 
 * How tf would you find phpinfo.php if you keep being offside all the time damnit
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>line 150,000 there's levels to this yk</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>line 150,000 there's levels to this yk</p></figcaption></figure>
 
 * Also, you clocked the hashes would be in the php file itself after seeing the app structure on github but come on man you couldn't figure out 'tinyfilemanager.php' was renamed to index.php?
 * Not being able to privesc via sudo is an abomination icl
@@ -38,13 +38,13 @@ Default username/password: admin/admin@123 and user/12345 - Don't work
 
 Only index.php to work with here find creds somehow
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 FInd Tiny File Manager 2.5.3 after logging in
 
 ### Attack Vectors
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Edit spx\_key value from 'dev' (default value) to key mentioned here
 
@@ -54,7 +54,7 @@ Edit spx\_key value from 'dev' (default value) to key mentioned here
 
 `(ALL) /usr/bin/make install -C /home/profiler/php-spx`
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>add pur own binary and embed reverse shell</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>add pur own binary and embed reverse shell</p></figcaption></figure>
 
 ```
 profiler@spx:/tmp$ cat sh

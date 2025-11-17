@@ -6,7 +6,7 @@
 
 The stock API endpoint URL is modified to `http://localhost` and from the response, we find the API endpoint to delete the user carlos
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Lab 2
 

@@ -39,7 +39,8 @@
   * [Scripts](methodology/enumeration/scripts.md)
 * [Linux Privesc](methodology/linux-privesc.md)
 * [Windows PrivEsc](methodology/windows-privesc.md)
-* [AD PrivEsc](methodology/ad-privesc.md)
+* [AD PrivEsc](methodology/ad-privesc/README.md)
+  * [Privilege Abuse](methodology/ad-privesc/privilege-abuse.md)
 
 ## Hackthebox
 
@@ -141,6 +142,15 @@
   * [Kevin \[Easy\]](proving-grounds/windows/kevin-easy.md)
   * [DVR4 \[Inter\]](proving-grounds/windows/dvr4-inter.md)
   * [Hepet \[Inter\]](proving-grounds/windows/hepet-inter.md)
+  * [Shenzi \[Inter\]](proving-grounds/windows/shenzi-inter.md)
+  * [Nickel \[Inter\]](proving-grounds/windows/nickel-inter.md)
+  * [Slort \[Inter\]](proving-grounds/windows/slort-inter.md)
+  * [Medjed \[Inter\]](proving-grounds/windows/medjed-inter.md)
+  * [Resourced \[Inter\]](proving-grounds/windows/resourced-inter.md)
+* [AD](proving-grounds/ad/README.md)
+  * [Access \[Inter\]](proving-grounds/ad/access-inter.md)
+  * [Vault \[Hard\]](proving-grounds/ad/vault-hard.md)
+  * [Nagoya \[Hard\]](proving-grounds/ad/nagoya-hard.md)
 
 ## Pen-200
 

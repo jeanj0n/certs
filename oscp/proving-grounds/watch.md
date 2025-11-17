@@ -4,12 +4,15 @@
 
 `sudo ifconfig tun0 mtu 1250`
 
+For every room, mention that room in the associated notes of every section (eg. group policy -> refer this room)
+
 The first room 'Twiggy' showed the Offsec patterns we have to watch for
 
 * revshell only on certain ports (80,8000)
 * base64 encode payloads if within quotes - you'll know whats up
 * ffuf is not broken, the vpn connection is fine (new syntax port position?)
 * default creds - offsec loves admin:admin?
+* internal enumeration for AD instead of external (from kali)
 
 TRY HARDER
 

