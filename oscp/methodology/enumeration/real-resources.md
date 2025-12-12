@@ -8,6 +8,10 @@ description: The real stuff
 GOAT
 {% endembed %}
 
+{% embed url="https://github.com/OoStellarnightoO/OSCP_Notes/blob/main/12-ActiveDirectory.md" %}
+The ULTIMATE AD METHODOLOGY DO NOT MISS \[key tips plus realisitc things to do]
+{% endembed %}
+
 {% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings" %}
 PayloadAllTheThings
 {% endembed %}

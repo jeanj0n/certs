@@ -22,14 +22,16 @@ Add 240.0.0.1 to ip route instead of target IP, all ports will be forwarded to t
 
 {% embed url="https://www.linkedin.com/pulse/bidirectional-port-forwarding-ligolo-ng-saathwick-venkataramalingam-grwuc" %}
 
+### Quick Port Forward (Linux)
+
 ```
-Wreath -> invoke-portscan.ps1 comms mentioned too (instead of nmap)
+ssh -L 8080:127.0.0.1:8080 vmdak@192.168.106.103
 ```
 
 ### Summary
 
 ```
-sudo ip tuntap add user [your_username] mode tun ligolo
+sudo ip tuntap add user jtripz mode tun ligolo
 sudo ip link set ligolo up
 ligolo -selfcert 
 #Accepts connections at port 443
@@ -51,8 +53,19 @@ start
 
 To perform port forwarding, before start
 
+{% hint style="info" %}
+Nagoya \[PG AD]
+{% endhint %}
+
 ```
 sudo ip route add 240.0.0.1/32 dev ligolo
+```
+
+To access port forwarding of the double pivot, remove the above route and add a new one with new interface
+
+```
+sudo ip route del 240.0.0.1/32 dev ligolo
+sudo ip route add 240.0.0.1/32 dev ligolo-double
 ```
 
 #### Double Pivot
@@ -60,7 +73,7 @@ sudo ip route add 240.0.0.1/32 dev ligolo
 New interface `ligolo-double` now
 
 ```
-EXISTING SESSION
+EXISTING SESSION [ON KALI]
 listener_add --addr 0.0.0.0:11601 --to 127.0.0.1:11601 --tcp
 listener_list
 ./agent.exe -connect <IP of First Pivot Point>:11601 -ignore-cert
@@ -71,3 +84,9 @@ session
 2
 tunnel_start --tun ligolo-double
 ```
+
+Ligolo creates the listener on the jumpbox machine with the first command so no need to run proxy on it as well, wow.
+
+### File Transfer
+
+{% embed url="https://arth0s.medium.com/ligolo-ng-pivoting-reverse-shells-and-file-transfers-6bfb54593fa5" %}

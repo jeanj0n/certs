@@ -5,8 +5,7 @@ We need OWASP ZAP and wappalyzer cus that shi helpred check the forum on Hydra
 If you are using a Kali VM, Network Manager is most likely used as DNS manager. You can use GUI Menu to configure DNS:
 
 * Network Manager -> Advanced Network Configuration -> Your Connection -> IPv4 Settings
-* Set your DNS IP here to the IP for THMDC in the network diagram above\
-
+* Set your DNS IP here to the IP for THMDC in the network diagram above<br>
 * Add another DNS such as 1.1.1.1 or similar to ensure you still have internet access
 * Run `sudo systemctl restart NetworkManager` and test your DNS similar to the steps above.
 
