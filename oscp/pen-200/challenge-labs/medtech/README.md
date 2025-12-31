@@ -4,7 +4,7 @@
 
 IP=192.168.45.167 \[ours]
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Chain Attack Flow
 

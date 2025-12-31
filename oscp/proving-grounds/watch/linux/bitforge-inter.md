@@ -34,13 +34,13 @@ Simple Online Planning v1.52.01
 
 {% embed url="https://github.com/theexploiters/CVE-2024-27115-Exploit" %}
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Extract default hash from fresh install, replace it with existing hash as we cannot crack it</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Extract default hash from fresh install, replace it with existing hash as we cannot crack it</p></figcaption></figure>
 
-<div align="left"><figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>includes/class_user.inc shows how password hash is created, some char prepended and appended so normal way of creating sha-1 wont work</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption><p>includes/class_user.inc shows how password hash is created, some char prepended and appended so normal way of creating sha-1 wont work</p></figcaption></figure></div>
 
 ### PrivEsc
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Intercept creds for user 'jack'</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Intercept creds for user 'jack'</p></figcaption></figure>
 
 ```bash
 User jack may run the following commands on bitforge:

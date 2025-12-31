@@ -4,7 +4,7 @@ A Dream Reborn
 
 THIS IS LITERALLY LIKE CHAMPS CALM YO ASS DOWN
 
-<div align="left"><figure><img src=".gitbook/assets/image (5) (1) (1).png" alt="" width="188"><figcaption><p>src="https://www.hackthebox.eu/badge/929451"</p></figcaption></figure></div>
+<div align="left"><figure><img src=".gitbook/assets/image (5) (1) (1) (1).png" alt="" width="188"><figcaption><p>src="https://www.hackthebox.eu/badge/929451"</p></figcaption></figure></div>
 
 <figure><img src=".gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 

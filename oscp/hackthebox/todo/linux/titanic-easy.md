@@ -59,7 +59,7 @@ Convert gitea PBKDF2-HMAC-SHA256 password hashes to hashcat readable form
 
 <div align="left"><figure><img src="../../../.gitbook/assets/image (82).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## In-Game Pitch Notes
 

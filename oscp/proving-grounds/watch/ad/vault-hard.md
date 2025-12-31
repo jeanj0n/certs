@@ -143,7 +143,7 @@ Find what all GPOs are there in the first place
 Get-GPO -Name "Default Domain Policy"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 What are our permissions?
 

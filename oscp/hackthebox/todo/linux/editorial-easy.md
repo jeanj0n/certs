@@ -26,11 +26,11 @@ http://127.0.0.1 is the way but no change, maybe we gotta hit the right port? Th
 
 But we finally get a hit and that's port 5000. Filter it by the response size easiest option.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 we get a few API endpoints we can hit up, if you use common sense from reading the content, you can tell which one you really want. Append this to the lo URL we been using as payload to get another document which exposes dev credentials
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

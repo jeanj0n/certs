@@ -6,13 +6,13 @@
 
 The stock API endpoint URL is modified to `http://localhost` and from the response, we find the API endpoint to delete the user carlos
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Lab 2
 
 Fuzz a range 192.168.0.FUZZ:8080 same admin endpoint and delte user functionality. Worked with and without URL encoding. Intruder is so slow lmao
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Lab 3 (Bypass blacklist filters)
 

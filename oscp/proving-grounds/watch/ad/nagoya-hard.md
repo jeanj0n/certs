@@ -51,7 +51,7 @@ Service Info: Host: NAGOYA; OS: Windows; CPE: cpe:/o:microsoft:windows
 
 Error page showing this
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Files
 

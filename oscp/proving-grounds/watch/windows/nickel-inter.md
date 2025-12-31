@@ -86,7 +86,7 @@ SSH there, keys maybe?
 
 HTTP site on 8089 shows 3 buttons showing diff info
 
-<div align="left"><figure><img src="../../../.gitbook/assets/image (3).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../../.gitbook/assets/image (3) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 They don't work but accessing the URL directly shows 'invalid token' - change request method
 
@@ -116,13 +116,13 @@ This returns running process and exposes creds for user 'ariah'
 
 ## PrivEsc
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Find this pdf from FTP with 'ariah' creds, need a password, crack with john
 
 EDIT: The web server didn't load on port 80 lol had to revert it that's why https was loading prior
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Loot
 

